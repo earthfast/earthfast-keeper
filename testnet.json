@@ -1,0 +1,443 @@
+{
+  "ArmadaToken": {
+    "holders": [
+      {
+        "address": "ArmadaRegistry",
+        "balance": "2500.0"
+      },
+      {
+        "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
+        "balance": "999997500.0"
+      }
+    ]
+  },
+  "ArmadaRegistry": {
+    "version": "",
+    "nonce": "27",
+    "lastEpochLength": "604800",
+    "nextEpochLength": "604800",
+    "cuedEpochLength": "604800",
+    "gracePeriod": "86400",
+    "epochSlot": "0"
+  },
+  "ArmadaNodes": {
+    "topologyCreators": [
+      "0xF62e46336335f2344D451bAA23696CF77e5C52fC"
+    ],
+    "nodes": [
+      {
+        "id": "0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "topology.testnet.armadanodes.com",
+        "region": "xx",
+        "topology": true,
+        "disabled": false,
+        "prices": [
+          "0.0",
+          "0.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0x0175b7a638427703f0dbe7bb9bbf987a2551717b34e79f33b5b1008d1fa01db9",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content3.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
+          "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695"
+        ]
+      },
+      {
+        "id": "0x036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db0",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content0.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
+          "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b"
+        ]
+      },
+      {
+        "id": "0x1b6847dc741a1b0cd08d278845f9d819d87b734759afb55fe2de5cb82a9ae672",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content8.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0x31ecc21a745e3968a04e9570e4425bc18fa8019c68028196b546d1669c200c68",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content9.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content0.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
+          "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b"
+        ]
+      },
+      {
+        "id": "0x55f448fdea98c4d29eb340757ef0a66cd03dbb9538908a6a81d96026b71ec475",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content6.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0x66de8ffda797e3de9c05e8fc57b3bf0ec28a930d40b0d285d93c06501cf6a090",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content4.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x057c384a7d1c54f3a1b2e5e67b2617b8224fdfd1ea7234eea573a6ff665ff63e",
+          "0x057c384a7d1c54f3a1b2e5e67b2617b8224fdfd1ea7234eea573a6ff665ff63e"
+        ]
+      },
+      {
+        "id": "0x6e1540171b6c0c960b71a7020d9f60077f6af931a8bbf590da0223dacf75c7af",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content2.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3",
+          "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3"
+        ]
+      },
+      {
+        "id": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content1.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0xa66cc928b5edb82af9bd49922954155ab7b0942694bea4ce44661d9a8736c688",
+          "0xa66cc928b5edb82af9bd49922954155ab7b0942694bea4ce44661d9a8736c688"
+        ]
+      },
+      {
+        "id": "0x8d1108e10bcb7c27dddfc02ed9d693a074039d026cf4ea4240b40f7d581ac802",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content7.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0xb13d2d76d1f4b7be834882e410b3e3a8afaf69f83600ae24db354391d2378d2e",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content9.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0xbb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fd",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content6.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0xbb8a6a4669ba250d26cd7a459eca9d215f8307e33aebe50379bc5a3617ec3444",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content3.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
+          "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695"
+        ]
+      },
+      {
+        "id": "0xc624b66cc0138b8fabc209247f72d758e1cf3343756d543badbf24212bed8c15",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content8.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0xc65a7bb8d6351c1cf70c95a316cc6a92839c986682d98bc35f958f4883f9d2a8",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content2.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3",
+          "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3"
+        ]
+      },
+      {
+        "id": "0xce6d7b5282bd9a3661ae061feed1dbda4e52ab073b1f9285be6e155d9c38d4ec",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content5.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0xd7b6990105719101dabeb77144f2a3385c8033acd3af97e9423a695e81ad1eb5",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content5.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0xd833147d7dc355ba459fc788f669e58cfaf9dc25ddcd0702e87d69c7b5124289",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content7.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0xdf6966c971051c3d54ec59162606531493a51404a002842f56009d7e5cf4a8c7",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content4.usw2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x057c384a7d1c54f3a1b2e5e67b2617b8224fdfd1ea7234eea573a6ff665ff63e",
+          "0x057c384a7d1c54f3a1b2e5e67b2617b8224fdfd1ea7234eea573a6ff665ff63e"
+        ]
+      },
+      {
+        "id": "0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d3f",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content1.use2.testnet.armadanodes.com",
+        "region": "na",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0xa66cc928b5edb82af9bd49922954155ab7b0942694bea4ce44661d9a8736c688",
+          "0xa66cc928b5edb82af9bd49922954155ab7b0942694bea4ce44661d9a8736c688"
+        ]
+      }
+    ]
+  },
+  "ArmadaOperators": {
+    "stakePerNode": "100.0",
+    "operators": [
+      {
+        "id": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "owner": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
+        "name": "armada",
+        "email": "@",
+        "stake": "2041.362698412698412696"
+      }
+    ]
+  },
+  "ArmadaProjects": {
+    "projectCreators": [
+      "0x27611d4192879CEBBe0f7f0ED09eA423ac11e713",
+      "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
+      "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
+      "0x9f8e4ee788D9b00A3409584E18034aA7B736C396",
+      "0xF62e46336335f2344D451bAA23696CF77e5C52fC"
+    ],
+    "projects": [
+      {
+        "id": "0x057c384a7d1c54f3a1b2e5e67b2617b8224fdfd1ea7234eea573a6ff665ff63e",
+        "owner": "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
+        "name": "armada-demo-project",
+        "email": "@",
+        "escrow": "99.436865079365079366",
+        "reserve": "4.0",
+        "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
+        "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949"
+      },
+      {
+        "id": "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
+        "owner": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
+        "name": "uniswap",
+        "email": "@",
+        "escrow": "95.200436507936507938",
+        "reserve": "4.0",
+        "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/uniswap-v4.136.0.tgz",
+        "checksum": "0x3cfa66f02ea49dc2b62539446fc7f2e4e4e96a28f20403d2e8970ec5b1a231b7"
+      },
+      {
+        "id": "0xa66cc928b5edb82af9bd49922954155ab7b0942694bea4ce44661d9a8736c688",
+        "owner": "0x27611d4192879CEBBe0f7f0ED09eA423ac11e713",
+        "name": "synthetix-staking",
+        "email": "@",
+        "escrow": "88.0",
+        "reserve": "4.0",
+        "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/synthetix-staking.tgz",
+        "checksum": "0x73c80579b8643cef103602738e2b635f1a2a24f01b9183912129b680fe494639"
+      },
+      {
+        "id": "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
+        "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
+        "name": "audius",
+        "email": "@",
+        "escrow": "88.0",
+        "reserve": "4.0",
+        "content": "https://s3.us-west-1.amazonaws.com/app.audius.co/app.audius.co-11.3.22.tgz",
+        "checksum": "0x35cd0343b5a862a0ef5a37f3bf8a5c25734b5557c06bae3c869929f0177ace95"
+      },
+      {
+        "id": "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3",
+        "owner": "0x9f8e4ee788D9b00A3409584E18034aA7B736C396",
+        "name": "exoticmarkets",
+        "email": "@",
+        "escrow": "88.0",
+        "reserve": "4.0",
+        "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/exotic-markets-v0.1.4.tgz",
+        "checksum": "0xc85e297a2a2b07718c9b5c013cc9f47f8e77588eb6b720aab767aeeb7cc6937b"
+      }
+    ]
+  },
+  "ArmadaBilling": {
+    "billingNodeIndex": "0",
+    "renewalNodeIndex": "0"
+  }
+}
