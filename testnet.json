@@ -3,17 +3,17 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "2500.0"
+        "balance": "2600.0"
       },
       {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999997500.0"
+        "balance": "999997400.0"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "27",
+    "nonce": "28",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -225,12 +225,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.549642857142857142",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
+          "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1"
         ]
       },
       {
@@ -305,12 +305,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.549642857142857142",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
+          "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1"
         ]
       },
       {
@@ -393,6 +393,16 @@
         "reserve": "4.0",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
         "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949"
+      },
+      {
+        "id": "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
+        "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
+        "name": "dashboard.staging.audius.org",
+        "email": "engineering@audius.co",
+        "escrow": "100.0",
+        "reserve": "3.099285714285714284",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1668650999.tgz",
+        "checksum": "0x516af263acef02dfde660f464308d0d4179518368f5be080f9dc74a9ae0e0904"
       },
       {
         "id": "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
