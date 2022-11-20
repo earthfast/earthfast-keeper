@@ -225,7 +225,7 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "0.549642857142857142",
+          "1.0",
           "1.0"
         ],
         "projectIds": [
@@ -305,7 +305,7 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "0.549642857142857142",
+          "1.0",
           "1.0"
         ],
         "projectIds": [
@@ -371,7 +371,7 @@
         "owner": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
         "name": "armada",
         "email": "@",
-        "stake": "2051.362698412698412696"
+        "stake": "2062.46198412698412698"
       }
     ]
   },
@@ -389,7 +389,7 @@
         "owner": "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
         "name": "armada-demo-project",
         "email": "@",
-        "escrow": "97.436865079365079366",
+        "escrow": "95.436865079365079366",
         "reserve": "4.0",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
         "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949"
@@ -399,8 +399,8 @@
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "dashboard.staging.audius.org",
         "email": "engineering@audius.co",
-        "escrow": "100.0",
-        "reserve": "3.099285714285714284",
+        "escrow": "98.900714285714285716",
+        "reserve": "4.0",
         "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1668650999.tgz",
         "checksum": "0x516af263acef02dfde660f464308d0d4179518368f5be080f9dc74a9ae0e0904"
       },
@@ -409,7 +409,7 @@
         "owner": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
         "name": "uniswap",
         "email": "@",
-        "escrow": "93.200436507936507938",
+        "escrow": "91.200436507936507938",
         "reserve": "4.0",
         "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/uniswap-v4.136.0.tgz",
         "checksum": "0x3cfa66f02ea49dc2b62539446fc7f2e4e4e96a28f20403d2e8970ec5b1a231b7"
@@ -419,7 +419,7 @@
         "owner": "0x27611d4192879CEBBe0f7f0ED09eA423ac11e713",
         "name": "synthetix-staking",
         "email": "@",
-        "escrow": "86.0",
+        "escrow": "84.0",
         "reserve": "4.0",
         "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/synthetix-staking.tgz",
         "checksum": "0x73c80579b8643cef103602738e2b635f1a2a24f01b9183912129b680fe494639"
@@ -429,7 +429,7 @@
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "audius",
         "email": "@",
-        "escrow": "86.0",
+        "escrow": "84.0",
         "reserve": "4.0",
         "content": "https://s3.us-west-1.amazonaws.com/app.audius.co/app.audius.co-11.3.22.tgz",
         "checksum": "0x35cd0343b5a862a0ef5a37f3bf8a5c25734b5557c06bae3c869929f0177ace95"
@@ -439,7 +439,7 @@
         "owner": "0x9f8e4ee788D9b00A3409584E18034aA7B736C396",
         "name": "exoticmarkets",
         "email": "@",
-        "escrow": "86.0",
+        "escrow": "84.0",
         "reserve": "4.0",
         "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/exotic-markets-v0.1.4.tgz",
         "checksum": "0xc85e297a2a2b07718c9b5c013cc9f47f8e77588eb6b720aab767aeeb7cc6937b"
