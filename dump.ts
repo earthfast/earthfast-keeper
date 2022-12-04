@@ -132,7 +132,6 @@ async function main() {
       nextEpochLength: (await registry.getNextEpochLength()).toString(),
       cuedEpochLength: (await registry.getCuedEpochLength()).toString(),
       gracePeriod: (await registry.getGracePeriod()).toString(),
-      epochSlot: (await registry.lastEpochSlot()).toString(),
     },
     ArmadaNodes: {
       // NOTE: This only restores roles of existing operators
