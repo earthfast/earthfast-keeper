@@ -3,17 +3,17 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "2600.0"
+        "balance": "2700.0"
       },
       {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999997400.0"
+        "balance": "999997300.0"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "28",
+    "nonce": "29",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -81,12 +81,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.189761904761904761",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211",
+          "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211"
         ]
       },
       {
@@ -193,12 +193,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.189761904761904761",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211",
+          "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211"
         ]
       },
       {
@@ -381,7 +381,8 @@
       "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
       "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
       "0x9f8e4ee788D9b00A3409584E18034aA7B736C396",
-      "0xF62e46336335f2344D451bAA23696CF77e5C52fC"
+      "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
+      "0xaA0f527456241aA4E80dacBe6e7b7fbBf6EdF297"
     ],
     "projects": [
       {
@@ -393,6 +394,16 @@
         "reserve": "4.0",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
         "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949"
+      },
+      {
+        "id": "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211",
+        "owner": "0xaA0f527456241aA4E80dacBe6e7b7fbBf6EdF297",
+        "name": "overtimemarkets",
+        "email": "vladan@thalesmarket.io",
+        "escrow": "100.0",
+        "reserve": "2.379523809523809522",
+        "content": "https://github.com/thales-markets/thales-sport-markets/releases/download/v0.0.2/overtime-v0.0.2.tgz",
+        "checksum": "0x008d3cac34d5c39ded1782574122554c516230e58b43db00b81948ec92bc89d6"
       },
       {
         "id": "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
