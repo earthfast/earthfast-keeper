@@ -14,7 +14,7 @@ import { attach, formatTokens, signers, stringify } from "../armada-contracts/li
 // @ts-ignore Type created during hardhat compile
 type ArmadaBilling = import("../armada-contracts/typechain-types").ArmadaBilling;
 // @ts-ignore Type created during hardhat compile
-type ArmadaNodes = import("../armada-contractstypechain-types").ArmadaNodes;
+type ArmadaNodes = import("../armada-contracts/typechain-types").ArmadaNodes;
 // @ts-ignore Type created during hardhat compile
 type ArmadaNode = import("../armada-contracts/typechain-types/contracts/ArmadaNodes").ArmadaNodeStructOutput;
 // @ts-ignore Type created during hardhat compile
