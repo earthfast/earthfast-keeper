@@ -3,17 +3,17 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "2700.0"
+        "balance": "2800.0"
       },
       {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999997300.0"
+        "balance": "999997200.0"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "29",
+    "nonce": "30",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -371,6 +371,13 @@
         "name": "armada",
         "email": "@",
         "stake": "2156.841507936507936502"
+      },
+      {
+        "id": "0x6d4407e7be21f808e6509aa9fa9143369579dd7d760fe20a2c09680fc146134f",
+        "owner": "0x13963af49fCe118e24583aaD4245638DF192B494",
+        "name": "horizon",
+        "email": "@",
+        "stake": "100.0"
       }
     ]
   },
