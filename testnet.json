@@ -434,8 +434,8 @@
         "email": "engineering@audius.co",
         "escrow": "82.900714285714285716",
         "reserve": "4.0",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1668650999.tgz",
-        "checksum": "0x516af263acef02dfde660f464308d0d4179518368f5be080f9dc74a9ae0e0904"
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1673914597.tgz",
+        "checksum": "0x73491a86e58866962b6a96147397f46d746488e775cd21ce824d3e12587d2faf"
       },
       {
         "id": "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
