@@ -1,0 +1,10 @@
+{
+  "name": "armada-reconcile",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "defender-relay-client": "^1.38.0",
+    "dotenv": "^16.0.3",
+    "ethers": "^6.0.2"
+  }
+}
