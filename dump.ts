@@ -9,7 +9,7 @@ import * as path from "path";
 import hre from "../armada-contracts/node_modules/hardhat";
 import { AddressZero, HashZero } from "../armada-contracts/node_modules/@ethersproject/constants";
 import { BigNumber, Contract } from "../armada-contracts/node_modules/ethers";
-import { attach, formatTokens, signers, stringify } from "../armada-contracts/lib/util";
+import { attach, formatTokens, formatUSDC, signers, stringify } from "../armada-contracts/lib/util";
 
 // @ts-ignore Type created during hardhat compile
 type ArmadaBilling = import("../armada-contracts/typechain-types").ArmadaBilling;
@@ -143,7 +143,7 @@ async function main() {
         region: v.region,
         topology: v.topology,
         disabled: v.disabled,
-        prices: v.prices.map((v: BigNumber) => formatTokens(v)),
+        prices: v.prices.map((v: BigNumber) => formatUSDC(v)),
         projectIds: v.projectIds,
       })),
     },
@@ -155,6 +155,7 @@ async function main() {
         name: v.name,
         email: v.email,
         stake: formatTokens(v.stake),
+        balance: formatUSDC(v.balance),
       })),
     },
     ArmadaProjects: {
@@ -165,8 +166,8 @@ async function main() {
         owner: v.owner,
         name: v.name,
         email: v.email,
-        escrow: formatTokens(v.escrow),
-        reserve: formatTokens(v.reserve),
+        escrow: formatUSDC(v.escrow),
+        reserve: formatUSDC(v.reserve),
         content: v.content,
         checksum: v.checksum,
       })),
