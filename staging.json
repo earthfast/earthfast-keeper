@@ -3,15 +3,11 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "1310.0"
-      },
-      {
-        "address": "0x2d4C5F7a3914C56262af754E0fF16Ac8Ec8c952A",
-        "balance": "100.0"
+        "balance": "1064.726349206349206349"
       },
       {
         "address": "0x90bC78b839fCC1c652CCF8d6A527687AE432A3Bc",
-        "balance": "999998590.0"
+        "balance": "999998935.273650793650793651"
       }
     ]
   },
@@ -118,7 +114,8 @@
         "owner": "0xE7fB9953703F9B4dc0e077EBe66b7eB18b2e9279",
         "name": "armada",
         "email": "@",
-        "stake": "1064.726349206349206349"
+        "stake": "1064.726349206349206349",
+        "balance": "0.0"
       }
     ]
   },
@@ -176,7 +173,7 @@
         "owner": "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
         "name": "armada-demo-project",
         "email": "@",
-        "escrow": "85.273650793650793651",
+        "escrow": "85.27365",
         "reserve": "2.0",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.2/demo-project-v1.0.2.tgz",
         "checksum": "0x590ba8e7cb80bcd875c822a7aa0be779047870eabc5da3ef50f9d3b3b5cbc8d9"
