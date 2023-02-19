@@ -3,17 +3,17 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "2800.0"
+        "balance": "2900.0"
       },
       {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999997200.0"
+        "balance": "999997100.0"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "31",
+    "nonce": "32",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -393,6 +393,13 @@
         "owner": "0x13963af49fCe118e24583aaD4245638DF192B494",
         "name": "mdv",
         "email": "it@marinventures.com",
+        "stake": "100.0"
+      },
+      {
+        "id": "0xa03837a25210ee280c2113ff4b77ca23440b19d4866cca721c801278fd08d807",
+        "owner": "0xC394967fE064f4fF9aaa02D25eD58E5056fE3b6C",
+        "name": "Tomek Group",
+        "email": "nodes@tomekgroup.com",
         "stake": "100.0"
       }
     ]
