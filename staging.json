@@ -3,11 +3,11 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "1064.726349206349206349"
+        "balance": "400.0"
       },
       {
         "address": "0x90bC78b839fCC1c652CCF8d6A527687AE432A3Bc",
-        "balance": "999998935.273650793650793651"
+        "balance": "999999600.0"
       }
     ]
   },
@@ -114,8 +114,8 @@
         "owner": "0x90bC78b839fCC1c652CCF8d6A527687AE432A3Bc",
         "name": "armada",
         "email": "@",
-        "stake": "1064.726349206349206349",
-        "balance": "6.0"
+        "stake": "400.0",
+        "balance": "60.72635"
       }
     ]
   },
