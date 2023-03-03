@@ -12,7 +12,7 @@
     ]
   },
   "ArmadaRegistry": {
-    "version": "",
+    "version": "0.3.0",
     "nonce": "32",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
