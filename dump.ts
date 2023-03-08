@@ -1,73 +1,79 @@
 // Downloads contract data from blockchain.
 //
 // USAGE
-// $ (cd ../armada-contracts; npx hardhat run ../armada-reconcile/dump.ts --network localhost|staging|testnet|mainnet)
+// $ npx ts-node dump.ts --network {mainnet|testnet|staging|localhost}
 
-import { promises as fs } from "fs";
-import * as path from "path";
-import hre from "../armada-contracts/node_modules/hardhat";
-import { AddressZero, HashZero } from "../armada-contracts/node_modules/@ethersproject/constants";
-import { BigNumber, Contract } from "../armada-contracts/node_modules/ethers";
-import { attach, formatTokens, formatUSDC, signers, stringify } from "../armada-contracts/lib/util";
+import fs from "fs";
+import path from "path";
+import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
+import { AddressZero, HashZero } from "@ethersproject/constants";
+import { JsonRpcProvider, Provider } from "@ethersproject/providers";
+import { formatUnits } from "@ethersproject/units";
+import { Contract } from "ethers";
+import parseArgs from "minimist";
 
-// @ts-ignore Type created during hardhat compile
-type ArmadaBilling = import("../armada-contracts/typechain-types").ArmadaBilling;
-// @ts-ignore Type created during hardhat compile
-type ArmadaNodes = import("../armada-contracts/typechain-types").ArmadaNodes;
-// @ts-ignore Type created during hardhat compile
-type ArmadaNode = import("../armada-contracts/typechain-types/contracts/ArmadaNodes").ArmadaNodeStructOutput;
-// @ts-ignore Type created during hardhat compile
-type ArmadaOperators = import("../armada-contracts/typechain-types").ArmadaOperators;
-// @ts-ignore Type created during hardhat compile
-type ArmadaOperator = import("../armada-contracts/typechain-types/contracts/ArmadaOperators").ArmadaOperatorStructOutput;
-// @ts-ignore Type created during hardhat compile
-type ArmadaProjects = import("../armada-contracts/typechain-types").ArmadaProjects;
-// @ts-ignore Type created during hardhat compile
-type ArmadaProject = import("../armada-contracts/typechain-types/contracts/ArmadaProjects").ArmadaProjectStructOutput;
-// @ts-ignore Type created during hardhat compile
-type ArmadaRegistry = import("../armada-contracts/typechain-types").ArmadaRegistry;
-// @ts-ignore Type created during hardhat compile
-type ArmadaReservations = import("../armada-contracts/typechain-types").ArmadaReservations;
-// @ts-ignore Type created during hardhat compile
-type ArmadaToken = import("../armada-contracts/typechain-types").ArmadaToken;
+const Networks: Record<string, { rpcUrl: string; abiDir?: string }> = {
+  mainnet: { rpcUrl: "https://rpc.ankr.com/eth" },
+  testnet: { rpcUrl: "https://rpc.ankr.com/eth_goerli" },
+  staging: { rpcUrl: "https://rpc.ankr.com/eth_goerli" },
+  localhost: { rpcUrl: "http://localhost:8545", abiDir: "../armada-contracts/deployments/localhost" },
+};
 
-const isUnique = (value: any, index: any, self: any) => self.indexOf(value) === index;
-
+const formatUSDC = (value: BigNumberish): string => `${formatUnits(value, 6)} USDC`;
+const formatTokens = (value: BigNumberish): string => `${formatUnits(value, 18)} ARMADA`;
+const isUnique = <T>(value: T, index: number, self: T[]) => self.indexOf(value) === index;
 async function hasRole(contract: Contract, role: string, address: string): Promise<boolean> {
   return await contract.hasRole(role, address);
 }
 
+async function getProvider(network: string): Promise<Provider> {
+  const provider = new JsonRpcProvider(Networks[network].rpcUrl);
+  const network_ = await provider.getNetwork();
+  console.log(`Using ${network} (${network_.chainId}/${network_.name})`);
+  return provider;
+}
+
+async function getContract(network: string, contract: string, provider: Provider): Promise<Contract> {
+  const dir = Networks[network].abiDir ?? path.join("./abi", network);
+  const file = path.join(dir, contract + ".json");
+  const abi = JSON.parse(fs.readFileSync(file).toString());
+  console.log(`Contract ${abi.address} (${contract})`);
+  return new Contract(abi.address, abi.abi, provider);
+}
+
 async function main() {
-  if (hre.network.name === "hardhat") {
-    throw Error("Must specify --network");
+  const args = parseArgs(process.argv.slice(2));
+  if (!args.network) {
+    throw Error("Missing --network");
+  }
+  if (!Networks[args.network]) {
+    throw Error("Invalid --network");
   }
 
-  const provider = hre["ethers"].provider;
+  const provider = await getProvider(args.network);
   const block = await provider.getBlock("latest");
   const blockTag = block.hash;
-  console.log(`Using block ${block.number}/${blockTag}`);
+  console.log(`Block ${block.number} (${blockTag})`);
 
-  const { admin } = await signers(hre);
-  const token = <ArmadaToken>await attach(hre, "ArmadaToken");
-  const registry = <ArmadaRegistry>await attach(hre, "ArmadaRegistry");
-  const billing = <ArmadaBilling>await attach(hre, "ArmadaBilling");
-  const nodes = <ArmadaNodes>await attach(hre, "ArmadaNodes");
-  const operators = <ArmadaOperators>await attach(hre, "ArmadaOperators");
-  const projects = <ArmadaProjects>await attach(hre, "ArmadaProjects");
+  const token = await getContract(args.network, "ArmadaToken", provider);
+  const registry = await getContract(args.network, "ArmadaRegistry", provider);
+  const billing = await getContract(args.network, "ArmadaBilling", provider);
+  const nodes = await getContract(args.network, "ArmadaNodes", provider);
+  const operators = await getContract(args.network, "ArmadaOperators", provider);
+  const projects = await getContract(args.network, "ArmadaProjects", provider);
 
-  const topologyNodesDataRaw = await nodes.getNodes(HashZero, true, 0, await nodes.getNodeCount(HashZero, true, {blockTag}), {blockTag});
-  const contentNodesDataRaw = await nodes.getNodes(HashZero, false, 0, await nodes.getNodeCount(HashZero, false, {blockTag}), {blockTag});
-  const topologyNodesData = (<ArmadaNode[]>topologyNodesDataRaw).slice().sort((a, b) => a.id.localeCompare(b.id));
-  const contentNodesData = (<ArmadaNode[]>contentNodesDataRaw).slice().sort((a, b) => a.id.localeCompare(b.id));
-  const nodesData = (<ArmadaNode[]>topologyNodesData).concat(contentNodesData);
+  const topologyNodeCount = await nodes.getNodeCount(HashZero, true, {blockTag});
+  const contentNodeCount = await nodes.getNodeCount(HashZero, false, {blockTag});
+  const topologyNodeDataRaw = await nodes.getNodes(HashZero, true, 0, topologyNodeCount, {blockTag});
+  const contentNodeDataRaw = await nodes.getNodes(HashZero, false, 0, contentNodeCount, {blockTag});
+  const topologyNodeData = topologyNodeDataRaw.slice().sort((a: any, b: any) => a.id.localeCompare(b.id));
+  const contentNodeData = contentNodeDataRaw.slice().sort((a: any, b: any) => a.id.localeCompare(b.id));
+  const nodeData = topologyNodeData.concat(contentNodeData);
 
-  const operatorsDataRaw = await operators.getOperators(0, await operators.getOperatorCount({blockTag}), {blockTag});
-  const operatorsData = (<ArmadaOperator[]>operatorsDataRaw).slice().sort((a, b) => a.id.localeCompare(b.id));
-  const operatorOwners = operatorsData
-    .map((v) => v.owner as string)
-    .concat(admin.address)
-    .filter(isUnique)
-    .sort();
+  const operatorCount = await operators.getOperatorCount({blockTag});
+  const operatorDataRaw = await operators.getOperators(0, operatorCount, {blockTag});
+  const operatorData = operatorDataRaw.slice().sort((a: any, b: any) => a.id.localeCompare(b.id));
+  const operatorOwners = operatorData.map((v: any) => v.owner as string).filter(isUnique).sort();
   const topologyCreators: string[] = [];
   for (let i = 0; i < operatorOwners.length; ++i) {
     if (await hasRole(nodes, await nodes.TOPOLOGY_CREATOR_ROLE({blockTag}), operatorOwners[i])) {
@@ -75,16 +81,14 @@ async function main() {
     }
   }
 
-  const projectsDataRaw = await projects.getProjects(0, await projects.getProjectCount({blockTag}), {blockTag});
-  const projectsData = (<ArmadaProject[]>projectsDataRaw).slice().sort((a, b) => a.id.localeCompare(b.id));
-  const projectOwners = projectsData
-    .map((v) => v.owner as string)
-    .concat(AddressZero, admin.address)
-    .filter(isUnique)
-    .sort();
+  const projectCount = await projects.getProjectCount({blockTag});
+  const projectDataRaw = await projects.getProjects(0, projectCount, {blockTag});
+  const projectData = projectDataRaw.slice().sort((a: any, b: any) => a.id.localeCompare(b.id));
+  const projectOwners = projectData.map((v: any) => v.owner as string).concat(AddressZero).filter(isUnique).sort();
   const projectCreators: string[] = [];
+  const projectCreatorRole = await projects.PROJECT_CREATOR_ROLE({blockTag});
   for (let i = 0; i < projectOwners.length; ++i) {
-    if (await hasRole(projects, await projects.PROJECT_CREATOR_ROLE({blockTag}), projectOwners[i])) {
+    if (await hasRole(projects, projectCreatorRole, projectOwners[i])) {
       projectCreators.push(projectOwners[i]);
     }
   }
@@ -104,7 +108,7 @@ async function main() {
     console.warn("WARNING: Could not identify all token holders");
   }
 
-  const idCount = nodesData.length + operatorsData.length + projectsData.length;
+  const idCount = nodeData.length + operatorData.length + projectData.length;
   if (!(await registry.getNonce({blockTag})).gte(idCount)) {
     throw Error("Mismatched nonce");
   }
@@ -128,7 +132,7 @@ async function main() {
     ArmadaNodes: {
       // NOTE: This only restores roles of existing operators
       topologyCreators,
-      nodes: nodesData.map((v) => ({
+      nodes: nodeData.map((v: any) => ({
         id: v.id,
         operatorId: v.operatorId,
         host: v.host,
@@ -141,7 +145,7 @@ async function main() {
     },
     ArmadaOperators: {
       stakePerNode: formatTokens(await operators.getStakePerNode({blockTag})),
-      operators: operatorsData.map((v) => ({
+      operators: operatorData.map((v: any) => ({
         id: v.id,
         owner: v.owner,
         name: v.name,
@@ -153,7 +157,7 @@ async function main() {
     ArmadaProjects: {
       // NOTE: This only restores roles of existing projects and the special zero address
       projectCreators,
-      projects: projectsData.map((v) => ({
+      projects: projectData.map((v: any) => ({
         id: v.id,
         owner: v.owner,
         name: v.name,
@@ -171,10 +175,16 @@ async function main() {
   };
 
   const dir = path.dirname(process.argv[1]);
-  const name = hre.network.name === "hardhat" ? "localhost" : hre.network.name;
-  const file = process.env.DATA ?? path.join(dir, name + ".json");
-  await fs.writeFile(file, stringify(data));
-  console.log(`Saved ${file}`);
+  const file = path.join(dir, args.network + ".json");
+  const before = fs.readFileSync(file).toString();
+  const after = JSON.stringify(data, null, 2);
+  if (before === after) {
+    console.log(`Unchanged ${file}`);
+    return;
+  }
+
+  fs.writeFileSync(file, after);
+  console.log(`Wrote ${file}`);
 }
 
 main().catch((error) => {

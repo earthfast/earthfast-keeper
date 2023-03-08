@@ -3,11 +3,11 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "2200.0"
+        "balance": "2200.0 ARMADA"
       },
       {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999997800.0"
+        "balance": "999997800.0 ARMADA"
       }
     ]
   },
@@ -32,8 +32,8 @@
         "topology": true,
         "disabled": false,
         "prices": [
-          "0.0",
-          "0.0"
+          "0.0 USDC",
+          "0.0 USDC"
         ],
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -48,8 +48,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
@@ -64,8 +64,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
@@ -80,8 +80,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211",
@@ -96,8 +96,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -112,8 +112,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
@@ -128,8 +128,8 @@
         "topology": false,
         "disabled": true,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -144,8 +144,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -160,8 +160,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x057c384a7d1c54f3a1b2e5e67b2617b8224fdfd1ea7234eea573a6ff665ff63e",
@@ -176,8 +176,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3",
@@ -192,8 +192,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0xa66cc928b5edb82af9bd49922954155ab7b0942694bea4ce44661d9a8736c688",
@@ -208,8 +208,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211",
@@ -224,8 +224,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -240,8 +240,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
@@ -256,8 +256,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
@@ -272,8 +272,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -288,8 +288,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3",
@@ -304,8 +304,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -320,8 +320,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
@@ -336,8 +336,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -352,8 +352,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0x057c384a7d1c54f3a1b2e5e67b2617b8224fdfd1ea7234eea573a6ff665ff63e",
@@ -368,8 +368,8 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0",
-          "1.0"
+          "1.0 USDC",
+          "1.0 USDC"
         ],
         "projectIds": [
           "0xa66cc928b5edb82af9bd49922954155ab7b0942694bea4ce44661d9a8736c688",
@@ -379,31 +379,31 @@
     ]
   },
   "ArmadaOperators": {
-    "stakePerNode": "100.0",
+    "stakePerNode": "100.0 ARMADA",
     "operators": [
       {
         "id": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
         "owner": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
         "name": "armada",
         "email": "@",
-        "stake": "2000.0",
-        "balance": "268.841508"
+        "stake": "2000.0 ARMADA",
+        "balance": "268.841508 USDC"
       },
       {
         "id": "0x6d4407e7be21f808e6509aa9fa9143369579dd7d760fe20a2c09680fc146134f",
         "owner": "0x13963af49fCe118e24583aaD4245638DF192B494",
         "name": "mdv",
         "email": "it@marinventures.com",
-        "stake": "100.0",
-        "balance": "0.0"
+        "stake": "100.0 ARMADA",
+        "balance": "0.0 USDC"
       },
       {
         "id": "0xa03837a25210ee280c2113ff4b77ca23440b19d4866cca721c801278fd08d807",
         "owner": "0xC394967fE064f4fF9aaa02D25eD58E5056fE3b6C",
         "name": "Tomek Group",
         "email": "nodes@tomekgroup.com",
-        "stake": "100.0",
-        "balance": "0.0"
+        "stake": "100.0 ARMADA",
+        "balance": "0.0 USDC"
       }
     ]
   },
@@ -422,8 +422,8 @@
         "owner": "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
         "name": "armada-demo-project",
         "email": "@",
-        "escrow": "65.436865",
-        "reserve": "4.0",
+        "escrow": "65.436865 USDC",
+        "reserve": "4.0 USDC",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
         "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949"
       },
@@ -432,8 +432,8 @@
         "owner": "0xaA0f527456241aA4E80dacBe6e7b7fbBf6EdF297",
         "name": "overtimemarkets",
         "email": "vladan@thalesmarket.io",
-        "escrow": "73.620476",
-        "reserve": "4.0",
+        "escrow": "73.620476 USDC",
+        "reserve": "4.0 USDC",
         "content": "https://github.com/thales-markets/thales-sport-markets/releases/download/v0.0.2/overtime-v0.0.2.tgz",
         "checksum": "0x008d3cac34d5c39ded1782574122554c516230e58b43db00b81948ec92bc89d6"
       },
@@ -442,8 +442,8 @@
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "dashboard.staging.audius.org",
         "email": "engineering@audius.co",
-        "escrow": "68.900714",
-        "reserve": "4.0",
+        "escrow": "68.900714 USDC",
+        "reserve": "4.0 USDC",
         "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1673914597.tgz",
         "checksum": "0x73491a86e58866962b6a96147397f46d746488e775cd21ce824d3e12587d2faf"
       },
@@ -452,8 +452,8 @@
         "owner": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
         "name": "uniswap",
         "email": "@",
-        "escrow": "61.200437",
-        "reserve": "4.0",
+        "escrow": "61.200437 USDC",
+        "reserve": "4.0 USDC",
         "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/uniswap-v4.136.0.tgz",
         "checksum": "0x3cfa66f02ea49dc2b62539446fc7f2e4e4e96a28f20403d2e8970ec5b1a231b7"
       },
@@ -462,8 +462,8 @@
         "owner": "0x27611d4192879CEBBe0f7f0ED09eA423ac11e713",
         "name": "synthetix-staking",
         "email": "@",
-        "escrow": "54.0",
-        "reserve": "4.0",
+        "escrow": "54.0 USDC",
+        "reserve": "4.0 USDC",
         "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/synthetix-staking.tgz",
         "checksum": "0x73c80579b8643cef103602738e2b635f1a2a24f01b9183912129b680fe494639"
       },
@@ -472,8 +472,8 @@
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "audius",
         "email": "@",
-        "escrow": "54.0",
-        "reserve": "4.0",
+        "escrow": "54.0 USDC",
+        "reserve": "4.0 USDC",
         "content": "https://s3.us-west-1.amazonaws.com/app.audius.co/app.audius.co-11.3.22.tgz",
         "checksum": "0x35cd0343b5a862a0ef5a37f3bf8a5c25734b5557c06bae3c869929f0177ace95"
       },
@@ -482,8 +482,8 @@
         "owner": "0x9f8e4ee788D9b00A3409584E18034aA7B736C396",
         "name": "exoticmarkets",
         "email": "@",
-        "escrow": "54.0",
-        "reserve": "4.0",
+        "escrow": "54.0 USDC",
+        "reserve": "4.0 USDC",
         "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/exotic-markets-v0.1.4.tgz",
         "checksum": "0xc85e297a2a2b07718c9b5c013cc9f47f8e77588eb6b720aab767aeeb7cc6937b"
       }

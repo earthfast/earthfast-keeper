@@ -2,9 +2,15 @@
   "name": "armada-reconcile",
   "version": "1.0.0",
   "license": "UNLICENSED",
-  "devDependencies": {
+  "dependencies": {
+    "@ethersproject/bignumber": "^5.7.0",
+    "@ethersproject/providers": "^5.7.2",
+    "@ethersproject/units": "^5.7.0",
+    "@types/minimist": "^1.2.2",
     "defender-relay-client": "^1.38.0",
     "dotenv": "^16.0.3",
-    "ethers": "^6.0.2"
+    "ethers": "^5.7.2",
+    "minimist": "^1.2.8",
+    "ts-node": "^10.9.1"
   }
 }
