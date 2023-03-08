@@ -1,8 +1,7 @@
 // Downloads contract data from blockchain.
 //
 // USAGE
-// $ cd armada-contracts
-// $ npx hardhat run dump.ts --network ...
+// $ (cd ../armada-contracts; npx hardhat run ../armada-reconcile/dump.ts --network localhost|staging|testnet|mainnet)
 
 import { promises as fs } from "fs";
 import * as path from "path";
@@ -42,6 +41,12 @@ async function main() {
   if (hre.network.name === "hardhat") {
     throw Error("Must specify --network");
   }
+
+  const provider = hre["ethers"].provider;
+  const block = await provider.getBlock("latest");
+  const blockTag = block.hash;
+  console.log(`Using block ${block.number}/${blockTag}`);
+
   const { admin } = await signers(hre);
   const token = <ArmadaToken>await attach(hre, "ArmadaToken");
   const registry = <ArmadaRegistry>await attach(hre, "ArmadaRegistry");
@@ -49,27 +54,14 @@ async function main() {
   const nodes = <ArmadaNodes>await attach(hre, "ArmadaNodes");
   const operators = <ArmadaOperators>await attach(hre, "ArmadaOperators");
   const projects = <ArmadaProjects>await attach(hre, "ArmadaProjects");
-  const reservations = <ArmadaReservations>await attach(hre, "ArmadaReservations");
-  if (!hre.network.tags.dev) {
-    if (
-      !(await registry.paused()) ||
-      !(await billing.paused()) ||
-      !(await nodes.paused()) ||
-      !(await operators.paused()) ||
-      !(await projects.paused()) ||
-      !(await reservations.paused())
-    ) {
-      console.warn("WARNING: Contracts should be paused during data dump");
-    }
-  }
 
-  const topologyNodesDataRaw = await nodes.getNodes(HashZero, true, 0, await nodes.getNodeCount(HashZero, true));
-  const contentNodesDataRaw = await nodes.getNodes(HashZero, false, 0, await nodes.getNodeCount(HashZero, false));
+  const topologyNodesDataRaw = await nodes.getNodes(HashZero, true, 0, await nodes.getNodeCount(HashZero, true, {blockTag}), {blockTag});
+  const contentNodesDataRaw = await nodes.getNodes(HashZero, false, 0, await nodes.getNodeCount(HashZero, false, {blockTag}), {blockTag});
   const topologyNodesData = (<ArmadaNode[]>topologyNodesDataRaw).slice().sort((a, b) => a.id.localeCompare(b.id));
   const contentNodesData = (<ArmadaNode[]>contentNodesDataRaw).slice().sort((a, b) => a.id.localeCompare(b.id));
   const nodesData = (<ArmadaNode[]>topologyNodesData).concat(contentNodesData);
 
-  const operatorsDataRaw = await operators.getOperators(0, await operators.getOperatorCount());
+  const operatorsDataRaw = await operators.getOperators(0, await operators.getOperatorCount({blockTag}), {blockTag});
   const operatorsData = (<ArmadaOperator[]>operatorsDataRaw).slice().sort((a, b) => a.id.localeCompare(b.id));
   const operatorOwners = operatorsData
     .map((v) => v.owner as string)
@@ -78,12 +70,12 @@ async function main() {
     .sort();
   const topologyCreators: string[] = [];
   for (let i = 0; i < operatorOwners.length; ++i) {
-    if (await hasRole(nodes, await nodes.TOPOLOGY_CREATOR_ROLE(), operatorOwners[i])) {
+    if (await hasRole(nodes, await nodes.TOPOLOGY_CREATOR_ROLE({blockTag}), operatorOwners[i])) {
       topologyCreators.push(operatorOwners[i]);
     }
   }
 
-  const projectsDataRaw = await projects.getProjects(0, await projects.getProjectCount());
+  const projectsDataRaw = await projects.getProjects(0, await projects.getProjectCount({blockTag}), {blockTag});
   const projectsData = (<ArmadaProject[]>projectsDataRaw).slice().sort((a, b) => a.id.localeCompare(b.id));
   const projectOwners = projectsData
     .map((v) => v.owner as string)
@@ -92,7 +84,7 @@ async function main() {
     .sort();
   const projectCreators: string[] = [];
   for (let i = 0; i < projectOwners.length; ++i) {
-    if (await hasRole(projects, await projects.PROJECT_CREATOR_ROLE(), projectOwners[i])) {
+    if (await hasRole(projects, await projects.PROJECT_CREATOR_ROLE({blockTag}), projectOwners[i])) {
       projectCreators.push(projectOwners[i]);
     }
   }
@@ -102,22 +94,22 @@ async function main() {
     await Promise.all(
       knownAddresses.map(async (address) => ({
         address: address === registry.address ? "ArmadaRegistry" : address,
-        balance: await token.balanceOf(address),
+        balance: await token.balanceOf(address, {blockTag}),
       }))
     )
   ).filter(({ balance }) => !balance.isZero());
 
   const totalBalance = knownHolders.reduce((sum, val) => ({ address: "", balance: sum.balance.add(val.balance) }));
-  if (!totalBalance.balance.eq(await token.totalSupply())) {
+  if (!totalBalance.balance.eq(await token.totalSupply({blockTag}))) {
     console.warn("WARNING: Could not identify all token holders");
   }
 
   const idCount = nodesData.length + operatorsData.length + projectsData.length;
-  if (!(await registry.getNonce()).gte(idCount)) {
+  if (!(await registry.getNonce({blockTag})).gte(idCount)) {
     throw Error("Mismatched nonce");
   }
 
-  if (!(await registry.getCuedEpochLength()).eq(await registry.getNextEpochLength())) {
+  if (!(await registry.getCuedEpochLength({blockTag})).eq(await registry.getNextEpochLength({blockTag}))) {
     throw Error("Mismatched cuedEpochStart");
   }
 
@@ -126,12 +118,12 @@ async function main() {
       holders: knownHolders.map(({ address, balance }) => ({ address, balance: formatTokens(balance) })),
     },
     ArmadaRegistry: {
-      version: await registry.getVersion(),
-      nonce: (await registry.getNonce()).toString(),
-      lastEpochLength: (await registry.getLastEpochLength()).toString(),
-      nextEpochLength: (await registry.getNextEpochLength()).toString(),
-      cuedEpochLength: (await registry.getCuedEpochLength()).toString(),
-      gracePeriod: (await registry.getGracePeriod()).toString(),
+      version: await registry.getVersion({blockTag}),
+      nonce: (await registry.getNonce({blockTag})).toString(),
+      lastEpochLength: (await registry.getLastEpochLength({blockTag})).toString(),
+      nextEpochLength: (await registry.getNextEpochLength({blockTag})).toString(),
+      cuedEpochLength: (await registry.getCuedEpochLength({blockTag})).toString(),
+      gracePeriod: (await registry.getGracePeriod({blockTag})).toString(),
     },
     ArmadaNodes: {
       // NOTE: This only restores roles of existing operators
@@ -148,7 +140,7 @@ async function main() {
       })),
     },
     ArmadaOperators: {
-      stakePerNode: formatTokens(await operators.getStakePerNode()),
+      stakePerNode: formatTokens(await operators.getStakePerNode({blockTag})),
       operators: operatorsData.map((v) => ({
         id: v.id,
         owner: v.owner,
@@ -173,8 +165,8 @@ async function main() {
       })),
     },
     ArmadaBilling: {
-      billingNodeIndex: (await billing.getBillingNodeIndex()).toString(),
-      renewalNodeIndex: (await billing.getRenewalNodeIndex()).toString(),
+      billingNodeIndex: (await billing.getBillingNodeIndex({blockTag})).toString(),
+      renewalNodeIndex: (await billing.getRenewalNodeIndex({blockTag})).toString(),
     },
   };
 
