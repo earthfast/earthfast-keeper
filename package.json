@@ -2,15 +2,22 @@
   "name": "armada-reconcile",
   "version": "1.0.0",
   "license": "UNLICENSED",
+  "scripts": {
+    "copy-abi": "SRC=../armada-contracts && DST=$(pwd) && rm -rf ./abi && mkdir ./abi && cd ${SRC}/deployments && tar c {staging,testnet}/*.json | tar x -C ${DST}/abi",
+    "gen-types": "rm -rf ./types && for SRC in ./abi/*; do DST=./types/$(basename ${SRC}); echo \"Generating ${DST}\"; npx typechain --target=ethers-v5 --out-dir ${DST} ${SRC}/*.json; done",
+    "dump": "ts-node dump"
+  },
   "dependencies": {
     "@ethersproject/bignumber": "^5.7.0",
     "@ethersproject/providers": "^5.7.2",
     "@ethersproject/units": "^5.7.0",
+    "@typechain/ethers-v5": "^10.2.0",
     "@types/minimist": "^1.2.2",
     "defender-relay-client": "^1.38.0",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
     "minimist": "^1.2.8",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.1"
   }
 }

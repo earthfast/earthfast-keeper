@@ -1,7 +1,7 @@
 // Downloads contract data from blockchain.
 //
 // USAGE
-// $ npx ts-node dump.ts --network {mainnet|testnet|staging|localhost}
+// $ npm run dump -- --network {mainnet|testnet|staging|localhost}
 
 import fs from "fs";
 import path from "path";
@@ -11,6 +11,15 @@ import { JsonRpcProvider, Provider } from "@ethersproject/providers";
 import { formatUnits } from "@ethersproject/units";
 import { Contract } from "ethers";
 import parseArgs from "minimist";
+
+import {
+  ArmadaBilling,
+  ArmadaNodes,
+  ArmadaOperators,
+  ArmadaProjects,
+  ArmadaRegistry,
+  ArmadaToken,
+} from "./types/staging";
 
 const Networks: Record<string, { rpcUrl: string; abiDir?: string }> = {
   mainnet: { rpcUrl: "https://rpc.ankr.com/eth" },
@@ -33,12 +42,12 @@ async function getProvider(network: string): Promise<Provider> {
   return provider;
 }
 
-async function getContract(network: string, contract: string, provider: Provider): Promise<Contract> {
+async function getContract<T extends Contract>(network: string, contract: string, provider: Provider): Promise<T> {
   const dir = Networks[network].abiDir ?? path.join("./abi", network);
   const file = path.join(dir, contract + ".json");
   const abi = JSON.parse(fs.readFileSync(file).toString());
   console.log(`Contract ${abi.address} (${contract})`);
-  return new Contract(abi.address, abi.abi, provider);
+  return new Contract(abi.address, abi.abi, provider) as T;
 }
 
 async function main() {
@@ -55,25 +64,25 @@ async function main() {
   const blockTag = block.hash;
   console.log(`Block ${block.number} (${blockTag})`);
 
-  const token = await getContract(args.network, "ArmadaToken", provider);
-  const registry = await getContract(args.network, "ArmadaRegistry", provider);
-  const billing = await getContract(args.network, "ArmadaBilling", provider);
-  const nodes = await getContract(args.network, "ArmadaNodes", provider);
-  const operators = await getContract(args.network, "ArmadaOperators", provider);
-  const projects = await getContract(args.network, "ArmadaProjects", provider);
+  const token = await getContract<ArmadaToken>(args.network, "ArmadaToken", provider);
+  const registry = await getContract<ArmadaRegistry>(args.network, "ArmadaRegistry", provider);
+  const billing = await getContract<ArmadaBilling>(args.network, "ArmadaBilling", provider);
+  const nodes = await getContract<ArmadaNodes>(args.network, "ArmadaNodes", provider);
+  const operators = await getContract<ArmadaOperators>(args.network, "ArmadaOperators", provider);
+  const projects = await getContract<ArmadaProjects>(args.network, "ArmadaProjects", provider);
 
   const topologyNodeCount = await nodes.getNodeCount(HashZero, true, {blockTag});
   const contentNodeCount = await nodes.getNodeCount(HashZero, false, {blockTag});
   const topologyNodeDataRaw = await nodes.getNodes(HashZero, true, 0, topologyNodeCount, {blockTag});
   const contentNodeDataRaw = await nodes.getNodes(HashZero, false, 0, contentNodeCount, {blockTag});
-  const topologyNodeData = topologyNodeDataRaw.slice().sort((a: any, b: any) => a.id.localeCompare(b.id));
-  const contentNodeData = contentNodeDataRaw.slice().sort((a: any, b: any) => a.id.localeCompare(b.id));
+  const topologyNodeData = topologyNodeDataRaw.slice().sort((a, b) => a.id.localeCompare(b.id));
+  const contentNodeData = contentNodeDataRaw.slice().sort((a, b) => a.id.localeCompare(b.id));
   const nodeData = topologyNodeData.concat(contentNodeData);
 
   const operatorCount = await operators.getOperatorCount({blockTag});
   const operatorDataRaw = await operators.getOperators(0, operatorCount, {blockTag});
-  const operatorData = operatorDataRaw.slice().sort((a: any, b: any) => a.id.localeCompare(b.id));
-  const operatorOwners = operatorData.map((v: any) => v.owner as string).filter(isUnique).sort();
+  const operatorData = operatorDataRaw.slice().sort((a, b) => a.id.localeCompare(b.id));
+  const operatorOwners = operatorData.map((v) => v.owner as string).filter(isUnique).sort();
   const topologyCreators: string[] = [];
   for (let i = 0; i < operatorOwners.length; ++i) {
     if (await hasRole(nodes, await nodes.TOPOLOGY_CREATOR_ROLE({blockTag}), operatorOwners[i])) {
@@ -83,8 +92,8 @@ async function main() {
 
   const projectCount = await projects.getProjectCount({blockTag});
   const projectDataRaw = await projects.getProjects(0, projectCount, {blockTag});
-  const projectData = projectDataRaw.slice().sort((a: any, b: any) => a.id.localeCompare(b.id));
-  const projectOwners = projectData.map((v: any) => v.owner as string).concat(AddressZero).filter(isUnique).sort();
+  const projectData = projectDataRaw.slice().sort((a, b) => a.id.localeCompare(b.id));
+  const projectOwners = projectData.map((v) => v.owner as string).concat(AddressZero).filter(isUnique).sort();
   const projectCreators: string[] = [];
   const projectCreatorRole = await projects.PROJECT_CREATOR_ROLE({blockTag});
   for (let i = 0; i < projectOwners.length; ++i) {
@@ -132,7 +141,7 @@ async function main() {
     ArmadaNodes: {
       // NOTE: This only restores roles of existing operators
       topologyCreators,
-      nodes: nodeData.map((v: any) => ({
+      nodes: nodeData.map((v) => ({
         id: v.id,
         operatorId: v.operatorId,
         host: v.host,
@@ -145,7 +154,7 @@ async function main() {
     },
     ArmadaOperators: {
       stakePerNode: formatTokens(await operators.getStakePerNode({blockTag})),
-      operators: operatorData.map((v: any) => ({
+      operators: operatorData.map((v) => ({
         id: v.id,
         owner: v.owner,
         name: v.name,
@@ -157,7 +166,7 @@ async function main() {
     ArmadaProjects: {
       // NOTE: This only restores roles of existing projects and the special zero address
       projectCreators,
-      projects: projectData.map((v: any) => ({
+      projects: projectData.map((v) => ({
         id: v.id,
         owner: v.owner,
         name: v.name,
