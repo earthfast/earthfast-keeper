@@ -1,7 +1,7 @@
 // Downloads contract data from blockchain.
 //
 // USAGE
-// $ npm run dump -- --network {mainnet|testnet|staging|localhost}
+// $ npm run dump -- --network {localhost|staging|testnet|mainnet}
 
 import fs from "fs";
 import path from "path";
