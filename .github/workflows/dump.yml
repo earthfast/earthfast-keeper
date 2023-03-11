@@ -1,0 +1,40 @@
+name: Dump contract data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 0 * * 0'
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get staging epoch status
+        id: status
+        run: |
+          json="$(npx ts-node ./src/status.ts --network staging)"
+          echo "block1=$(echo $json | jq .epochFinishedBlock-1)" >> $GITHUB_OUTPUT
+          echo "block2=$(echo $json | jq .epochAdvancedBlock)" >> $GITHUB_OUTPUT
+
+      - name: Dump staging data at epoch finishing block
+        id: dump1
+        run: |
+          npx ts-node ./src/dump.ts --network staging --block ${{ steps.status.outputs.block1 }}
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: "dump-staging-finished-${{ steps.status.outputs.block1 }}"
+          title: "Dump staging epoch finished ${{ steps.status.outputs.block1 }}"
+          commit-message: "Dump staging epoch finished ${{ steps.status.outputs.block1 }}"
+          delete-branch: true
