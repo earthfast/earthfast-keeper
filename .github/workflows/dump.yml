@@ -1,0 +1,34 @@
+name: Dump contract data
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 0 * * 0'
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci
+      - name: Get staging status
+        id: status
+        run: |
+          json="$(npx ts-node ./src/status.ts --network staging)"
+          echo "block1=$(echo $json | jq .epochFinishedBlock-1)" >> $GITHUB_OUTPUT
+          echo "block2=$(echo $json | jq .epochAdvancedBlock)" >> $GITHUB_OUTPUT
+      - name: Dump staging at epoch finished block
+        run: |
+          npx ts-node ./src/dump.ts --network staging --block ${{ steps.status.outputs.block1 }}
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Dump staging at epoch finished block ${{ steps.status.outputs.block1 }}
+      - name: Dump staging at epoch advanced block
+        run: |
+          npx ts-node ./src/dump.ts --network staging --block ${{ steps.status.outputs.block2 }}
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Dump staging at epoch advanced block ${{ steps.status.outputs.block2 }}
+      - run: git push
