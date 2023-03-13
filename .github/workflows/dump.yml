@@ -34,11 +34,11 @@ jobs:
           npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block1 }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Dump ${{ inputs.network }} at EpochFinished (block ${{ steps.status.outputs.block1 }})
+          commit_message: Dump ${{ inputs.network }} (EpochFinished / block ${{ steps.status.outputs.block1 }})
       - name: Dump ${{ inputs.network }} at EpochAdvanced
         run: |
           npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block2 }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Dump ${{ inputs.network }} at EpochAdvanced (block ${{ steps.status.outputs.block2 }})
+          commit_message: Dump ${{ inputs.network }} (EpochAdvanced / block ${{ steps.status.outputs.block2 }})
       - run: git push
