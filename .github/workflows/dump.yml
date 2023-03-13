@@ -1,8 +1,19 @@
-name: Dump contract data
+name: Dump
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '10 0 * * 0'
+    inputs:
+      network:
+        description: The network
+        type: choice
+        required: true
+        options: 
+        - staging
+        - testnet
+  workflow_call:
+    inputs:
+      network:
+        type: string
+        required: true
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -10,25 +21,24 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "16"
-          registry-url: "https://registry.npmjs.org"
+          node-version: 16
       - run: npm ci
-      - name: Get staging status
+      - name: Get ${{ inputs.network }} status
         id: status
         run: |
-          json="$(npx ts-node ./src/status.ts --network staging)"
+          json="$(npx ts-node ./src/status.ts --network ${{ inputs.network }})"
           echo "block1=$(echo $json | jq .epochFinishedBlock-1)" >> $GITHUB_OUTPUT
           echo "block2=$(echo $json | jq .epochAdvancedBlock)" >> $GITHUB_OUTPUT
-      - name: Dump staging at epoch finished block
+      - name: Dump ${{ inputs.network }} at EpochFinished
         run: |
-          npx ts-node ./src/dump.ts --network staging --block ${{ steps.status.outputs.block1 }}
+          npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block1 }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Dump staging at epoch finished block ${{ steps.status.outputs.block1 }}
-      - name: Dump staging at epoch advanced block
+          commit_message: Dump ${{ inputs.network }} at EpochFinished (block ${{ steps.status.outputs.block1 }})
+      - name: Dump ${{ inputs.network }} at EpochAdvanced
         run: |
-          npx ts-node ./src/dump.ts --network staging --block ${{ steps.status.outputs.block2 }}
+          npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block2 }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Dump staging at epoch advanced block ${{ steps.status.outputs.block2 }}
+          commit_message: Dump ${{ inputs.network }} at EpochAdvanced (block ${{ steps.status.outputs.block2 }})
       - run: git push

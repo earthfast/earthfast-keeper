@@ -1,0 +1,10 @@
+name: Dump (testnet)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 0 * * 0'
+jobs:
+  dump-testnet:
+    uses: ./.github/workflows/dump.yml
+    with:
+      network: testnet
