@@ -25,19 +25,31 @@ jobs:
       - run: npm ci
       - name: Get ${{ inputs.network }} status
         id: status
-        run: |
-          json="$(npx ts-node ./src/status.ts --network ${{ inputs.network }})"
-          echo "block1=$(echo $json | jq .epochFinishedBlock-1)" >> $GITHUB_OUTPUT
-          echo "block2=$(echo $json | jq .epochAdvancedBlock)" >> $GITHUB_OUTPUT
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 1
+          max_attempts: 3
+          command: |
+            json="$(npx ts-node ./src/status.ts --network ${{ inputs.network }})"
+            echo "block1=$(echo $json | jq .epochFinishedBlock-1)" >> $GITHUB_OUTPUT
+            echo "block2=$(echo $json | jq .epochAdvancedBlock)" >> $GITHUB_OUTPUT
       - name: Dump ${{ inputs.network }} at EpochFinished
-        run: |
-          npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block1 }}
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 1
+          max_attempts: 3
+          command: |
+            npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block1 }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Dump ${{ inputs.network }} (EpochFinished / block ${{ steps.status.outputs.block1 }})
       - name: Dump ${{ inputs.network }} at EpochAdvanced
-        run: |
-          npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block2 }}
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 1
+          max_attempts: 3
+          command: |
+            npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block2 }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Dump ${{ inputs.network }} (EpochAdvanced / block ${{ steps.status.outputs.block2 }})
