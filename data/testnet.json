@@ -13,7 +13,7 @@
   },
   "ArmadaRegistry": {
     "version": "0.3.0",
-    "nonce": "32",
+    "nonce": "33",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -294,6 +294,22 @@
         "projectIds": [
           "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3",
           "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3"
+        ]
+      },
+      {
+        "id": "0xc97bfaf2f8ee708c303a06d134f5ecd8389ae0432af62dc132a24118292866bb",
+        "operatorId": "0xa03837a25210ee280c2113ff4b77ca23440b19d4866cca721c801278fd08d807",
+        "host": "acn01.euw1.armnd.link",
+        "region": "eu",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1000000000000.0 USDC",
+          "1000000000000.0 USDC"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
