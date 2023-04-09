@@ -3,17 +3,17 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "2200.0 ARMADA"
+        "balance": "2400.0 ARMADA"
       },
       {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999997800.0 ARMADA"
+        "balance": "999997600.0 ARMADA"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "0.3.0",
-    "nonce": "33",
+    "nonce": "37",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -185,6 +185,22 @@
         ]
       },
       {
+        "id": "0x7cd332d19b93bcabe3cce7ca0c18a052f57e5fd03b4758a09f30f5ddc4b22ec4",
+        "operatorId": "0x3a6357012c1a3ae0a17d304c9920310382d968ebcc4b1771f41c6b304205b570",
+        "host": "content1.us-central1-a.testnet.guerillaflotilla.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "0.597361 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
         "id": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
         "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
         "host": "content1.usw2.testnet.armadanodes.com",
@@ -304,12 +320,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.326805 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
+          "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510"
         ]
       },
       {
@@ -326,6 +342,22 @@
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0xd57b2b5166478fd4318d2acc6cc2c704584312bdd8781b32d5d06abda57f4230",
+        "operatorId": "0x3a6357012c1a3ae0a17d304c9920310382d968ebcc4b1771f41c6b304205b570",
+        "host": "content0.us-central1-a.testnet.guerillaflotilla.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "0.597361 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
+          "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510"
         ]
       },
       {
@@ -406,6 +438,14 @@
         "balance": "324.841508 USDC"
       },
       {
+        "id": "0x3a6357012c1a3ae0a17d304c9920310382d968ebcc4b1771f41c6b304205b570",
+        "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
+        "name": "Super Cool Labs",
+        "email": "dheeraj@supercoollabs.com",
+        "stake": "200.0 ARMADA",
+        "balance": "0.0 USDC"
+      },
+      {
         "id": "0x6d4407e7be21f808e6509aa9fa9143369579dd7d760fe20a2c09680fc146134f",
         "owner": "0x13963af49fCe118e24583aaD4245638DF192B494",
         "name": "mdv",
@@ -425,6 +465,7 @@
   },
   "ArmadaProjects": {
     "projectCreators": [
+      "0x0F82843D7982c254fe1E89E989Ae6eD9Cd3ea5A8",
       "0x27611d4192879CEBBe0f7f0ED09eA423ac11e713",
       "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
       "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
@@ -462,6 +503,16 @@
         "reserve": "4.0 USDC",
         "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1673914597.tgz",
         "checksum": "0x73491a86e58866962b6a96147397f46d746488e775cd21ce824d3e12587d2faf"
+      },
+      {
+        "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
+        "owner": "0x0F82843D7982c254fe1E89E989Ae6eD9Cd3ea5A8",
+        "name": "guerillaflotilla",
+        "email": "dheeraj@supercoollabs.com",
+        "escrow": "100.0 USDC",
+        "reserve": "3.521527 USDC",
+        "content": "https://github.com/dmanjunath/guerillaflotilla.com/releases/download/v0.0.1/guerillaflotilla.tgz",
+        "checksum": "0x6a76d01b21f2ac34ff1db9771a184b1b8fa57208d5e117db591cc27a678daa83"
       },
       {
         "id": "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
