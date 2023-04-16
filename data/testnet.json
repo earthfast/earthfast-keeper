@@ -511,8 +511,8 @@
         "email": "dheeraj@supercoollabs.com",
         "escrow": "98.478473 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://github.com/dmanjunath/guerillaflotilla.com/releases/download/v0.0.1/guerillaflotilla.tgz",
-        "checksum": "0x6a76d01b21f2ac34ff1db9771a184b1b8fa57208d5e117db591cc27a678daa83"
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-test-2/release-test-2.tgz",
+        "checksum": "0xbc5bedb040c69cf6b1f3c1a96e3b21aa38b8172f089bc38b6128558e17a811f0"
       },
       {
         "id": "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
