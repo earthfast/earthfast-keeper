@@ -13,7 +13,7 @@
   },
   "ArmadaRegistry": {
     "version": "0.3.0",
-    "nonce": "37",
+    "nonce": "38",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -182,22 +182,6 @@
         "projectIds": [
           "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3",
           "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3"
-        ]
-      },
-      {
-        "id": "0x7cd332d19b93bcabe3cce7ca0c18a052f57e5fd03b4758a09f30f5ddc4b22ec4",
-        "operatorId": "0x3a6357012c1a3ae0a17d304c9920310382d968ebcc4b1771f41c6b304205b570",
-        "host": "content1.us-central1-a.testnet.guerillaflotilla.com",
-        "region": "us",
-        "topology": false,
-        "disabled": false,
-        "prices": [
-          "1.0 USDC",
-          "1.0 USDC"
-        ],
-        "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -469,6 +453,7 @@
       "0x27611d4192879CEBBe0f7f0ED09eA423ac11e713",
       "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
       "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
+      "0x861444f51D61c1A0954e10329623325Ed951818f",
       "0x9f8e4ee788D9b00A3409584E18034aA7B736C396",
       "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
       "0xaA0f527456241aA4E80dacBe6e7b7fbBf6EdF297"
@@ -505,14 +490,24 @@
         "checksum": "0x73491a86e58866962b6a96147397f46d746488e775cd21ce824d3e12587d2faf"
       },
       {
+        "id": "0x401968ff42a154441da5f6c4c935ac46b8671f0e062baaa62a7545ba53bb6e4c",
+        "owner": "0x861444f51D61c1A0954e10329623325Ed951818f",
+        "name": "Synthetix",
+        "email": "info@synthetix.io",
+        "escrow": "0.0 USDC",
+        "reserve": "0.0 USDC",
+        "content": " ",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
         "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
         "owner": "0x0F82843D7982c254fe1E89E989Ae6eD9Cd3ea5A8",
         "name": "guerillaflotilla",
         "email": "dheeraj@supercoollabs.com",
         "escrow": "96.478473 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-test-2/release-test-2.tgz",
-        "checksum": "0xbc5bedb040c69cf6b1f3c1a96e3b21aa38b8172f089bc38b6128558e17a811f0"
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-04_22_23_09_03_PM/release-04_22_23_09_03_PM.tgz",
+        "checksum": "0x588dab37a66bb6c05c97bfe42e70e933cbec4fd0ee3ef2e056ae5f2543d1a243"
       },
       {
         "id": "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
