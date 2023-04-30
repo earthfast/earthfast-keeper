@@ -6,14 +6,18 @@
         "balance": "2400.0 ARMADA"
       },
       {
+        "address": "0xD478fB1Ba009B2674acA2845DA123F08D16d440f",
+        "balance": "100.0 ARMADA"
+      },
+      {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999997600.0 ARMADA"
+        "balance": "999997500.0 ARMADA"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "0.3.0",
-    "nonce": "38",
+    "nonce": "39",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -96,12 +100,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.700515 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x401968ff42a154441da5f6c4c935ac46b8671f0e062baaa62a7545ba53bb6e4c",
+          "0x401968ff42a154441da5f6c4c935ac46b8671f0e062baaa62a7545ba53bb6e4c"
         ]
       },
       {
@@ -455,6 +459,7 @@
       "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
       "0x861444f51D61c1A0954e10329623325Ed951818f",
       "0x9f8e4ee788D9b00A3409584E18034aA7B736C396",
+      "0xD478fB1Ba009B2674acA2845DA123F08D16d440f",
       "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
       "0xaA0f527456241aA4E80dacBe6e7b7fbBf6EdF297"
     ],
@@ -486,18 +491,18 @@
         "email": "engineering@audius.co",
         "escrow": "54.900714 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1673914597.tgz",
-        "checksum": "0x73491a86e58866962b6a96147397f46d746488e775cd21ce824d3e12587d2faf"
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1682562533.tgz",
+        "checksum": "0x6badcd2c7d4a46fa16de29f3cc3b16886234eff3ed1d696f022cd8c1a257fbd1"
       },
       {
         "id": "0x401968ff42a154441da5f6c4c935ac46b8671f0e062baaa62a7545ba53bb6e4c",
         "owner": "0x861444f51D61c1A0954e10329623325Ed951818f",
         "name": "Synthetix",
         "email": "info@synthetix.io",
-        "escrow": "0.0 USDC",
-        "reserve": "0.0 USDC",
-        "content": " ",
-        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        "escrow": "100.0 USDC",
+        "reserve": "1.700515 USDC",
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-04_29_23_09_04_PM/release-04_29_23_09_04_PM.tgz",
+        "checksum": "0x97ed10acca0afe4b0b5e46d8d3576600ef5e4234b9ff59ec49a81c53f1b6860d"
       },
       {
         "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
@@ -506,8 +511,18 @@
         "email": "dheeraj@supercoollabs.com",
         "escrow": "94.478473 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-04_22_23_09_03_PM/release-04_22_23_09_03_PM.tgz",
-        "checksum": "0x588dab37a66bb6c05c97bfe42e70e933cbec4fd0ee3ef2e056ae5f2543d1a243"
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-04_24_23_10_21_PM/release-04_24_23_10_21_PM.tgz",
+        "checksum": "0x7308320fec5519a249a2137faff6fee22a4ab4db301d1a5ebbde297b45293a9c"
+      },
+      {
+        "id": "0x744a2cf8fd7008e3d53b67916e73460df9fa5214e3ef23dd4259ca09493a3594",
+        "owner": "0xD478fB1Ba009B2674acA2845DA123F08D16d440f",
+        "name": "Raydium",
+        "email": "armada-test@raydium.io",
+        "escrow": "0.0 USDC",
+        "reserve": "0.0 USDC",
+        "content": " ",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
       },
       {
         "id": "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
