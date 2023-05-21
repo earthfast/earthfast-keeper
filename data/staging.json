@@ -115,7 +115,7 @@
         "name": "armada",
         "email": "@",
         "stake": "400.0 ARMADA",
-        "balance": "93.72635 USDC"
+        "balance": "96.72635 USDC"
       }
     ]
   },
@@ -163,7 +163,7 @@
         "owner": "0x90bC78b839fCC1c652CCF8d6A527687AE432A3Bc",
         "name": "hello-world",
         "email": "@",
-        "escrow": "67.0 USDC",
+        "escrow": "66.0 USDC",
         "reserve": "2.0 USDC",
         "content": "https://s3.us-west-2.amazonaws.com/armada-staging/bundles/hello-world.tgz",
         "checksum": "0xe912ca589655c55680b1ea2be2729b3f39d2e9541e142342506795b1c1f49a98"
@@ -173,7 +173,7 @@
         "owner": "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
         "name": "armada-demo-project",
         "email": "@",
-        "escrow": "72.27365 USDC",
+        "escrow": "71.27365 USDC",
         "reserve": "2.0 USDC",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.2/demo-project-v1.0.2.tgz",
         "checksum": "0x590ba8e7cb80bcd875c822a7aa0be779047870eabc5da3ef50f9d3b3b5cbc8d9"
@@ -183,7 +183,7 @@
         "owner": "0x90bC78b839fCC1c652CCF8d6A527687AE432A3Bc",
         "name": "audius",
         "email": "@",
-        "escrow": "67.0 USDC",
+        "escrow": "66.0 USDC",
         "reserve": "2.0 USDC",
         "content": "https://s3.us-west-2.amazonaws.com/armada-staging/bundles/app.audius.co-1.1.2.tgz",
         "checksum": "0xd44c6262166946a1dfa15c6b3fdd9e1e015687d80c4f0428cb7cc4a0012b3912"
