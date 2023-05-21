@@ -36,11 +36,38 @@ async function main() {
   const billing = await getContract<ArmadaBilling>(args.network, "ArmadaBilling", provider);
   const nodes = await getContract<ArmadaNodes>(args.network, "ArmadaNodes", provider);
 
-  const epochAdvancedEvent = await findEvent(registry, registry.filters.EpochAdvanced(), block);
+  // This assumes that the EpochAdvanced event happened not too long ago before this script was run.
+  const epochAdvancedEvent_ = await findEvent(registry, registry.filters.EpochAdvanced(), block);
+  const epochAdvancedEvent = { blockNumber: epochAdvancedEvent_.blockNumber, blockHash: epochAdvancedEvent_.blockHash };
+  stderr(`Found EpochAdvanced event at block ${epochAdvancedEvent.blockNumber}`);
+
+  // Work around for an apparent bug in ethers that badly serializes blockTags with leading zeros.
+  while (epochAdvancedEvent.blockHash.startsWith("0x0")) {
+    epochAdvancedEvent.blockNumber++;
+    epochAdvancedEvent.blockHash = (await provider.getBlock(epochAdvancedEvent.blockNumber)).hash;
+    stderr(`Block hash has leading zeros, use prev block ${epochAdvancedEvent.blockNumber}`);
+  }
+
   const epochAdvancedBlock = await provider.getBlock(epochAdvancedEvent.blockNumber);
   const nodeArray = await nodes.getNodes(HashZero, false, 0, 1, { blockTag: epochAdvancedBlock.hash });
   const nodeId = nodeArray[0].id;
-  const epochFinishedEvent = await findEvent(billing, billing.filters.ReservationResolved(nodeId), epochAdvancedBlock);
+
+  // This assumes that there was only one EpochFinished event, that is all nodes fit in one block.
+  const epochFinishedEvent_ = await findEvent(billing, billing.filters.ReservationResolved(nodeId), epochAdvancedBlock);
+  const epochFinishedEvent = { blockNumber: epochFinishedEvent_.blockNumber, blockHash: epochFinishedEvent_.blockHash };
+  
+  // Use the block right before the (first) ReservationResolved event.
+  epochFinishedEvent.blockNumber = epochFinishedEvent.blockNumber - 1;
+  epochFinishedEvent.blockHash = (await provider.getBlock(epochFinishedEvent.blockNumber)).hash;
+  stderr(`Found ReservationResolved event right after block ${epochFinishedEvent.blockNumber}`);
+
+  // Work around for an apparent bug in ethers that badly serializes blockTags with leading zeros.
+  while (epochFinishedEvent.blockHash.startsWith("0x0")) {
+    epochFinishedEvent.blockNumber--;
+    epochFinishedEvent.blockHash = (await provider.getBlock(epochFinishedEvent.blockNumber)).hash;
+    stderr(`Block hash has leading zeros, use prev block ${epochFinishedEvent.blockNumber}`);
+  }
+
   stdout(JSON.stringify({
     epochFinishedBlock: epochFinishedEvent.blockNumber,
     epochAdvancedBlock: epochAdvancedEvent.blockNumber,

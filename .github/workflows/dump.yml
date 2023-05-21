@@ -31,7 +31,7 @@ jobs:
           max_attempts: 3
           command: |
             json="$(npx ts-node ./src/status.ts --network ${{ inputs.network }})"
-            echo "block1=$(echo $json | jq .epochFinishedBlock-1)" >> $GITHUB_OUTPUT
+            echo "block1=$(echo $json | jq .epochFinishedBlock)" >> $GITHUB_OUTPUT
             echo "block2=$(echo $json | jq .epochAdvancedBlock)" >> $GITHUB_OUTPUT
       - name: Dump ${{ inputs.network }} at EpochFinished
         uses: nick-fields/retry@v2
