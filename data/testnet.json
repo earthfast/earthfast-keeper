@@ -3,21 +3,25 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "2400.0 ARMADA"
+        "balance": "2600.0 ARMADA"
       },
       {
         "address": "0x4D70933e4D996d5439cDE82176Afd26B80128614",
         "balance": "100.0 ARMADA"
       },
       {
+        "address": "0xC394967fE064f4fF9aaa02D25eD58E5056fE3b6C",
+        "balance": "300.0 ARMADA"
+      },
+      {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999997400.0 ARMADA"
+        "balance": "999996900.0 ARMADA"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "0.3.0",
-    "nonce": "39",
+    "nonce": "40",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -148,12 +152,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.828392 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x744a2cf8fd7008e3d53b67916e73460df9fa5214e3ef23dd4259ca09493a3594",
+          "0x744a2cf8fd7008e3d53b67916e73460df9fa5214e3ef23dd4259ca09493a3594"
         ]
       },
       {
@@ -218,6 +222,22 @@
         "projectIds": [
           "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211",
           "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211"
+        ]
+      },
+      {
+        "id": "0x98a476f1687bc3d60a2da2adbcba2c46958e61fa2fb4042cd7bc5816a710195b",
+        "operatorId": "0xa03837a25210ee280c2113ff4b77ca23440b19d4866cca721c801278fd08d807",
+        "host": "acn02.warsaw.armnd.cc",
+        "region": "eu",
+        "topology": false,
+        "disabled": true,
+        "prices": [
+          "1.0 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -324,12 +344,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.828392 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x744a2cf8fd7008e3d53b67916e73460df9fa5214e3ef23dd4259ca09493a3594",
+          "0x744a2cf8fd7008e3d53b67916e73460df9fa5214e3ef23dd4259ca09493a3594"
         ]
       },
       {
@@ -446,7 +466,7 @@
         "owner": "0xC394967fE064f4fF9aaa02D25eD58E5056fE3b6C",
         "name": "Tomek Group",
         "email": "nodes@tomekgroup.com",
-        "stake": "100.0 ARMADA",
+        "stake": "300.0 ARMADA",
         "balance": "6.326805 USDC"
       }
     ]
@@ -456,6 +476,7 @@
       "0x0F82843D7982c254fe1E89E989Ae6eD9Cd3ea5A8",
       "0x27611d4192879CEBBe0f7f0ED09eA423ac11e713",
       "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
+      "0x4D70933e4D996d5439cDE82176Afd26B80128614",
       "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
       "0x861444f51D61c1A0954e10329623325Ed951818f",
       "0x9f8e4ee788D9b00A3409584E18034aA7B736C396",
@@ -518,10 +539,10 @@
         "owner": "0x4D70933e4D996d5439cDE82176Afd26B80128614",
         "name": "Raydium",
         "email": "armada-test@raydium.io",
-        "escrow": "0.0 USDC",
-        "reserve": "0.0 USDC",
-        "content": " ",
-        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        "escrow": "100.0 USDC",
+        "reserve": "3.656784 USDC",
+        "content": "https://img.raydium.io/ui/test-ui-v0.1.0.tgz",
+        "checksum": "0x5e994101b51c3aa6f1de1d1d404073e417d13357af01e1ee4af9f8cc38995e6a"
       },
       {
         "id": "0x944998273e477b495144fb8794c914197f3ccb46be2900f4698fd0ef743c9695",
