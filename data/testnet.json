@@ -521,8 +521,8 @@
         "email": "info@synthetix.io",
         "escrow": "95.299485 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-05_20_23_09_03_AM/release-05_20_23_09_03_AM.tgz",
-        "checksum": "0xfa0a4870d4bb37b2569b39cdd98cc10ebdda03fe03cc130afc98aa2382907309"
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-06_03_23_12_17_AM/release-06_03_23_12_17_AM.tgz",
+        "checksum": "0x7445f9b90c3e789b51a29ec1683f48946290f0fb303e8caec1b7ed19d2c6dcd1"
       },
       {
         "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
