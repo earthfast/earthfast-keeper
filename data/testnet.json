@@ -3,7 +3,7 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "2600.0 ARMADA"
+        "balance": "2700.0 ARMADA"
       },
       {
         "address": "0x4D70933e4D996d5439cDE82176Afd26B80128614",
@@ -15,13 +15,13 @@
       },
       {
         "address": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
-        "balance": "999996900.0 ARMADA"
+        "balance": "999996800.0 ARMADA"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "0.3.0",
-    "nonce": "40",
+    "nonce": "43",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -296,12 +296,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.170595 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2",
+          "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2"
         ]
       },
       {
@@ -334,6 +334,22 @@
         "projectIds": [
           "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
           "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510"
+        ]
+      },
+      {
+        "id": "0xcb7c14ce178f56e2e8d86ab33ebc0ae081ba8556a00cd122038841867181caac",
+        "operatorId": "0xe16da923a2d88192e5070f37b4571d58682c0d66212ec634d495f33de3f77ab5",
+        "host": "armada-us-west-0.vpn.dev",
+        "region": "na",
+        "topology": false,
+        "disabled": true,
+        "prices": [
+          "1.0 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -392,12 +408,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.170595 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2",
+          "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2"
         ]
       },
       {
@@ -468,11 +484,20 @@
         "email": "nodes@tomekgroup.com",
         "stake": "300.0 ARMADA",
         "balance": "11.326805 USDC"
+      },
+      {
+        "id": "0xe16da923a2d88192e5070f37b4571d58682c0d66212ec634d495f33de3f77ab5",
+        "owner": "0x68C7c6E39c04818a4507a77f63aF33A5c6327e24",
+        "name": "BringYour, Inc.",
+        "email": "info@vpn.dev",
+        "stake": "100.0 ARMADA",
+        "balance": "0.0 USDC"
       }
     ]
   },
   "ArmadaProjects": {
     "projectCreators": [
+      "0x05e12734df9AEf044Af2932B3aA467334ccF1730",
       "0x0F82843D7982c254fe1E89E989Ae6eD9Cd3ea5A8",
       "0x27611d4192879CEBBe0f7f0ED09eA423ac11e713",
       "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
@@ -521,8 +546,8 @@
         "email": "info@synthetix.io",
         "escrow": "91.299485 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-06_24_23_12_21_AM/release-06_24_23_12_21_AM.tgz",
-        "checksum": "0xea1bebbac4896a3a4555244e338ab215977299dc625bd16371a0b16834a898f9"
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-07_01_23_12_22_AM/release-07_01_23_12_22_AM.tgz",
+        "checksum": "0x44fc795e25f971f82dce7b7d03f19e0e3ab4b1c3450ddd3c08cdfa1a300f9df3"
       },
       {
         "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
@@ -563,6 +588,16 @@
         "reserve": "4.0 USDC",
         "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/synthetix-staking.tgz",
         "checksum": "0x73c80579b8643cef103602738e2b635f1a2a24f01b9183912129b680fe494639"
+      },
+      {
+        "id": "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2",
+        "owner": "0x05e12734df9AEf044Af2932B3aA467334ccF1730",
+        "name": "ajna-app-v1",
+        "email": "david@ajna.finance",
+        "escrow": "100.0 USDC",
+        "reserve": "2.34119 USDC",
+        "content": "https://github.com/ajna-finance/armada-site/releases/download/v0.1.1/ajna-app-v1-v0.1.1.tgz",
+        "checksum": "0xd0ed49506cc8f9792b38135b9be2e6152de7ca93a28553bde2932ca5528ae7bd"
       },
       {
         "id": "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
