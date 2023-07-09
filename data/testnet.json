@@ -536,8 +536,8 @@
         "email": "engineering@audius.co",
         "escrow": "34.900714 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1682562533.tgz",
-        "checksum": "0x6badcd2c7d4a46fa16de29f3cc3b16886234eff3ed1d696f022cd8c1a257fbd1"
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1688601211.tgz",
+        "checksum": "0x828bb09b697e27e74313f9b97906c0eb929890c10db84f26209012eb003d6bba"
       },
       {
         "id": "0x401968ff42a154441da5f6c4c935ac46b8671f0e062baaa62a7545ba53bb6e4c",
@@ -546,8 +546,8 @@
         "email": "info@synthetix.io",
         "escrow": "90.299485 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-07_01_23_12_22_AM/release-07_01_23_12_22_AM.tgz",
-        "checksum": "0x44fc795e25f971f82dce7b7d03f19e0e3ab4b1c3450ddd3c08cdfa1a300f9df3"
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-07_08_23_12_20_AM/release-07_08_23_12_20_AM.tgz",
+        "checksum": "0x1dc5d43b20f6bd193008489483bbd03e68a9ad43449b1626f479f067b997abc3"
       },
       {
         "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
@@ -556,8 +556,8 @@
         "email": "dheeraj@supercoollabs.com",
         "escrow": "74.478473 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-04_24_23_10_21_PM/release-04_24_23_10_21_PM.tgz",
-        "checksum": "0x7308320fec5519a249a2137faff6fee22a4ab4db301d1a5ebbde297b45293a9c"
+        "content": "https://github.com/dmanjunath/guerillaflotilla.com/releases/download/v0.0.2/gf.tgz",
+        "checksum": "0x851c7a19ae53cd520e57ceecf4c93cd6a8901d29f6f2881f40cd56d2ca1a48f8"
       },
       {
         "id": "0x744a2cf8fd7008e3d53b67916e73460df9fa5214e3ef23dd4259ca09493a3594",
@@ -596,8 +596,8 @@
         "email": "david@ajna.finance",
         "escrow": "99.65881 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://github.com/ajna-finance/armada-site/releases/download/v0.1.1/ajna-app-v1-v0.1.1.tgz",
-        "checksum": "0xd0ed49506cc8f9792b38135b9be2e6152de7ca93a28553bde2932ca5528ae7bd"
+        "content": "https://github.com/ajna-finance/armada-site/releases/download/v0.1.2/ajna-app-v1-v0.1.3.tgz",
+        "checksum": "0xa9238b5c8a4ea80cb6ba315acd8742bff42c209ced2e9affc3ae5e57c3df2b56"
       },
       {
         "id": "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
