@@ -536,8 +536,8 @@
         "email": "engineering@audius.co",
         "escrow": "30.900714 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1688601211.tgz",
-        "checksum": "0x828bb09b697e27e74313f9b97906c0eb929890c10db84f26209012eb003d6bba"
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1689620375.tgz",
+        "checksum": "0x4b7099559c15f170a38ef86837ff106d493c0bb11fd67436ce4e26097204e6a8"
       },
       {
         "id": "0x401968ff42a154441da5f6c4c935ac46b8671f0e062baaa62a7545ba53bb6e4c",
@@ -546,8 +546,8 @@
         "email": "info@synthetix.io",
         "escrow": "88.299485 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-07_15_23_12_20_AM/release-07_15_23_12_20_AM.tgz",
-        "checksum": "0x11ed1a77b1044d13d3f4b490faa37017e7f8b9ea9764dd29a3be89cfc96647c5"
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-07_18_23_12_31_AM/release-07_18_23_12_31_AM.tgz",
+        "checksum": "0x32b1c13b9c166c58723dcba4ccebf9b2115f0acf12cc7a1acfac1c7ddc39822f"
       },
       {
         "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
