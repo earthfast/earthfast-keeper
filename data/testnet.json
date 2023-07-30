@@ -536,8 +536,8 @@
         "email": "engineering@audius.co",
         "escrow": "28.900714 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1689620375.tgz",
-        "checksum": "0x4b7099559c15f170a38ef86837ff106d493c0bb11fd67436ce4e26097204e6a8"
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/build1690298398.tgz",
+        "checksum": "0x3f72aa9cd0cf4f8749b2c4d85a451fc57ea8eb4da68a9b7b780232e5d0869b0d"
       },
       {
         "id": "0x401968ff42a154441da5f6c4c935ac46b8671f0e062baaa62a7545ba53bb6e4c",
@@ -596,8 +596,8 @@
         "email": "david@ajna.finance",
         "escrow": "93.65881 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://github.com/ajna-finance/armada-site/releases/download/v0.2.2/ajna-app-v1-v0.2.2.tgz",
-        "checksum": "0xc893bff2e9e11798ee7189c9e12c78e5d900dc5172c3c6703a83530b38abfc43"
+        "content": "https://github.com/ajna-finance/armada-site/releases/download/v0.2.3/ajna-app-v1-v0.2.3.tgz",
+        "checksum": "0x995d8d2c012b016610a2357d57cbdb6a57913ce4bef93357546800dc399bcedf"
       },
       {
         "id": "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
