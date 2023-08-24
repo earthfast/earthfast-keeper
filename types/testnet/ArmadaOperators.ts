@@ -646,10 +646,6 @@ export interface ArmadaOperators extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     * Registers a new network operator. Only admin can do this.
-     */
     createOperator(
       owner: PromiseOrValue<string>,
       name: PromiseOrValue<string>,
@@ -657,18 +653,11 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Unregisters a network operator. Reverts if operator has stake or nodes.
-     */
     deleteOperator(
       operatorId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers USDC into the contract and applies them toward given operator balance.
-     */
     depositOperatorBalance(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -679,10 +668,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers tokens into the contract and applies them toward given operator stake.
-     */
     depositOperatorStake(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -693,9 +678,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Reverts if the id is unknown
-     */
     getOperator(
       operatorId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -703,9 +685,6 @@ export interface ArmadaOperators extends BaseContract {
 
     getOperatorCount(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getOperators(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -716,9 +695,6 @@ export interface ArmadaOperators extends BaseContract {
 
     getRegistry(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -726,28 +702,18 @@ export interface ArmadaOperators extends BaseContract {
 
     getStakePerNode(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -760,19 +726,10 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<[boolean]>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -785,9 +742,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -807,9 +761,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     */
     setOperatorProps(
       operatorId: PromiseOrValue<BytesLike>,
       name: PromiseOrValue<string>,
@@ -822,9 +773,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -840,9 +788,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Adjusts multiple operators balances relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetBalances(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -851,34 +796,22 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Transfers earned USDC from contract to given recipient.
-     */
     withdrawOperatorBalance(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -886,9 +819,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Transfers stake from contract to given recipient. Reverts if stake is locked.
-     */
     withdrawOperatorStake(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -901,10 +831,6 @@ export interface ArmadaOperators extends BaseContract {
 
   IMPORTER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Does not check name or email for validity or uniqueness
-   * Registers a new network operator. Only admin can do this.
-   */
   createOperator(
     owner: PromiseOrValue<string>,
     name: PromiseOrValue<string>,
@@ -912,18 +838,11 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Unregisters a network operator. Reverts if operator has stake or nodes.
-   */
   deleteOperator(
     operatorId: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-   * Transfers USDC into the contract and applies them toward given operator balance.
-   */
   depositOperatorBalance(
     operatorId: PromiseOrValue<BytesLike>,
     amount: PromiseOrValue<BigNumberish>,
@@ -934,10 +853,6 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-   * Transfers tokens into the contract and applies them toward given operator stake.
-   */
   depositOperatorStake(
     operatorId: PromiseOrValue<BytesLike>,
     amount: PromiseOrValue<BigNumberish>,
@@ -948,9 +863,6 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Reverts if the id is unknown
-   */
   getOperator(
     operatorId: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
@@ -958,9 +870,6 @@ export interface ArmadaOperators extends BaseContract {
 
   getOperatorCount(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * Truncates the results if skip or size are out of bounds
-   */
   getOperators(
     skip: PromiseOrValue<BigNumberish>,
     size: PromiseOrValue<BigNumberish>,
@@ -969,9 +878,6 @@ export interface ArmadaOperators extends BaseContract {
 
   getRegistry(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-   */
   getRoleAdmin(
     role: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
@@ -979,28 +885,18 @@ export interface ArmadaOperators extends BaseContract {
 
   getStakePerNode(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-   */
   grantRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns `true` if `account` has been granted `role`.
-   */
   hasRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Called once to set up the contract. Not called during proxy upgrades.
-   * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-   */
   initialize(
     admins: PromiseOrValue<string>[],
     registry: PromiseOrValue<string>,
@@ -1013,19 +909,10 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns true if the contract is paused, and false otherwise.
-   */
   paused(overrides?: CallOverrides): Promise<boolean>;
 
-  /**
-   * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-   */
   proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-   */
   renounceRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
@@ -1038,9 +925,6 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-   */
   revokeRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
@@ -1060,9 +944,6 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Does not check name or email for validity or uniqueness
-   */
   setOperatorProps(
     operatorId: PromiseOrValue<BytesLike>,
     name: PromiseOrValue<string>,
@@ -1075,9 +956,6 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC165-supportsInterface}.
-   */
   supportsInterface(
     interfaceId: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
@@ -1093,9 +971,6 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Adjusts multiple operators balances relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetBalances(
     skip: PromiseOrValue<BigNumberish>,
     size: PromiseOrValue<BigNumberish>,
@@ -1104,34 +979,22 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetRegistry(
     registry: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-   */
   upgradeTo(
     newImplementation: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-   */
   upgradeToAndCall(
     newImplementation: PromiseOrValue<string>,
     data: PromiseOrValue<BytesLike>,
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Transfers earned USDC from contract to given recipient.
-   */
   withdrawOperatorBalance(
     operatorId: PromiseOrValue<BytesLike>,
     amount: PromiseOrValue<BigNumberish>,
@@ -1139,9 +1002,6 @@ export interface ArmadaOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Transfers stake from contract to given recipient. Reverts if stake is locked.
-   */
   withdrawOperatorStake(
     operatorId: PromiseOrValue<BytesLike>,
     amount: PromiseOrValue<BigNumberish>,
@@ -1154,10 +1014,6 @@ export interface ArmadaOperators extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     * Registers a new network operator. Only admin can do this.
-     */
     createOperator(
       owner: PromiseOrValue<string>,
       name: PromiseOrValue<string>,
@@ -1165,18 +1021,11 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Unregisters a network operator. Reverts if operator has stake or nodes.
-     */
     deleteOperator(
       operatorId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers USDC into the contract and applies them toward given operator balance.
-     */
     depositOperatorBalance(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1187,10 +1036,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers tokens into the contract and applies them toward given operator stake.
-     */
     depositOperatorStake(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1201,9 +1046,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Reverts if the id is unknown
-     */
     getOperator(
       operatorId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1211,9 +1053,6 @@ export interface ArmadaOperators extends BaseContract {
 
     getOperatorCount(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getOperators(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1222,9 +1061,6 @@ export interface ArmadaOperators extends BaseContract {
 
     getRegistry(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1232,28 +1068,18 @@ export interface ArmadaOperators extends BaseContract {
 
     getStakePerNode(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -1264,19 +1090,10 @@ export interface ArmadaOperators extends BaseContract {
 
     pause(overrides?: CallOverrides): Promise<void>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<boolean>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1289,9 +1106,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1311,9 +1125,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     */
     setOperatorProps(
       operatorId: PromiseOrValue<BytesLike>,
       name: PromiseOrValue<string>,
@@ -1326,9 +1137,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1342,9 +1150,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Adjusts multiple operators balances relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetBalances(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1353,34 +1158,22 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Transfers earned USDC from contract to given recipient.
-     */
     withdrawOperatorBalance(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1388,9 +1181,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Transfers stake from contract to given recipient. Reverts if stake is locked.
-     */
     withdrawOperatorStake(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1545,10 +1335,6 @@ export interface ArmadaOperators extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     * Registers a new network operator. Only admin can do this.
-     */
     createOperator(
       owner: PromiseOrValue<string>,
       name: PromiseOrValue<string>,
@@ -1556,18 +1342,11 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Unregisters a network operator. Reverts if operator has stake or nodes.
-     */
     deleteOperator(
       operatorId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers USDC into the contract and applies them toward given operator balance.
-     */
     depositOperatorBalance(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1578,10 +1357,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers tokens into the contract and applies them toward given operator stake.
-     */
     depositOperatorStake(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1592,9 +1367,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Reverts if the id is unknown
-     */
     getOperator(
       operatorId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1602,9 +1374,6 @@ export interface ArmadaOperators extends BaseContract {
 
     getOperatorCount(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getOperators(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1613,9 +1382,6 @@ export interface ArmadaOperators extends BaseContract {
 
     getRegistry(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1623,28 +1389,18 @@ export interface ArmadaOperators extends BaseContract {
 
     getStakePerNode(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -1657,19 +1413,10 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1682,9 +1429,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1704,9 +1448,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     */
     setOperatorProps(
       operatorId: PromiseOrValue<BytesLike>,
       name: PromiseOrValue<string>,
@@ -1719,9 +1460,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1737,9 +1475,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Adjusts multiple operators balances relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetBalances(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1748,34 +1483,22 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Transfers earned USDC from contract to given recipient.
-     */
     withdrawOperatorBalance(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1783,9 +1506,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Transfers stake from contract to given recipient. Reverts if stake is locked.
-     */
     withdrawOperatorStake(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1801,10 +1521,6 @@ export interface ArmadaOperators extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     * Registers a new network operator. Only admin can do this.
-     */
     createOperator(
       owner: PromiseOrValue<string>,
       name: PromiseOrValue<string>,
@@ -1812,18 +1528,11 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Unregisters a network operator. Reverts if operator has stake or nodes.
-     */
     deleteOperator(
       operatorId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers USDC into the contract and applies them toward given operator balance.
-     */
     depositOperatorBalance(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1834,10 +1543,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers tokens into the contract and applies them toward given operator stake.
-     */
     depositOperatorStake(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1848,9 +1553,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Reverts if the id is unknown
-     */
     getOperator(
       operatorId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1858,9 +1560,6 @@ export interface ArmadaOperators extends BaseContract {
 
     getOperatorCount(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getOperators(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1869,9 +1568,6 @@ export interface ArmadaOperators extends BaseContract {
 
     getRegistry(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1879,28 +1575,18 @@ export interface ArmadaOperators extends BaseContract {
 
     getStakePerNode(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -1913,19 +1599,10 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1938,9 +1615,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1960,9 +1634,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     */
     setOperatorProps(
       operatorId: PromiseOrValue<BytesLike>,
       name: PromiseOrValue<string>,
@@ -1975,9 +1646,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1993,9 +1661,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Adjusts multiple operators balances relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetBalances(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -2004,34 +1669,22 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Transfers earned USDC from contract to given recipient.
-     */
     withdrawOperatorBalance(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -2039,9 +1692,6 @@ export interface ArmadaOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Transfers stake from contract to given recipient. Reverts if stake is locked.
-     */
     withdrawOperatorStake(
       operatorId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
