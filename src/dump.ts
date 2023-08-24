@@ -142,6 +142,7 @@ async function main() {
         reserve: formatUSDC(v.reserve),
         content: v.content,
         checksum: v.checksum,
+        metadata: v.metadata,
       })),
     },
     ArmadaBilling: {
