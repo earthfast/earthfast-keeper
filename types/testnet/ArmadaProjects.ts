@@ -34,9 +34,11 @@ export type ArmadaCreateProjectDataStruct = {
   email: PromiseOrValue<string>;
   content: PromiseOrValue<string>;
   checksum: PromiseOrValue<BytesLike>;
+  metadata: PromiseOrValue<string>;
 };
 
 export type ArmadaCreateProjectDataStructOutput = [
+  string,
   string,
   string,
   string,
@@ -48,6 +50,7 @@ export type ArmadaCreateProjectDataStructOutput = [
   email: string;
   content: string;
   checksum: string;
+  metadata: string;
 };
 
 export type ArmadaProjectStruct = {
@@ -59,6 +62,7 @@ export type ArmadaProjectStruct = {
   reserve: PromiseOrValue<BigNumberish>;
   content: PromiseOrValue<string>;
   checksum: PromiseOrValue<BytesLike>;
+  metadata: PromiseOrValue<string>;
 };
 
 export type ArmadaProjectStructOutput = [
@@ -68,6 +72,7 @@ export type ArmadaProjectStructOutput = [
   string,
   BigNumber,
   BigNumber,
+  string,
   string,
   string
 ] & {
@@ -79,6 +84,7 @@ export type ArmadaProjectStructOutput = [
   reserve: BigNumber;
   content: string;
   checksum: string;
+  metadata: string;
 };
 
 export interface ArmadaProjectsInterface extends utils.Interface {
@@ -86,7 +92,7 @@ export interface ArmadaProjectsInterface extends utils.Interface {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
     "IMPORTER_ROLE()": FunctionFragment;
     "PROJECT_CREATOR_ROLE()": FunctionFragment;
-    "createProject((address,string,string,string,bytes32))": FunctionFragment;
+    "createProject((address,string,string,string,bytes32,string))": FunctionFragment;
     "deleteProject(bytes32)": FunctionFragment;
     "depositProjectEscrow(bytes32,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
     "getProject(bytes32)": FunctionFragment;
@@ -104,12 +110,13 @@ export interface ArmadaProjectsInterface extends utils.Interface {
     "revokeRole(bytes32,address)": FunctionFragment;
     "setProjectContent(bytes32,string,bytes32)": FunctionFragment;
     "setProjectEscrowImpl(bytes32,uint256,uint256)": FunctionFragment;
+    "setProjectMetadata(bytes32,string)": FunctionFragment;
     "setProjectOwner(bytes32,address)": FunctionFragment;
     "setProjectProps(bytes32,string,string)": FunctionFragment;
     "setProjectReserveImpl(bytes32,uint256,uint256)": FunctionFragment;
     "supportsInterface(bytes4)": FunctionFragment;
     "unpause()": FunctionFragment;
-    "unsafeImportData((bytes32,address,string,string,uint256,uint256,string,bytes32)[],address[],bool)": FunctionFragment;
+    "unsafeImportData((bytes32,address,string,string,uint256,uint256,string,bytes32,string)[],address[],bool)": FunctionFragment;
     "unsafeSetEscrows(uint256,uint256,uint256,uint256)": FunctionFragment;
     "unsafeSetRegistry(address)": FunctionFragment;
     "upgradeTo(address)": FunctionFragment;
@@ -140,6 +147,7 @@ export interface ArmadaProjectsInterface extends utils.Interface {
       | "revokeRole"
       | "setProjectContent"
       | "setProjectEscrowImpl"
+      | "setProjectMetadata"
       | "setProjectOwner"
       | "setProjectProps"
       | "setProjectReserveImpl"
@@ -249,6 +257,10 @@ export interface ArmadaProjectsInterface extends utils.Interface {
       PromiseOrValue<BigNumberish>,
       PromiseOrValue<BigNumberish>
     ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setProjectMetadata",
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "setProjectOwner",
@@ -374,6 +386,10 @@ export interface ArmadaProjectsInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "setProjectEscrowImpl",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setProjectMetadata",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -660,18 +676,11 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Unregisters a project. Reverts if project has escrow or reservations.
-     */
     deleteProject(
       projectId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers USDC into the contract and applies them toward given operator stake.
-     */
     depositProjectEscrow(
       projectId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -682,9 +691,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Reverts if the id is unknown
-     */
     getProject(
       projectId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -692,9 +698,6 @@ export interface ArmadaProjects extends BaseContract {
 
     getProjectCount(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getProjects(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -705,36 +708,23 @@ export interface ArmadaProjects extends BaseContract {
 
     getRegistry(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -746,37 +736,22 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<[boolean]>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Publishes new content on the network
-     */
     setProjectContent(
       projectId: PromiseOrValue<BytesLike>,
       content: PromiseOrValue<string>,
@@ -791,15 +766,18 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
+    setProjectMetadata(
+      projectId: PromiseOrValue<BytesLike>,
+      metadata: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
     setProjectOwner(
       projectId: PromiseOrValue<BytesLike>,
       owner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     */
     setProjectProps(
       projectId: PromiseOrValue<BytesLike>,
       name: PromiseOrValue<string>,
@@ -814,9 +792,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -833,9 +808,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Adjusts multiple projects escrows relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetEscrows(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -844,34 +816,22 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Transfers escrow from contract to given recipient. Reverts if escrow is reserved.
-     */
     withdrawProjectEscrow(
       projectId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -891,18 +851,11 @@ export interface ArmadaProjects extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Unregisters a project. Reverts if project has escrow or reservations.
-   */
   deleteProject(
     projectId: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-   * Transfers USDC into the contract and applies them toward given operator stake.
-   */
   depositProjectEscrow(
     projectId: PromiseOrValue<BytesLike>,
     amount: PromiseOrValue<BigNumberish>,
@@ -913,9 +866,6 @@ export interface ArmadaProjects extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Reverts if the id is unknown
-   */
   getProject(
     projectId: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
@@ -923,9 +873,6 @@ export interface ArmadaProjects extends BaseContract {
 
   getProjectCount(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * Truncates the results if skip or size are out of bounds
-   */
   getProjects(
     skip: PromiseOrValue<BigNumberish>,
     size: PromiseOrValue<BigNumberish>,
@@ -934,36 +881,23 @@ export interface ArmadaProjects extends BaseContract {
 
   getRegistry(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-   */
   getRoleAdmin(
     role: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<string>;
 
-  /**
-   * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-   */
   grantRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns `true` if `account` has been granted `role`.
-   */
   hasRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Called once to set up the contract. Not called during proxy upgrades.
-   * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-   */
   initialize(
     admins: PromiseOrValue<string>[],
     registry: PromiseOrValue<string>,
@@ -975,37 +909,22 @@ export interface ArmadaProjects extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns true if the contract is paused, and false otherwise.
-   */
   paused(overrides?: CallOverrides): Promise<boolean>;
 
-  /**
-   * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-   */
   proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-   */
   renounceRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-   */
   revokeRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Publishes new content on the network
-   */
   setProjectContent(
     projectId: PromiseOrValue<BytesLike>,
     content: PromiseOrValue<string>,
@@ -1020,15 +939,18 @@ export interface ArmadaProjects extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
+  setProjectMetadata(
+    projectId: PromiseOrValue<BytesLike>,
+    metadata: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
   setProjectOwner(
     projectId: PromiseOrValue<BytesLike>,
     owner: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Does not check name or email for validity or uniqueness
-   */
   setProjectProps(
     projectId: PromiseOrValue<BytesLike>,
     name: PromiseOrValue<string>,
@@ -1043,9 +965,6 @@ export interface ArmadaProjects extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC165-supportsInterface}.
-   */
   supportsInterface(
     interfaceId: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
@@ -1062,9 +981,6 @@ export interface ArmadaProjects extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Adjusts multiple projects escrows relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetEscrows(
     skip: PromiseOrValue<BigNumberish>,
     size: PromiseOrValue<BigNumberish>,
@@ -1073,34 +989,22 @@ export interface ArmadaProjects extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetRegistry(
     registry: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-   */
   upgradeTo(
     newImplementation: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-   */
   upgradeToAndCall(
     newImplementation: PromiseOrValue<string>,
     data: PromiseOrValue<BytesLike>,
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Transfers escrow from contract to given recipient. Reverts if escrow is reserved.
-   */
   withdrawProjectEscrow(
     projectId: PromiseOrValue<BytesLike>,
     amount: PromiseOrValue<BigNumberish>,
@@ -1120,18 +1024,11 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Unregisters a project. Reverts if project has escrow or reservations.
-     */
     deleteProject(
       projectId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers USDC into the contract and applies them toward given operator stake.
-     */
     depositProjectEscrow(
       projectId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1142,9 +1039,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Reverts if the id is unknown
-     */
     getProject(
       projectId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1152,9 +1046,6 @@ export interface ArmadaProjects extends BaseContract {
 
     getProjectCount(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getProjects(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1163,36 +1054,23 @@ export interface ArmadaProjects extends BaseContract {
 
     getRegistry(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -1202,37 +1080,22 @@ export interface ArmadaProjects extends BaseContract {
 
     pause(overrides?: CallOverrides): Promise<void>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<boolean>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Publishes new content on the network
-     */
     setProjectContent(
       projectId: PromiseOrValue<BytesLike>,
       content: PromiseOrValue<string>,
@@ -1247,15 +1110,18 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
+    setProjectMetadata(
+      projectId: PromiseOrValue<BytesLike>,
+      metadata: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     setProjectOwner(
       projectId: PromiseOrValue<BytesLike>,
       owner: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     */
     setProjectProps(
       projectId: PromiseOrValue<BytesLike>,
       name: PromiseOrValue<string>,
@@ -1270,9 +1136,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1287,9 +1150,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Adjusts multiple projects escrows relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetEscrows(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1298,34 +1158,22 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Transfers escrow from contract to given recipient. Reverts if escrow is reserved.
-     */
     withdrawProjectEscrow(
       projectId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1499,18 +1347,11 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Unregisters a project. Reverts if project has escrow or reservations.
-     */
     deleteProject(
       projectId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers USDC into the contract and applies them toward given operator stake.
-     */
     depositProjectEscrow(
       projectId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1521,9 +1362,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Reverts if the id is unknown
-     */
     getProject(
       projectId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1531,9 +1369,6 @@ export interface ArmadaProjects extends BaseContract {
 
     getProjectCount(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getProjects(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1542,36 +1377,23 @@ export interface ArmadaProjects extends BaseContract {
 
     getRegistry(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -1583,37 +1405,22 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Publishes new content on the network
-     */
     setProjectContent(
       projectId: PromiseOrValue<BytesLike>,
       content: PromiseOrValue<string>,
@@ -1628,15 +1435,18 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
+    setProjectMetadata(
+      projectId: PromiseOrValue<BytesLike>,
+      metadata: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
     setProjectOwner(
       projectId: PromiseOrValue<BytesLike>,
       owner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     */
     setProjectProps(
       projectId: PromiseOrValue<BytesLike>,
       name: PromiseOrValue<string>,
@@ -1651,9 +1461,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1670,9 +1477,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Adjusts multiple projects escrows relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetEscrows(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1681,34 +1485,22 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Transfers escrow from contract to given recipient. Reverts if escrow is reserved.
-     */
     withdrawProjectEscrow(
       projectId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1733,18 +1525,11 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Unregisters a project. Reverts if project has escrow or reservations.
-     */
     deleteProject(
       projectId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Needs either a token allowance from msg.sender, or a gasless approval (v/r/s != 0).CAUTION: To avoid loss of funds, do NOT deposit to this contract by token.transfer().
-     * Transfers USDC into the contract and applies them toward given operator stake.
-     */
     depositProjectEscrow(
       projectId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,
@@ -1755,9 +1540,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Reverts if the id is unknown
-     */
     getProject(
       projectId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1765,9 +1547,6 @@ export interface ArmadaProjects extends BaseContract {
 
     getProjectCount(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getProjects(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1776,36 +1555,23 @@ export interface ArmadaProjects extends BaseContract {
 
     getRegistry(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -1817,37 +1583,22 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Publishes new content on the network
-     */
     setProjectContent(
       projectId: PromiseOrValue<BytesLike>,
       content: PromiseOrValue<string>,
@@ -1862,15 +1613,18 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
+    setProjectMetadata(
+      projectId: PromiseOrValue<BytesLike>,
+      metadata: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
     setProjectOwner(
       projectId: PromiseOrValue<BytesLike>,
       owner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Does not check name or email for validity or uniqueness
-     */
     setProjectProps(
       projectId: PromiseOrValue<BytesLike>,
       name: PromiseOrValue<string>,
@@ -1885,9 +1639,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1904,9 +1655,6 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Adjusts multiple projects escrows relative to their current values.CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetEscrows(
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
@@ -1915,34 +1663,22 @@ export interface ArmadaProjects extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Transfers escrow from contract to given recipient. Reverts if escrow is reserved.
-     */
     withdrawProjectEscrow(
       projectId: PromiseOrValue<BytesLike>,
       amount: PromiseOrValue<BigNumberish>,

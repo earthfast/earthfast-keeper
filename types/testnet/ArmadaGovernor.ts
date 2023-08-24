@@ -765,9 +765,6 @@ export interface ArmadaGovernor extends BaseContract {
   functions: {
     BALLOT_TYPEHASH(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * See {IGovernor-COUNTING_MODE}.
-     */
     COUNTING_MODE(overrides?: CallOverrides): Promise<[string]>;
 
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<[string]>;
@@ -782,18 +779,12 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IGovernor-castVote}.
-     */
     castVote(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IGovernor-castVoteBySig}.
-     */
     castVoteBySig(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -803,9 +794,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IGovernor-castVoteWithReason}.
-     */
     castVoteWithReason(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -813,9 +801,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IGovernor-castVoteWithReasonAndParams}.
-     */
     castVoteWithReasonAndParams(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -824,9 +809,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IGovernor-castVoteWithReasonAndParamsBySig}.
-     */
     castVoteWithReasonAndParamsBySig(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -838,9 +820,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IGovernor-execute}.
-     */
     execute(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -849,26 +828,17 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    /**
-     * See {IGovernor-getVotes}.
-     */
     getVotes(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * See {IGovernor-getVotesWithParams}.
-     */
     getVotesWithParams(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
@@ -876,36 +846,24 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * See {IGovernor-hasVoted}.
-     */
     hasVoted(
       proposalId: PromiseOrValue<BigNumberish>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * See {IGovernor-hashProposal}. The proposal id is produced by hashing the RLC encoded `targets` array, the `values` array, the `calldatas` array and the descriptionHash (bytes32 which itself is the keccak256 hash of the description string). This proposal id can be produced from the proposal data which is part of the {ProposalCreated} event. It can even be computed in advance, before the proposal is submitted. Note that the chainId and the governor address are not part of the proposal id computation. Consequently, the same proposal (with same operation and same description) will have the same id if submitted on multiple governors across multiple networks. This also means that in order to execute the same operation twice (on the same governor) the proposer will have to change the description in order to avoid proposal id conflicts.
-     */
     hashProposal(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -914,14 +872,8 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * See {IGovernor-name}.
-     */
     name(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155BatchReceived}.
-     */
     onERC1155BatchReceived(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -931,9 +883,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155Received}.
-     */
     onERC1155Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -943,9 +892,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC721Receiver-onERC721Received}.
-     */
     onERC721Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -954,25 +900,16 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IGovernor-proposalDeadline}.
-     */
     proposalDeadline(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Public accessor to check the eta of a queued proposal
-     */
     proposalEta(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * See {IGovernor-proposalSnapshot}.
-     */
     proposalSnapshot(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -980,9 +917,6 @@ export interface ArmadaGovernor extends BaseContract {
 
     proposalThreshold(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * Accessor to the internal vote counts.
-     */
     proposalVotes(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -994,9 +928,6 @@ export interface ArmadaGovernor extends BaseContract {
       }
     >;
 
-    /**
-     * See {IGovernor-propose}.
-     */
     propose(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1005,9 +936,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Function to queue a proposal to the timelock.
-     */
     queue(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1016,27 +944,15 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns the quorum for a block number, in terms of number of votes: `supply * numerator / denominator`.
-     */
     quorum(
       blockNumber: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Returns the quorum denominator. Defaults to 100, but may be overridden.
-     */
     quorumDenominator(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * Returns the current quorum numerator. See {quorumDenominator}.
-     */
     quorumNumerator(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * Relays a transaction or function call to an arbitrary target. In cases where the governance executor is some contract other than the governor itself, like when using a timelock, this function can be invoked in a governance proposal to recover tokens or Ether that was sent to the governor contract by mistake. Note that if the executor is simply the governor itself, use of `relay` is redundant.
-     */
     relay(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1044,43 +960,28 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Update the proposal threshold. This operation can only be performed through a governance proposal. Emits a {ProposalThresholdSet} event.
-     */
     setProposalThreshold(
       newProposalThreshold: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Update the voting delay. This operation can only be performed through a governance proposal. Emits a {VotingDelaySet} event.
-     */
     setVotingDelay(
       newVotingDelay: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Update the voting period. This operation can only be performed through a governance proposal. Emits a {VotingPeriodSet} event.
-     */
     setVotingPeriod(
       newVotingPeriod: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1096,50 +997,29 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Public accessor to check the address of the timelock
-     */
     timelock(overrides?: CallOverrides): Promise<[string]>;
 
     token(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Changes the quorum numerator. Emits a {QuorumNumeratorUpdated} event. Requirements: - Must be called through a governance proposal. - New numerator must be smaller or equal to the denominator.
-     */
     updateQuorumNumerator(
       newQuorumNumerator: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Public endpoint to update the underlying timelock instance. Restricted to the timelock itself, so updates must be proposed, scheduled, and executed through governance proposals. CAUTION: It is not recommended to change the timelock while there are other queued governance proposals.
-     */
     updateTimelock(
       newTimelock: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IGovernor-version}.
-     */
     version(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * See {IGovernor-votingDelay}.
-     */
     votingDelay(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * See {IGovernor-votingPeriod}.
-     */
     votingPeriod(overrides?: CallOverrides): Promise<[BigNumber]>;
   };
 
   BALLOT_TYPEHASH(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * See {IGovernor-COUNTING_MODE}.
-   */
   COUNTING_MODE(overrides?: CallOverrides): Promise<string>;
 
   DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
@@ -1154,18 +1034,12 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IGovernor-castVote}.
-   */
   castVote(
     proposalId: PromiseOrValue<BigNumberish>,
     support: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IGovernor-castVoteBySig}.
-   */
   castVoteBySig(
     proposalId: PromiseOrValue<BigNumberish>,
     support: PromiseOrValue<BigNumberish>,
@@ -1175,9 +1049,6 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IGovernor-castVoteWithReason}.
-   */
   castVoteWithReason(
     proposalId: PromiseOrValue<BigNumberish>,
     support: PromiseOrValue<BigNumberish>,
@@ -1185,9 +1056,6 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IGovernor-castVoteWithReasonAndParams}.
-   */
   castVoteWithReasonAndParams(
     proposalId: PromiseOrValue<BigNumberish>,
     support: PromiseOrValue<BigNumberish>,
@@ -1196,9 +1064,6 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IGovernor-castVoteWithReasonAndParamsBySig}.
-   */
   castVoteWithReasonAndParamsBySig(
     proposalId: PromiseOrValue<BigNumberish>,
     support: PromiseOrValue<BigNumberish>,
@@ -1210,9 +1075,6 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IGovernor-execute}.
-   */
   execute(
     targets: PromiseOrValue<string>[],
     values: PromiseOrValue<BigNumberish>[],
@@ -1221,26 +1083,17 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-   */
   getRoleAdmin(
     role: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<string>;
 
-  /**
-   * See {IGovernor-getVotes}.
-   */
   getVotes(
     account: PromiseOrValue<string>,
     blockNumber: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * See {IGovernor-getVotesWithParams}.
-   */
   getVotesWithParams(
     account: PromiseOrValue<string>,
     blockNumber: PromiseOrValue<BigNumberish>,
@@ -1248,36 +1101,24 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-   */
   grantRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns `true` if `account` has been granted `role`.
-   */
   hasRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * See {IGovernor-hasVoted}.
-   */
   hasVoted(
     proposalId: PromiseOrValue<BigNumberish>,
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * See {IGovernor-hashProposal}. The proposal id is produced by hashing the RLC encoded `targets` array, the `values` array, the `calldatas` array and the descriptionHash (bytes32 which itself is the keccak256 hash of the description string). This proposal id can be produced from the proposal data which is part of the {ProposalCreated} event. It can even be computed in advance, before the proposal is submitted. Note that the chainId and the governor address are not part of the proposal id computation. Consequently, the same proposal (with same operation and same description) will have the same id if submitted on multiple governors across multiple networks. This also means that in order to execute the same operation twice (on the same governor) the proposer will have to change the description in order to avoid proposal id conflicts.
-   */
   hashProposal(
     targets: PromiseOrValue<string>[],
     values: PromiseOrValue<BigNumberish>[],
@@ -1286,14 +1127,8 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * See {IGovernor-name}.
-   */
   name(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * See {IERC1155Receiver-onERC1155BatchReceived}.
-   */
   onERC1155BatchReceived(
     arg0: PromiseOrValue<string>,
     arg1: PromiseOrValue<string>,
@@ -1303,9 +1138,6 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC1155Receiver-onERC1155Received}.
-   */
   onERC1155Received(
     arg0: PromiseOrValue<string>,
     arg1: PromiseOrValue<string>,
@@ -1315,9 +1147,6 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC721Receiver-onERC721Received}.
-   */
   onERC721Received(
     arg0: PromiseOrValue<string>,
     arg1: PromiseOrValue<string>,
@@ -1326,25 +1155,16 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IGovernor-proposalDeadline}.
-   */
   proposalDeadline(
     proposalId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Public accessor to check the eta of a queued proposal
-   */
   proposalEta(
     proposalId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * See {IGovernor-proposalSnapshot}.
-   */
   proposalSnapshot(
     proposalId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
@@ -1352,9 +1172,6 @@ export interface ArmadaGovernor extends BaseContract {
 
   proposalThreshold(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * Accessor to the internal vote counts.
-   */
   proposalVotes(
     proposalId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
@@ -1366,9 +1183,6 @@ export interface ArmadaGovernor extends BaseContract {
     }
   >;
 
-  /**
-   * See {IGovernor-propose}.
-   */
   propose(
     targets: PromiseOrValue<string>[],
     values: PromiseOrValue<BigNumberish>[],
@@ -1377,9 +1191,6 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Function to queue a proposal to the timelock.
-   */
   queue(
     targets: PromiseOrValue<string>[],
     values: PromiseOrValue<BigNumberish>[],
@@ -1388,27 +1199,15 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns the quorum for a block number, in terms of number of votes: `supply * numerator / denominator`.
-   */
   quorum(
     blockNumber: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Returns the quorum denominator. Defaults to 100, but may be overridden.
-   */
   quorumDenominator(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * Returns the current quorum numerator. See {quorumDenominator}.
-   */
   quorumNumerator(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * Relays a transaction or function call to an arbitrary target. In cases where the governance executor is some contract other than the governor itself, like when using a timelock, this function can be invoked in a governance proposal to recover tokens or Ether that was sent to the governor contract by mistake. Note that if the executor is simply the governor itself, use of `relay` is redundant.
-   */
   relay(
     target: PromiseOrValue<string>,
     value: PromiseOrValue<BigNumberish>,
@@ -1416,43 +1215,28 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-   */
   renounceRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-   */
   revokeRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Update the proposal threshold. This operation can only be performed through a governance proposal. Emits a {ProposalThresholdSet} event.
-   */
   setProposalThreshold(
     newProposalThreshold: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Update the voting delay. This operation can only be performed through a governance proposal. Emits a {VotingDelaySet} event.
-   */
   setVotingDelay(
     newVotingDelay: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Update the voting period. This operation can only be performed through a governance proposal. Emits a {VotingPeriodSet} event.
-   */
   setVotingPeriod(
     newVotingPeriod: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1468,50 +1252,29 @@ export interface ArmadaGovernor extends BaseContract {
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Public accessor to check the address of the timelock
-   */
   timelock(overrides?: CallOverrides): Promise<string>;
 
   token(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Changes the quorum numerator. Emits a {QuorumNumeratorUpdated} event. Requirements: - Must be called through a governance proposal. - New numerator must be smaller or equal to the denominator.
-   */
   updateQuorumNumerator(
     newQuorumNumerator: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Public endpoint to update the underlying timelock instance. Restricted to the timelock itself, so updates must be proposed, scheduled, and executed through governance proposals. CAUTION: It is not recommended to change the timelock while there are other queued governance proposals.
-   */
   updateTimelock(
     newTimelock: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IGovernor-version}.
-   */
   version(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * See {IGovernor-votingDelay}.
-   */
   votingDelay(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * See {IGovernor-votingPeriod}.
-   */
   votingPeriod(overrides?: CallOverrides): Promise<BigNumber>;
 
   callStatic: {
     BALLOT_TYPEHASH(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * See {IGovernor-COUNTING_MODE}.
-     */
     COUNTING_MODE(overrides?: CallOverrides): Promise<string>;
 
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
@@ -1526,18 +1289,12 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVote}.
-     */
     castVote(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVoteBySig}.
-     */
     castVoteBySig(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -1547,9 +1304,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVoteWithReason}.
-     */
     castVoteWithReason(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -1557,9 +1311,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVoteWithReasonAndParams}.
-     */
     castVoteWithReasonAndParams(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -1568,9 +1319,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVoteWithReasonAndParamsBySig}.
-     */
     castVoteWithReasonAndParamsBySig(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -1582,9 +1330,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-execute}.
-     */
     execute(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1593,26 +1338,17 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * See {IGovernor-getVotes}.
-     */
     getVotes(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-getVotesWithParams}.
-     */
     getVotesWithParams(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
@@ -1620,36 +1356,24 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * See {IGovernor-hasVoted}.
-     */
     hasVoted(
       proposalId: PromiseOrValue<BigNumberish>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * See {IGovernor-hashProposal}. The proposal id is produced by hashing the RLC encoded `targets` array, the `values` array, the `calldatas` array and the descriptionHash (bytes32 which itself is the keccak256 hash of the description string). This proposal id can be produced from the proposal data which is part of the {ProposalCreated} event. It can even be computed in advance, before the proposal is submitted. Note that the chainId and the governor address are not part of the proposal id computation. Consequently, the same proposal (with same operation and same description) will have the same id if submitted on multiple governors across multiple networks. This also means that in order to execute the same operation twice (on the same governor) the proposer will have to change the description in order to avoid proposal id conflicts.
-     */
     hashProposal(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1658,14 +1382,8 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-name}.
-     */
     name(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155BatchReceived}.
-     */
     onERC1155BatchReceived(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1675,9 +1393,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155Received}.
-     */
     onERC1155Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1687,9 +1402,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * See {IERC721Receiver-onERC721Received}.
-     */
     onERC721Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1698,25 +1410,16 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * See {IGovernor-proposalDeadline}.
-     */
     proposalDeadline(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Public accessor to check the eta of a queued proposal
-     */
     proposalEta(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-proposalSnapshot}.
-     */
     proposalSnapshot(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1724,9 +1427,6 @@ export interface ArmadaGovernor extends BaseContract {
 
     proposalThreshold(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Accessor to the internal vote counts.
-     */
     proposalVotes(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1738,9 +1438,6 @@ export interface ArmadaGovernor extends BaseContract {
       }
     >;
 
-    /**
-     * See {IGovernor-propose}.
-     */
     propose(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1749,9 +1446,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Function to queue a proposal to the timelock.
-     */
     queue(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1760,27 +1454,15 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the quorum for a block number, in terms of number of votes: `supply * numerator / denominator`.
-     */
     quorum(
       blockNumber: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the quorum denominator. Defaults to 100, but may be overridden.
-     */
     quorumDenominator(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the current quorum numerator. See {quorumDenominator}.
-     */
     quorumNumerator(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Relays a transaction or function call to an arbitrary target. In cases where the governance executor is some contract other than the governor itself, like when using a timelock, this function can be invoked in a governance proposal to recover tokens or Ether that was sent to the governor contract by mistake. Note that if the executor is simply the governor itself, use of `relay` is redundant.
-     */
     relay(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1788,43 +1470,28 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Update the proposal threshold. This operation can only be performed through a governance proposal. Emits a {ProposalThresholdSet} event.
-     */
     setProposalThreshold(
       newProposalThreshold: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Update the voting delay. This operation can only be performed through a governance proposal. Emits a {VotingDelaySet} event.
-     */
     setVotingDelay(
       newVotingDelay: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Update the voting period. This operation can only be performed through a governance proposal. Emits a {VotingPeriodSet} event.
-     */
     setVotingPeriod(
       newVotingPeriod: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1840,42 +1507,24 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Public accessor to check the address of the timelock
-     */
     timelock(overrides?: CallOverrides): Promise<string>;
 
     token(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Changes the quorum numerator. Emits a {QuorumNumeratorUpdated} event. Requirements: - Must be called through a governance proposal. - New numerator must be smaller or equal to the denominator.
-     */
     updateQuorumNumerator(
       newQuorumNumerator: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Public endpoint to update the underlying timelock instance. Restricted to the timelock itself, so updates must be proposed, scheduled, and executed through governance proposals. CAUTION: It is not recommended to change the timelock while there are other queued governance proposals.
-     */
     updateTimelock(
       newTimelock: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * See {IGovernor-version}.
-     */
     version(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * See {IGovernor-votingDelay}.
-     */
     votingDelay(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-votingPeriod}.
-     */
     votingPeriod(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
@@ -2029,9 +1678,6 @@ export interface ArmadaGovernor extends BaseContract {
   estimateGas: {
     BALLOT_TYPEHASH(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-COUNTING_MODE}.
-     */
     COUNTING_MODE(overrides?: CallOverrides): Promise<BigNumber>;
 
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
@@ -2046,18 +1692,12 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVote}.
-     */
     castVote(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVoteBySig}.
-     */
     castVoteBySig(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -2067,9 +1707,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVoteWithReason}.
-     */
     castVoteWithReason(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -2077,9 +1714,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVoteWithReasonAndParams}.
-     */
     castVoteWithReasonAndParams(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -2088,9 +1722,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-castVoteWithReasonAndParamsBySig}.
-     */
     castVoteWithReasonAndParamsBySig(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -2102,9 +1733,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-execute}.
-     */
     execute(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -2113,26 +1741,17 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-getVotes}.
-     */
     getVotes(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-getVotesWithParams}.
-     */
     getVotesWithParams(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
@@ -2140,36 +1759,24 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-hasVoted}.
-     */
     hasVoted(
       proposalId: PromiseOrValue<BigNumberish>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-hashProposal}. The proposal id is produced by hashing the RLC encoded `targets` array, the `values` array, the `calldatas` array and the descriptionHash (bytes32 which itself is the keccak256 hash of the description string). This proposal id can be produced from the proposal data which is part of the {ProposalCreated} event. It can even be computed in advance, before the proposal is submitted. Note that the chainId and the governor address are not part of the proposal id computation. Consequently, the same proposal (with same operation and same description) will have the same id if submitted on multiple governors across multiple networks. This also means that in order to execute the same operation twice (on the same governor) the proposer will have to change the description in order to avoid proposal id conflicts.
-     */
     hashProposal(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -2178,14 +1785,8 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-name}.
-     */
     name(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155BatchReceived}.
-     */
     onERC1155BatchReceived(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -2195,9 +1796,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155Received}.
-     */
     onERC1155Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -2207,9 +1805,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC721Receiver-onERC721Received}.
-     */
     onERC721Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -2218,25 +1813,16 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-proposalDeadline}.
-     */
     proposalDeadline(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Public accessor to check the eta of a queued proposal
-     */
     proposalEta(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-proposalSnapshot}.
-     */
     proposalSnapshot(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -2244,17 +1830,11 @@ export interface ArmadaGovernor extends BaseContract {
 
     proposalThreshold(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Accessor to the internal vote counts.
-     */
     proposalVotes(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-propose}.
-     */
     propose(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -2263,9 +1843,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Function to queue a proposal to the timelock.
-     */
     queue(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -2274,27 +1851,15 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the quorum for a block number, in terms of number of votes: `supply * numerator / denominator`.
-     */
     quorum(
       blockNumber: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the quorum denominator. Defaults to 100, but may be overridden.
-     */
     quorumDenominator(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the current quorum numerator. See {quorumDenominator}.
-     */
     quorumNumerator(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Relays a transaction or function call to an arbitrary target. In cases where the governance executor is some contract other than the governor itself, like when using a timelock, this function can be invoked in a governance proposal to recover tokens or Ether that was sent to the governor contract by mistake. Note that if the executor is simply the governor itself, use of `relay` is redundant.
-     */
     relay(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -2302,43 +1867,28 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Update the proposal threshold. This operation can only be performed through a governance proposal. Emits a {ProposalThresholdSet} event.
-     */
     setProposalThreshold(
       newProposalThreshold: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Update the voting delay. This operation can only be performed through a governance proposal. Emits a {VotingDelaySet} event.
-     */
     setVotingDelay(
       newVotingDelay: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Update the voting period. This operation can only be performed through a governance proposal. Emits a {VotingPeriodSet} event.
-     */
     setVotingPeriod(
       newVotingPeriod: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -2354,51 +1904,30 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Public accessor to check the address of the timelock
-     */
     timelock(overrides?: CallOverrides): Promise<BigNumber>;
 
     token(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Changes the quorum numerator. Emits a {QuorumNumeratorUpdated} event. Requirements: - Must be called through a governance proposal. - New numerator must be smaller or equal to the denominator.
-     */
     updateQuorumNumerator(
       newQuorumNumerator: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Public endpoint to update the underlying timelock instance. Restricted to the timelock itself, so updates must be proposed, scheduled, and executed through governance proposals. CAUTION: It is not recommended to change the timelock while there are other queued governance proposals.
-     */
     updateTimelock(
       newTimelock: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-version}.
-     */
     version(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-votingDelay}.
-     */
     votingDelay(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IGovernor-votingPeriod}.
-     */
     votingPeriod(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
     BALLOT_TYPEHASH(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-COUNTING_MODE}.
-     */
     COUNTING_MODE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     DEFAULT_ADMIN_ROLE(
@@ -2417,18 +1946,12 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-castVote}.
-     */
     castVote(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-castVoteBySig}.
-     */
     castVoteBySig(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -2438,9 +1961,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-castVoteWithReason}.
-     */
     castVoteWithReason(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -2448,9 +1968,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-castVoteWithReasonAndParams}.
-     */
     castVoteWithReasonAndParams(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -2459,9 +1976,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-castVoteWithReasonAndParamsBySig}.
-     */
     castVoteWithReasonAndParamsBySig(
       proposalId: PromiseOrValue<BigNumberish>,
       support: PromiseOrValue<BigNumberish>,
@@ -2473,9 +1987,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-execute}.
-     */
     execute(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -2484,26 +1995,17 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-getVotes}.
-     */
     getVotes(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-getVotesWithParams}.
-     */
     getVotesWithParams(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
@@ -2511,36 +2013,24 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-hasVoted}.
-     */
     hasVoted(
       proposalId: PromiseOrValue<BigNumberish>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-hashProposal}. The proposal id is produced by hashing the RLC encoded `targets` array, the `values` array, the `calldatas` array and the descriptionHash (bytes32 which itself is the keccak256 hash of the description string). This proposal id can be produced from the proposal data which is part of the {ProposalCreated} event. It can even be computed in advance, before the proposal is submitted. Note that the chainId and the governor address are not part of the proposal id computation. Consequently, the same proposal (with same operation and same description) will have the same id if submitted on multiple governors across multiple networks. This also means that in order to execute the same operation twice (on the same governor) the proposer will have to change the description in order to avoid proposal id conflicts.
-     */
     hashProposal(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -2549,14 +2039,8 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-name}.
-     */
     name(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155BatchReceived}.
-     */
     onERC1155BatchReceived(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -2566,9 +2050,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155Received}.
-     */
     onERC1155Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -2578,9 +2059,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC721Receiver-onERC721Received}.
-     */
     onERC721Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -2589,25 +2067,16 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-proposalDeadline}.
-     */
     proposalDeadline(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Public accessor to check the eta of a queued proposal
-     */
     proposalEta(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-proposalSnapshot}.
-     */
     proposalSnapshot(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -2615,17 +2084,11 @@ export interface ArmadaGovernor extends BaseContract {
 
     proposalThreshold(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Accessor to the internal vote counts.
-     */
     proposalVotes(
       proposalId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-propose}.
-     */
     propose(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -2634,9 +2097,6 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Function to queue a proposal to the timelock.
-     */
     queue(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -2645,27 +2105,15 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the quorum for a block number, in terms of number of votes: `supply * numerator / denominator`.
-     */
     quorum(
       blockNumber: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the quorum denominator. Defaults to 100, but may be overridden.
-     */
     quorumDenominator(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the current quorum numerator. See {quorumDenominator}.
-     */
     quorumNumerator(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Relays a transaction or function call to an arbitrary target. In cases where the governance executor is some contract other than the governor itself, like when using a timelock, this function can be invoked in a governance proposal to recover tokens or Ether that was sent to the governor contract by mistake. Note that if the executor is simply the governor itself, use of `relay` is redundant.
-     */
     relay(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -2673,43 +2121,28 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Update the proposal threshold. This operation can only be performed through a governance proposal. Emits a {ProposalThresholdSet} event.
-     */
     setProposalThreshold(
       newProposalThreshold: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Update the voting delay. This operation can only be performed through a governance proposal. Emits a {VotingDelaySet} event.
-     */
     setVotingDelay(
       newVotingDelay: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Update the voting period. This operation can only be performed through a governance proposal. Emits a {VotingPeriodSet} event.
-     */
     setVotingPeriod(
       newVotingPeriod: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -2725,42 +2158,24 @@ export interface ArmadaGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Public accessor to check the address of the timelock
-     */
     timelock(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     token(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Changes the quorum numerator. Emits a {QuorumNumeratorUpdated} event. Requirements: - Must be called through a governance proposal. - New numerator must be smaller or equal to the denominator.
-     */
     updateQuorumNumerator(
       newQuorumNumerator: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Public endpoint to update the underlying timelock instance. Restricted to the timelock itself, so updates must be proposed, scheduled, and executed through governance proposals. CAUTION: It is not recommended to change the timelock while there are other queued governance proposals.
-     */
     updateTimelock(
       newTimelock: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-version}.
-     */
     version(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-votingDelay}.
-     */
     votingDelay(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IGovernor-votingPeriod}.
-     */
     votingPeriod(overrides?: CallOverrides): Promise<PopulatedTransaction>;
   };
 }
