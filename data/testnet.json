@@ -546,8 +546,8 @@
         "email": "info@synthetix.io",
         "escrow": "82.299485 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-08_26_23_12_14_AM/release-08_26_23_12_14_AM.tgz",
-        "checksum": "0x4bcdb7065c3f290c2960ee6431bf9ab72c06f7bf245f23d73173ced5767f5e46"
+        "content": "https://github.com/dmanjunath/snx-armada-demo/releases/download/release-09_02_23_12_15_AM/release-09_02_23_12_15_AM.tgz",
+        "checksum": "0xb52ddc5669c67530188af7e3948c8c3f27dc859d9a49e195cffe6a0cc2c9254b"
       },
       {
         "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
@@ -596,8 +596,8 @@
         "email": "david@ajna.finance",
         "escrow": "83.65881 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://github.com/ajna-finance/armada-site/releases/download/v0.2.3/ajna-app-v1-v0.2.3.tgz",
-        "checksum": "0x995d8d2c012b016610a2357d57cbdb6a57913ce4bef93357546800dc399bcedf"
+        "content": "https://github.com/ajna-finance/ajna-live/releases/download/v0.2.4/ajna-app-v1-v0.2.4.tgz",
+        "checksum": "0xacd0de68694922101f92755f08759bb0647de07457b01a6e6c3bd7d71fdda345"
       },
       {
         "id": "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
