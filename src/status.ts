@@ -3,11 +3,10 @@
 // USAGE
 // $ npx ts-node ./src/status.ts --network {localhost|staging|testnet|mainnet}
 
-import { HashZero } from "@ethersproject/constants";
 import { Block } from "@ethersproject/providers";
 import { Contract } from "ethers";
 import parseArgs from "minimist";
-import { ArmadaBilling, ArmadaNodes, ArmadaRegistry } from "../types/staging";
+import { ArmadaBilling, ArmadaRegistry } from "../types/staging";
 import { TypedEvent, TypedEventFilter } from "../types/staging/common";
 import { getContract, getProvider, Networks, stderr, stdout } from "./util";
 
@@ -34,7 +33,6 @@ async function main() {
 
   const registry = await getContract<ArmadaRegistry>(args.network, "ArmadaRegistry", provider);
   const billing = await getContract<ArmadaBilling>(args.network, "ArmadaBilling", provider);
-  const nodes = await getContract<ArmadaNodes>(args.network, "ArmadaNodes", provider);
 
   // This assumes that the EpochAdvanced event happened not too long ago before this script was run.
   const epochAdvancedEvent_ = await findEvent(registry, registry.filters.EpochAdvanced(), block);
@@ -49,11 +47,9 @@ async function main() {
   }
 
   const epochAdvancedBlock = await provider.getBlock(epochAdvancedEvent.blockNumber);
-  const nodeArray = await nodes.getNodes(HashZero, false, 0, 1, { blockTag: epochAdvancedBlock.hash });
-  const nodeId = nodeArray[0].id;
 
   // This assumes that there was only one EpochFinished event, that is all nodes fit in one block.
-  const epochFinishedEvent_ = await findEvent(billing, billing.filters.ReservationResolved(nodeId), epochAdvancedBlock);
+  const epochFinishedEvent_ = await findEvent(billing, billing.filters.ReservationResolved(), epochAdvancedBlock);
   const epochFinishedEvent = { blockNumber: epochFinishedEvent_.blockNumber, blockHash: epochFinishedEvent_.blockHash };
   
   // Use the block right before the (first) ReservationResolved event.
