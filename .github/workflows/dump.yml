@@ -36,7 +36,7 @@ jobs:
       - name: Dump ${{ inputs.network }} at EpochFinished
         uses: nick-fields/retry@v2
         with:
-          timeout_minutes: 1
+          timeout_minutes: 3
           max_attempts: 3
           command: |
             npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block1 }}
@@ -46,7 +46,7 @@ jobs:
       - name: Dump ${{ inputs.network }} at EpochAdvanced
         uses: nick-fields/retry@v2
         with:
-          timeout_minutes: 1
+          timeout_minutes: 3
           max_attempts: 3
           command: |
             npx ts-node ./src/dump.ts --network ${{ inputs.network }} --block ${{ steps.status.outputs.block2 }}
