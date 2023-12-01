@@ -1,0 +1,10 @@
+name: Cron (testnet)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 0 * * 0'
+jobs:
+  dump-testnet-sepolia:
+    uses: ./.github/workflows/dump.yml
+    with:
+      network: testnet-sepolia

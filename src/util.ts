@@ -9,6 +9,7 @@ export const stderr = (s: string): void => console.warn("> " + s);
 export const Networks: Record<string, { rpcUrl: string; abiDir?: string }> = {
   mainnet: { rpcUrl: "https://rpc.ankr.com/eth" },
   testnet: { rpcUrl: "https://rpc.ankr.com/eth_goerli" },
+  "testnet-sepolia": { rpcUrl: "https://rpc.ankr.com/eth_sepolia" },
   staging: { rpcUrl: "https://rpc.ankr.com/eth_goerli" },
   localhost: { rpcUrl: "http://localhost:8545", abiDir: "../armada-contracts/deployments/localhost" },
 };
