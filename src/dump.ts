@@ -1,7 +1,7 @@
 // Downloads contract data from blockchain.
 //
 // USAGE
-// $ npx ts-node ./src/dump.ts --network {localhost|staging|testnet|mainnet} [--block TAG]
+// $ npx ts-node ./src/dump.ts --network {localhost|staging|testnet|testnet-sepolia|mainnet} [--block TAG]
 
 import fs from "fs";
 import path from "path";
