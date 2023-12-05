@@ -1,4 +1,4 @@
-name: Cron (testnet)
+name: Cron (testnet-sepolia)
 on:
   workflow_dispatch:
   schedule:
