@@ -12,19 +12,6 @@ const REGISTRY_ABI = [
     stateMutability: "nonpayable",
     type: "function",
   },
-  {
-    "inputs": [],
-    "name": "getNodes",
-    "outputs": [
-      {
-        "internalType": "contract ArmadaNodes",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
 ];
 
 const NODES_ABI = [
@@ -94,19 +81,6 @@ const BILLING_ABI = [
     stateMutability: "nonpayable",
     type: "function",
   },
-  {
-    "inputs": [],
-    "name": "getBillingNodeIndex",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
 ];
 
 const { ethers } = require("ethers");
@@ -135,8 +109,6 @@ exports.handler = async function (credentials) {
 
   const billingArgs = [NODE_ID, [...nodeIds], [...uptimeBips]];
   console.log(`Execute ArmadaBilling.processBilling ${stringify(billingArgs)}`);
-  console.log("billing index", (await billing.getBillingNodeIndex()).toString());
-  console.log("node count", nodeCount.toString());
   const billingTx = await billing.processBilling(...billingArgs);
   console.log(billingTx.hash);
   await billingTx.wait();
