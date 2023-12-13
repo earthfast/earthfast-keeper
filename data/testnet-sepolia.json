@@ -1,0 +1,74 @@
+{
+  "ArmadaToken": {
+    "holders": [
+      {
+        "address": "ArmadaRegistry",
+        "balance": "100.0 ARMADA"
+      }
+    ]
+  },
+  "ArmadaRegistry": {
+    "version": "",
+    "nonce": "3",
+    "lastEpochLength": "604800",
+    "nextEpochLength": "604800",
+    "cuedEpochLength": "604800",
+    "gracePeriod": "86400"
+  },
+  "ArmadaNodes": {
+    "topologyCreators": [],
+    "nodes": [
+      {
+        "id": "0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "content1.us-central1-a.testnet-sepolia.guerillaflotilla.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "0.574067 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace",
+          "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace"
+        ]
+      }
+    ]
+  },
+  "ArmadaOperators": {
+    "stakePerNode": "0.0 ARMADA",
+    "operators": [
+      {
+        "id": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
+        "name": "Guerilla Flotilla",
+        "email": "@",
+        "stake": "100.0 ARMADA",
+        "balance": "0.0 USDC"
+      }
+    ]
+  },
+  "ArmadaProjects": {
+    "projectCreators": [
+      "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664"
+    ],
+    "projects": [
+      {
+        "id": "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace",
+        "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
+        "name": "guerilla-flotilla",
+        "email": "@",
+        "escrow": "100.0 USDC",
+        "reserve": "1.574067 USDC",
+        "content": "https://github.com/dmanjunath/guerillaflotilla.com/releases/download/v0.0.2/gf.tgz",
+        "checksum": "0x851c7a19ae53cd520e57ceecf4c93cd6a8901d29f6f2881f40cd56d2ca1a48f8",
+        "metadata": ""
+      }
+    ]
+  },
+  "ArmadaBilling": {
+    "billingNodeIndex": "0",
+    "renewalNodeIndex": "0"
+  }
+}
