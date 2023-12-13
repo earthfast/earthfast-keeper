@@ -1,7 +1,7 @@
 // Shows current epoch state.
 //
 // USAGE
-// $ npx ts-node ./src/status.ts --network {localhost|staging|testnet|mainnet}
+// $ npx ts-node ./src/status.ts --network {localhost|staging|testnet|testnet-sepolia|mainnet}
 
 import { Block } from "@ethersproject/providers";
 import { Contract } from "ethers";
