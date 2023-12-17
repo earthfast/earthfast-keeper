@@ -30,7 +30,7 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "0.574067 USDC",
+          "1.0 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
@@ -49,7 +49,7 @@
         "name": "Guerilla Flotilla",
         "email": "@",
         "stake": "100.0 ARMADA",
-        "balance": "0.0 USDC"
+        "balance": "0.574067 USDC"
       }
     ]
   },
@@ -64,8 +64,8 @@
         "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
         "name": "guerilla-flotilla",
         "email": "@",
-        "escrow": "100.0 USDC",
-        "reserve": "1.574067 USDC",
+        "escrow": "99.425933 USDC",
+        "reserve": "2.0 USDC",
         "content": "https://github.com/dmanjunath/guerillaflotilla.com/releases/download/v0.0.2/gf.tgz",
         "checksum": "0x851c7a19ae53cd520e57ceecf4c93cd6a8901d29f6f2881f40cd56d2ca1a48f8",
         "metadata": ""
