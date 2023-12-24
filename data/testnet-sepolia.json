@@ -66,8 +66,8 @@
         "email": "@",
         "escrow": "99.425933 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/guerillaflotilla.com/releases/download/v0.0.2/gf.tgz",
-        "checksum": "0x851c7a19ae53cd520e57ceecf4c93cd6a8901d29f6f2881f40cd56d2ca1a48f8",
+        "content": "https://output.circle-artifacts.com/output/job/09524709-97af-41a2-b819-a67094e538bd/artifacts/0/armada-bundle.tgz",
+        "checksum": "0x23673b81ea735bb4bdbcc8f0f2c775d93e748f20684290627b8f1dbbc8228e81",
         "metadata": ""
       },
       {
@@ -75,7 +75,7 @@
         "owner": "0x76824F74dE8C1E4985D73A9ea475B7E01432CdF5",
         "name": "armada-demo-project",
         "email": "@",
-        "escrow": "0.0 USDC",
+        "escrow": "100.0 USDC",
         "reserve": "0.0 USDC",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
