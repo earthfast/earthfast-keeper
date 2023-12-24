@@ -49,7 +49,7 @@
         "name": "Guerilla Flotilla",
         "email": "@",
         "stake": "100.0 ARMADA",
-        "balance": "0.574067 USDC"
+        "balance": "1.574067 USDC"
       }
     ]
   },
@@ -64,7 +64,7 @@
         "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
         "name": "guerilla-flotilla",
         "email": "@",
-        "escrow": "99.425933 USDC",
+        "escrow": "98.425933 USDC",
         "reserve": "2.0 USDC",
         "content": "https://output.circle-artifacts.com/output/job/09524709-97af-41a2-b819-a67094e538bd/artifacts/0/armada-bundle.tgz",
         "checksum": "0x23673b81ea735bb4bdbcc8f0f2c775d93e748f20684290627b8f1dbbc8228e81",
