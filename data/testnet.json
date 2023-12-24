@@ -550,8 +550,8 @@
         "email": "engineering@audius.co",
         "escrow": "86.900714 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1702488933.tgz",
-        "checksum": "0xa1946aaa752a58299ee50db47b9434d8c634b32f0ee746d9f406c52db9d38d8f",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1703288610.tgz",
+        "checksum": "0x9e13a6803b294d8358b72aabd77d9b3edfd5fc582051461d36bbb35b8493f5e1",
         "metadata": ""
       },
       {
@@ -561,8 +561,8 @@
         "email": "info@synthetix.io",
         "escrow": "66.299485 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-12_16_23_12_17_AM/release-12_16_23_12_17_AM.tgz",
-        "checksum": "0xb37148108f033d63d8eb8ead81453defc926245c6a3df8e1a5e56befdd7c62da",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-12_23_23_12_16_AM/release-12_23_23_12_16_AM.tgz",
+        "checksum": "0x78d70581144ed7a401867d754e824e5c4422efb150f6962396a2f3e866d1a7ab",
         "metadata": ""
       },
       {
@@ -616,8 +616,8 @@
         "email": "david@ajna.finance",
         "escrow": "51.65881 USDC",
         "reserve": "4.0 USDC",
-        "content": "https://github.com/ajna-finance/ajna-live/releases/download/v0.2.5/ajna-app-v1-v0.2.5.tgz",
-        "checksum": "0x75ea907cc152efa0da05eaaa5a7e473656be1bd8f14514ee9162f224637cfb35",
+        "content": "https://github.com/ajna-finance/ajna-live/releases/download/v0.2.6/ajna-app-v1-v0.2.6.tgz",
+        "checksum": "0xd6f1a793e36e38eedc7e156ef14d816fc7d9230e1c287a3b545039efffd74d6a",
         "metadata": ""
       },
       {
