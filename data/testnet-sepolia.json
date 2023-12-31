@@ -3,17 +3,21 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "100.0 ARMADA"
+        "balance": "600.0 ARMADA"
       },
       {
         "address": "0x76824F74dE8C1E4985D73A9ea475B7E01432CdF5",
-        "balance": "999999900.0 ARMADA"
+        "balance": "999997900.0 ARMADA"
+      },
+      {
+        "address": "0x8E0d75dEF5212698F6A2DA4546536acDBfF134b9",
+        "balance": "1500.0 ARMADA"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "4",
+    "nonce": "7",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -23,6 +27,22 @@
     "topologyCreators": [],
     "nodes": [
       {
+        "id": "0x036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db0",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content0.usw2.testnet-sepolia.armadanodes.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "0.613591 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b",
+          "0xc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b"
+        ]
+      },
+      {
         "id": "0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6",
         "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
         "host": "content1.us-central1-a.testnet-sepolia.guerillaflotilla.com",
@@ -31,6 +51,22 @@
         "disabled": false,
         "prices": [
           "1.0 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace",
+          "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace"
+        ]
+      },
+      {
+        "id": "0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d3f",
+        "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
+        "host": "e1guv29gs99afaqa8aic9ah488.ingress.akashprovid.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "0.470654 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
@@ -50,6 +86,14 @@
         "email": "@",
         "stake": "100.0 ARMADA",
         "balance": "1.574067 USDC"
+      },
+      {
+        "id": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "owner": "0x8E0d75dEF5212698F6A2DA4546536acDBfF134b9",
+        "name": "Armada",
+        "email": "@",
+        "stake": "500.0 ARMADA",
+        "balance": "0.0 USDC"
       }
     ]
   },
@@ -65,7 +109,7 @@
         "name": "guerilla-flotilla",
         "email": "@",
         "escrow": "98.425933 USDC",
-        "reserve": "2.0 USDC",
+        "reserve": "3.470654 USDC",
         "content": "https://output.circle-artifacts.com/output/job/09524709-97af-41a2-b819-a67094e538bd/artifacts/0/armada-bundle.tgz",
         "checksum": "0x23673b81ea735bb4bdbcc8f0f2c775d93e748f20684290627b8f1dbbc8228e81",
         "metadata": ""
@@ -76,9 +120,9 @@
         "name": "armada-demo-project",
         "email": "@",
         "escrow": "100.0 USDC",
-        "reserve": "0.0 USDC",
-        "content": "",
-        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "reserve": "1.613591 USDC",
+        "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
+        "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949",
         "metadata": ""
       }
     ]
