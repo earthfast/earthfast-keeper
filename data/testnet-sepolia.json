@@ -66,7 +66,7 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "0.330337 USDC",
+          "1.0 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
@@ -98,7 +98,7 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "0.330039 USDC",
+          "1.0 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
@@ -165,7 +165,7 @@
         "name": "Guerilla Flotilla",
         "email": "@",
         "stake": "100.0 ARMADA",
-        "balance": "3.044721 USDC"
+        "balance": "5.044721 USDC"
       },
       {
         "id": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
@@ -173,7 +173,7 @@
         "name": "Armada",
         "email": "@",
         "stake": "600.0 ARMADA",
-        "balance": "0.613591 USDC"
+        "balance": "2.273967 USDC"
       }
     ]
   },
@@ -190,7 +190,7 @@
         "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
         "name": "guerilla-flotilla",
         "email": "@",
-        "escrow": "96.955279 USDC",
+        "escrow": "94.955279 USDC",
         "reserve": "4.0 USDC",
         "content": "https://output.circle-artifacts.com/output/job/09524709-97af-41a2-b819-a67094e538bd/artifacts/0/armada-bundle.tgz",
         "checksum": "0x23673b81ea735bb4bdbcc8f0f2c775d93e748f20684290627b8f1dbbc8228e81",
@@ -201,8 +201,8 @@
         "owner": "0x861444f51D61c1A0954e10329623325Ed951818f",
         "name": "Synthetix-v2",
         "email": "info@synthetix.io",
-        "escrow": "200.0 USDC",
-        "reserve": "1.330337 USDC",
+        "escrow": "199.669663 USDC",
+        "reserve": "2.0 USDC",
         "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-01_06_24_12_17_AM/release-01_06_24_12_17_AM.tgz",
         "checksum": "0xe41f74b70f0c720ea9c6fe945f8dc6c48e4eb8f613e658462324fc67412472b7",
         "metadata": ""
@@ -212,7 +212,7 @@
         "owner": "0x76824F74dE8C1E4985D73A9ea475B7E01432CdF5",
         "name": "armada-demo-project",
         "email": "@",
-        "escrow": "99.386409 USDC",
+        "escrow": "98.386409 USDC",
         "reserve": "2.0 USDC",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
         "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949",
@@ -223,8 +223,8 @@
         "owner": "0x35e4eE4683f8bd3841cA8A89d3f5D6Dd05B3E248",
         "name": "Synthetix-v3",
         "email": "info@synthetix.io",
-        "escrow": "200.0 USDC",
-        "reserve": "1.330039 USDC",
+        "escrow": "199.669961 USDC",
+        "reserve": "2.0 USDC",
         "content": "https://output.circle-artifacts.com/output/job/97a4fdc6-0d18-4f2f-856d-f71177f62200/artifacts/0/armada-bundle.tgz",
         "checksum": "0x1adda3bb7b1226fd3c5953588cb421d1ac88e22d74c1fa2d6af9687272d761c2",
         "metadata": ""
