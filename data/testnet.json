@@ -20,7 +20,7 @@
     ]
   },
   "ArmadaRegistry": {
-    "version": "0.3.0",
+    "version": "",
     "nonce": "44",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
@@ -301,7 +301,7 @@
         ],
         "projectIds": [
           "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2",
-          "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2"
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -413,7 +413,7 @@
         ],
         "projectIds": [
           "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2",
-          "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2"
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -615,7 +615,7 @@
         "name": "ajna-app-v1",
         "email": "david@ajna.finance",
         "escrow": "45.65881 USDC",
-        "reserve": "4.0 USDC",
+        "reserve": "2.0 USDC",
         "content": "https://github.com/ajna-finance/ajna-live/releases/download/v0.2.6/ajna-app-v1-v0.2.6.tgz",
         "checksum": "0xd6f1a793e36e38eedc7e156ef14d816fc7d9230e1c287a3b545039efffd74d6a",
         "metadata": ""
