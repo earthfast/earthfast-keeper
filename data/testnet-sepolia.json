@@ -17,7 +17,7 @@
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "14",
+    "nonce": "16",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -34,12 +34,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.167797 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xbb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fd",
+          "0xbb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fd"
         ]
       },
       {
@@ -114,12 +114,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.165714 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x8d1108e10bcb7c27dddfc02ed9d693a074039d026cf4ea4240b40f7d581ac802",
+          "0x8d1108e10bcb7c27dddfc02ed9d693a074039d026cf4ea4240b40f7d581ac802"
         ]
       },
       {
@@ -130,12 +130,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.167797 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xbb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fd",
+          "0xbb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fd"
         ]
       },
       {
@@ -180,6 +180,7 @@
   "ArmadaProjects": {
     "projectCreators": [
       "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
+      "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
       "0x35e4eE4683f8bd3841cA8A89d3f5D6Dd05B3E248",
       "0x76824F74dE8C1E4985D73A9ea475B7E01432CdF5",
       "0x861444f51D61c1A0954e10329623325Ed951818f"
@@ -197,14 +198,36 @@
         "metadata": ""
       },
       {
+        "id": "0x8d1108e10bcb7c27dddfc02ed9d693a074039d026cf4ea4240b40f7d581ac802",
+        "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
+        "name": "dashboard.staging.audius.org",
+        "email": "engineering@audius.co",
+        "escrow": "100.0 USDC",
+        "reserve": "1.165714 USDC",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1703288610.tgz",
+        "checksum": "0x9e13a6803b294d8358b72aabd77d9b3edfd5fc582051461d36bbb35b8493f5e1",
+        "metadata": ""
+      },
+      {
         "id": "0xa66cc928b5edb82af9bd49922954155ab7b0942694bea4ce44661d9a8736c688",
         "owner": "0x861444f51D61c1A0954e10329623325Ed951818f",
         "name": "Synthetix-v2",
         "email": "info@synthetix.io",
         "escrow": "199.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-01_06_24_12_17_AM/release-01_06_24_12_17_AM.tgz",
-        "checksum": "0xe41f74b70f0c720ea9c6fe945f8dc6c48e4eb8f613e658462324fc67412472b7",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-01_13_24_12_17_AM/release-01_13_24_12_17_AM.tgz",
+        "checksum": "0xdccaed1cdd0caab200089a6c6d94709e0759b72a16208052b8b40fc5a6e8dff7",
+        "metadata": ""
+      },
+      {
+        "id": "0xbb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fd",
+        "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
+        "name": "app.audius.co",
+        "email": "engineering@audius.co",
+        "escrow": "100.0 USDC",
+        "reserve": "2.335594 USDC",
+        "content": "https://s3.us-west-1.amazonaws.com/app.audius.co/build1701307009.tgz",
+        "checksum": "0xc93fb4f2b5e8ed8c7b569f01fc9d46f2312e34db462a9dbce5fd8d48065e6aa7",
         "metadata": ""
       },
       {
