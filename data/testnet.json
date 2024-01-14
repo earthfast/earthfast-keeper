@@ -300,7 +300,7 @@
           "1.0 USDC"
         ],
         "projectIds": [
-          "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -412,7 +412,7 @@
           "1.0 USDC"
         ],
         "projectIds": [
-          "0xbeced09521047d05b8960b7e7bcc1d1292cf3e4b2a6b63f48335cbde5f7545d2",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -459,7 +459,7 @@
         "name": "armada",
         "email": "@",
         "stake": "2000.0 ARMADA",
-        "balance": "951.155135 USDC"
+        "balance": "966.155135 USDC"
       },
       {
         "id": "0x3a6357012c1a3ae0a17d304c9920310382d968ebcc4b1771f41c6b304205b570",
@@ -467,7 +467,7 @@
         "name": "Super Cool Labs",
         "email": "dheeraj@supercoollabs.com",
         "stake": "200.0 ARMADA",
-        "balance": "40.194722 USDC"
+        "balance": "41.194722 USDC"
       },
       {
         "id": "0x6d4407e7be21f808e6509aa9fa9143369579dd7d760fe20a2c09680fc146134f",
@@ -483,7 +483,7 @@
         "name": "Tomek Group",
         "email": "nodes@tomekgroup.com",
         "stake": "300.0 ARMADA",
-        "balance": "39.326805 USDC"
+        "balance": "40.326805 USDC"
       },
       {
         "id": "0xe16da923a2d88192e5070f37b4571d58682c0d66212ec634d495f33de3f77ab5",
@@ -515,7 +515,7 @@
         "owner": "0x63D1e411f0111A8aF7f63C58aFeA3a39c50B7993",
         "name": "armada-demo-project",
         "email": "@",
-        "escrow": "77.436865 USDC",
+        "escrow": "75.436865 USDC",
         "reserve": "4.0 USDC",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
         "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949",
@@ -526,7 +526,7 @@
         "owner": "0xaA0f527456241aA4E80dacBe6e7b7fbBf6EdF297",
         "name": "overtimemarkets",
         "email": "vladan@thalesmarket.io",
-        "escrow": "85.620476 USDC",
+        "escrow": "83.620476 USDC",
         "reserve": "4.0 USDC",
         "content": "https://github.com/thales-markets/thales-sport-markets/releases/download/v0.0.2/overtime-v0.0.2.tgz",
         "checksum": "0x008d3cac34d5c39ded1782574122554c516230e58b43db00b81948ec92bc89d6",
@@ -537,7 +537,7 @@
         "owner": "0x35e4eE4683f8bd3841cA8A89d3f5D6Dd05B3E248",
         "name": "synthetix-v3-demo",
         "email": "@",
-        "escrow": "93.777699 USDC",
+        "escrow": "92.777699 USDC",
         "reserve": "2.0 USDC",
         "content": "https://output.circle-artifacts.com/output/job/6be4299f-1bb4-4850-85ba-4825918d18d2/artifacts/0/armada-bundle.tgz",
         "checksum": "0xb12d4bc1e886bdbbafe0faa8bf16038f89916acf7fad7e06d230f912acf92f54",
@@ -548,7 +548,7 @@
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "dashboard.staging.audius.org",
         "email": "engineering@audius.co",
-        "escrow": "80.900714 USDC",
+        "escrow": "78.900714 USDC",
         "reserve": "4.0 USDC",
         "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1703288610.tgz",
         "checksum": "0x9e13a6803b294d8358b72aabd77d9b3edfd5fc582051461d36bbb35b8493f5e1",
@@ -559,7 +559,7 @@
         "owner": "0x861444f51D61c1A0954e10329623325Ed951818f",
         "name": "Synthetix",
         "email": "info@synthetix.io",
-        "escrow": "63.299485 USDC",
+        "escrow": "62.299485 USDC",
         "reserve": "2.0 USDC",
         "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-01_05_24_12_17_AM/release-01_05_24_12_17_AM.tgz",
         "checksum": "0x8579ef97f680c0593118339ed3c291c5ef9badceb48042e04977e23fbb55aec7",
@@ -570,7 +570,7 @@
         "owner": "0x0F82843D7982c254fe1E89E989Ae6eD9Cd3ea5A8",
         "name": "guerillaflotilla",
         "email": "dheeraj@supercoollabs.com",
-        "escrow": "20.478473 USDC",
+        "escrow": "18.478473 USDC",
         "reserve": "4.0 USDC",
         "content": "https://github.com/dmanjunath/guerillaflotilla.com/releases/download/v0.0.2/gf.tgz",
         "checksum": "0x851c7a19ae53cd520e57ceecf4c93cd6a8901d29f6f2881f40cd56d2ca1a48f8",
@@ -581,7 +581,7 @@
         "owner": "0x4D70933e4D996d5439cDE82176Afd26B80128614",
         "name": "Raydium",
         "email": "armada-test@raydium.io",
-        "escrow": "34.343216 USDC",
+        "escrow": "32.343216 USDC",
         "reserve": "4.0 USDC",
         "content": "https://img.raydium.io/ui/test-ui-v0.1.0.tgz",
         "checksum": "0x5e994101b51c3aa6f1de1d1d404073e417d13357af01e1ee4af9f8cc38995e6a",
@@ -592,7 +592,7 @@
         "owner": "0xF62e46336335f2344D451bAA23696CF77e5C52fC",
         "name": "uniswap",
         "email": "@",
-        "escrow": "73.200437 USDC",
+        "escrow": "71.200437 USDC",
         "reserve": "4.0 USDC",
         "content": "https://s3.us-west-2.amazonaws.com/armada-testnet/bundles/uniswap-v4.136.0.tgz",
         "checksum": "0x3cfa66f02ea49dc2b62539446fc7f2e4e4e96a28f20403d2e8970ec5b1a231b7",
@@ -614,8 +614,8 @@
         "owner": "0x05e12734df9AEf044Af2932B3aA467334ccF1730",
         "name": "ajna-app-v1",
         "email": "david@ajna.finance",
-        "escrow": "45.65881 USDC",
-        "reserve": "2.0 USDC",
+        "escrow": "43.65881 USDC",
+        "reserve": "0.0 USDC",
         "content": "https://github.com/ajna-finance/ajna-live/releases/download/v0.2.6/ajna-app-v1-v0.2.6.tgz",
         "checksum": "0xd6f1a793e36e38eedc7e156ef14d816fc7d9230e1c287a3b545039efffd74d6a",
         "metadata": ""
@@ -625,7 +625,7 @@
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "audius",
         "email": "@",
-        "escrow": "94.607163 USDC",
+        "escrow": "93.607163 USDC",
         "reserve": "2.0 USDC",
         "content": "https://s3.us-west-1.amazonaws.com/app.audius.co/build1701307009.tgz",
         "checksum": "0xc93fb4f2b5e8ed8c7b569f01fc9d46f2312e34db462a9dbce5fd8d48065e6aa7",
