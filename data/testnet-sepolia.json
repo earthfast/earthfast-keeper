@@ -3,21 +3,21 @@
     "holders": [
       {
         "address": "ArmadaRegistry",
-        "balance": "700.0 ARMADA"
+        "balance": "1200.0 ARMADA"
       },
       {
         "address": "0x76824F74dE8C1E4985D73A9ea475B7E01432CdF5",
-        "balance": "999997900.0 ARMADA"
+        "balance": "999996900.0 ARMADA"
       },
       {
         "address": "0x8E0d75dEF5212698F6A2DA4546536acDBfF134b9",
-        "balance": "1400.0 ARMADA"
+        "balance": "1900.0 ARMADA"
       }
     ]
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "16",
+    "nonce": "21",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -59,6 +59,54 @@
         ]
       },
       {
+        "id": "0x1b6847dc741a1b0cd08d278845f9d819d87b734759afb55fe2de5cb82a9ae672",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content6.usw2.testnet-sepolia.armadanodes.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0x31ecc21a745e3968a04e9570e4425bc18fa8019c68028196b546d1669c200c68",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content7.usw2.testnet-sepolia.armadanodes.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0x66de8ffda797e3de9c05e8fc57b3bf0ec28a930d40b0d285d93c06501cf6a090",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content9.usw2.testnet-sepolia.armadanodes.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
         "id": "0x6e1540171b6c0c960b71a7020d9f60077f6af931a8bbf590da0223dacf75c7af",
         "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
         "host": "content1.usw2.testnet-sepolia.armadanodes.com",
@@ -91,6 +139,22 @@
         ]
       },
       {
+        "id": "0xbb8a6a4669ba250d26cd7a459eca9d215f8307e33aebe50379bc5a3617ec3444",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content8.usw2.testnet-sepolia.armadanodes.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
         "id": "0xc65a7bb8d6351c1cf70c95a316cc6a92839c986682d98bc35f958f4883f9d2a8",
         "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
         "host": "content2.usw2.testnet-sepolia.armadanodes.com",
@@ -104,6 +168,22 @@
         "projectIds": [
           "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3",
           "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b636ee3"
+        ]
+      },
+      {
+        "id": "0xce6d7b5282bd9a3661ae061feed1dbda4e52ab073b1f9285be6e155d9c38d4ec",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content10.usw2.testnet-sepolia.armadanodes.com",
+        "region": "us",
+        "topology": false,
+        "disabled": false,
+        "prices": [
+          "1.0 USDC",
+          "1.0 USDC"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -172,7 +252,7 @@
         "owner": "0x8E0d75dEF5212698F6A2DA4546536acDBfF134b9",
         "name": "Armada",
         "email": "@",
-        "stake": "600.0 ARMADA",
+        "stake": "1100.0 ARMADA",
         "balance": "5.775275 USDC"
       }
     ]
@@ -215,8 +295,8 @@
         "email": "info@synthetix.io",
         "escrow": "198.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-01_13_24_12_17_AM/release-01_13_24_12_17_AM.tgz",
-        "checksum": "0xdccaed1cdd0caab200089a6c6d94709e0759b72a16208052b8b40fc5a6e8dff7",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-01_19_24_12_17_AM/release-01_19_24_12_17_AM.tgz",
+        "checksum": "0x539691e8fb997d0ca4cdede2d27dd91da456e07054eaff0fb5ff705fd77a86b8",
         "metadata": ""
       },
       {
@@ -248,8 +328,8 @@
         "email": "info@synthetix.io",
         "escrow": "198.669961 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/97a4fdc6-0d18-4f2f-856d-f71177f62200/artifacts/0/armada-bundle.tgz",
-        "checksum": "0x1adda3bb7b1226fd3c5953588cb421d1ac88e22d74c1fa2d6af9687272d761c2",
+        "content": "https://output.circle-artifacts.com/output/job/16070fee-fe4d-4ecc-91f7-27e85b63ebba/artifacts/0/armada-bundle.tgz",
+        "checksum": "0xf69e1afedb8c62932603082aec3b824c8d71ec952124398993509a6fac3b1ba6",
         "metadata": ""
       }
     ]
