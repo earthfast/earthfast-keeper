@@ -295,8 +295,8 @@
         "email": "info@synthetix.io",
         "escrow": "196.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-01_27_24_12_15_AM/release-01_27_24_12_15_AM.tgz",
-        "checksum": "0x59e498c6d5568718db8924c388a7bdedab4307bbf8210ad28338ce76ad0d54e3",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-02_03_24_12_16_AM/release-02_03_24_12_16_AM.tgz",
+        "checksum": "0x72a74468f846130d5e379bd786b33c0499a9adc9e851ea9bedad97fbbf16653a",
         "metadata": ""
       },
       {
@@ -328,8 +328,8 @@
         "email": "info@synthetix.io",
         "escrow": "196.669961 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/b3e49d3d-c52b-4a06-b461-72c2cd3496ff/artifacts/0/armada-bundle.tgz",
-        "checksum": "0x511581a0836f3a3865cd216d8f849016f51cb48cbf5442d77671b633e2ed6ba2",
+        "content": "https://output.circle-artifacts.com/output/job/762297ee-d698-4d1f-b65c-6bb3c69ae609/artifacts/0/armada-bundle.tgz",
+        "checksum": "0xa79200e200d9ead9e5ebfb6731897765705c875b958b1dbe3fceeca0c7125430",
         "metadata": ""
       }
     ]
