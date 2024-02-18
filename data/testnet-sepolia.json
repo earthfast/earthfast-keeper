@@ -17,7 +17,7 @@
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "21",
+    "nonce": "22",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -231,7 +231,7 @@
         ],
         "projectIds": [
           "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace",
-          "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace"
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       }
     ]
@@ -272,9 +272,20 @@
         "name": "guerilla-flotilla",
         "email": "@",
         "escrow": "84.955279 USDC",
-        "reserve": "4.0 USDC",
+        "reserve": "3.0 USDC",
         "content": "https://output.circle-artifacts.com/output/job/09524709-97af-41a2-b819-a67094e538bd/artifacts/0/armada-bundle.tgz",
         "checksum": "0x23673b81ea735bb4bdbcc8f0f2c775d93e748f20684290627b8f1dbbc8228e81",
+        "metadata": ""
+      },
+      {
+        "id": "0x55f448fdea98c4d29eb340757ef0a66cd03dbb9538908a6a81d96026b71ec475",
+        "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
+        "name": "cli-test",
+        "email": "@",
+        "escrow": "0.0 USDC",
+        "reserve": "0.0 USDC",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
       },
       {
@@ -284,8 +295,8 @@
         "email": "engineering@audius.co",
         "escrow": "95.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1703288610.tgz",
-        "checksum": "0x9e13a6803b294d8358b72aabd77d9b3edfd5fc582051461d36bbb35b8493f5e1",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1708049822.tgz",
+        "checksum": "0x4b698290d8563fb7f5fa337ee18c4e68a86c9791f7dea46973f1fb4b15b451ac",
         "metadata": ""
       },
       {
