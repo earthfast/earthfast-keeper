@@ -375,8 +375,8 @@
         "email": "engineering@audius.co",
         "escrow": "92.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1709364700.tgz",
-        "checksum": "0x29eadcb12b258bc53df7c3a399b12450a2ab037a43529861805d4dc19761429d",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1709969485.tgz",
+        "checksum": "0x1fcc55f002191c242f5ea3c4adbba7308c468d682ff69cffff884af3195c6273",
         "metadata": ""
       },
       {
