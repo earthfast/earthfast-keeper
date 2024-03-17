@@ -17,7 +17,7 @@
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "27",
+    "nonce": "28",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -306,12 +306,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.160496 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
+          "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1"
         ]
       }
     ]
@@ -339,6 +339,7 @@
   },
   "ArmadaProjects": {
     "projectCreators": [
+      "0x0000000000000000000000000000000000000000",
       "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
       "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
       "0x35e4eE4683f8bd3841cA8A89d3f5D6Dd05B3E248",
@@ -346,6 +347,17 @@
       "0x861444f51D61c1A0954e10329623325Ed951818f"
     ],
     "projects": [
+      {
+        "id": "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
+        "owner": "0x4F5eBa8225E9bdc1eDD0E23F9373B8D8155a271C",
+        "name": "overtime-markets",
+        "email": "@",
+        "escrow": "500.0 USDC",
+        "reserve": "1.160496 USDC",
+        "content": "https://github.com/thales-markets/thales-sport-markets/releases/download/v0.0.2/overtime-v0.0.2.tgz",
+        "checksum": "0x008d3cac34d5c39ded1782574122554c516230e58b43db00b81948ec92bc89d6",
+        "metadata": ""
+      },
       {
         "id": "0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace",
         "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
@@ -375,8 +387,8 @@
         "email": "engineering@audius.co",
         "escrow": "91.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1709969485.tgz",
-        "checksum": "0x1fcc55f002191c242f5ea3c4adbba7308c468d682ff69cffff884af3195c6273",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1710574348.tgz",
+        "checksum": "0xb5f0674d2a71300e3f57643889344ae6aac8fbdc0a7decbb2f103d9a09b693d3",
         "metadata": ""
       },
       {
