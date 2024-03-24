@@ -82,7 +82,7 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "0.68742 USDC",
+          "1.0 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
@@ -98,7 +98,7 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "0.687242 USDC",
+          "1.0 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
@@ -325,7 +325,7 @@
         "name": "Guerilla Flotilla",
         "email": "@",
         "stake": "100.0 ARMADA",
-        "balance": "21.205217 USDC"
+        "balance": "23.205217 USDC"
       },
       {
         "id": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
@@ -333,7 +333,7 @@
         "name": "Armada",
         "email": "@",
         "stake": "1600.0 ARMADA",
-        "balance": "59.775275 USDC"
+        "balance": "67.149937 USDC"
       }
     ]
   },
@@ -352,8 +352,8 @@
         "owner": "0x1bD2A7f67C72503Ae39176444453De7D0c206c38",
         "name": "raydium",
         "email": "@",
-        "escrow": "100.0 USDC",
-        "reserve": "1.687242 USDC",
+        "escrow": "99.312758 USDC",
+        "reserve": "2.0 USDC",
         "content": "https://project-sites.s3.amazonaws.com/raydium.tgz",
         "checksum": "0x48fc10a79d6316ccb3209f390d87e21cd896fc7bec45928ea584efea63cc5c1d",
         "metadata": ""
@@ -363,7 +363,7 @@
         "owner": "0x4F5eBa8225E9bdc1eDD0E23F9373B8D8155a271C",
         "name": "overtime-markets",
         "email": "@",
-        "escrow": "499.839504 USDC",
+        "escrow": "498.839504 USDC",
         "reserve": "2.0 USDC",
         "content": "https://github.com/thales-markets/thales-sport-markets/releases/download/v0.0.2/overtime-v0.0.2.tgz",
         "checksum": "0x008d3cac34d5c39ded1782574122554c516230e58b43db00b81948ec92bc89d6",
@@ -374,7 +374,7 @@
         "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
         "name": "guerilla-flotilla",
         "email": "@",
-        "escrow": "78.955279 USDC",
+        "escrow": "77.955279 USDC",
         "reserve": "2.0 USDC",
         "content": "https://output.circle-artifacts.com/output/job/09524709-97af-41a2-b819-a67094e538bd/artifacts/0/armada-bundle.tgz",
         "checksum": "0x23673b81ea735bb4bdbcc8f0f2c775d93e748f20684290627b8f1dbbc8228e81",
@@ -407,8 +407,8 @@
         "owner": "0x6CDdad4D558138DAc5F4B50e072536C3F754864b",
         "name": "Armada Test",
         "email": "y@ynvalid.com",
-        "escrow": "100.0 USDC",
-        "reserve": "1.68742 USDC",
+        "escrow": "99.31258 USDC",
+        "reserve": "2.0 USDC",
         "content": "https://s3.amazonaws.com/assets.randomidea.com/armada/test-project-v0.0.1.tgz",
         "checksum": "0x70090e00b015c9a93a4b7d749d91b203e5442303f0ca79b37aa82be401a80fa7",
         "metadata": ""
@@ -418,7 +418,7 @@
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "dashboard.staging.audius.org",
         "email": "engineering@audius.co",
-        "escrow": "90.834286 USDC",
+        "escrow": "89.834286 USDC",
         "reserve": "2.0 USDC",
         "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1710988739.tgz",
         "checksum": "0x228ccd0d349df59474ada023a11da16719e8a174931bced05ec05ecc8f65e1c1",
@@ -429,7 +429,7 @@
         "owner": "0x861444f51D61c1A0954e10329623325Ed951818f",
         "name": "Synthetix-v2",
         "email": "info@synthetix.io",
-        "escrow": "189.669663 USDC",
+        "escrow": "188.669663 USDC",
         "reserve": "2.0 USDC",
         "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-03_23_24_12_16_AM/release-03_23_24_12_16_AM.tgz",
         "checksum": "0x6adfe999f4c2f7979715366bf1dc21c2af3bafab66f9d5151d1714fad8e58728",
@@ -440,7 +440,7 @@
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "app.audius.co",
         "email": "engineering@audius.co",
-        "escrow": "81.664406 USDC",
+        "escrow": "79.664406 USDC",
         "reserve": "4.0 USDC",
         "content": "https://s3.us-west-1.amazonaws.com/app.audius.co/build1701307009.tgz",
         "checksum": "0xc93fb4f2b5e8ed8c7b569f01fc9d46f2312e34db462a9dbce5fd8d48065e6aa7",
@@ -451,7 +451,7 @@
         "owner": "0x76824F74dE8C1E4985D73A9ea475B7E01432CdF5",
         "name": "armada-demo-project",
         "email": "@",
-        "escrow": "88.386409 USDC",
+        "escrow": "87.386409 USDC",
         "reserve": "2.0 USDC",
         "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
         "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949",
@@ -462,7 +462,7 @@
         "owner": "0x35e4eE4683f8bd3841cA8A89d3f5D6Dd05B3E248",
         "name": "Synthetix-v3",
         "email": "info@synthetix.io",
-        "escrow": "189.669961 USDC",
+        "escrow": "188.669961 USDC",
         "reserve": "2.0 USDC",
         "content": "https://output.circle-artifacts.com/output/job/1aa65b11-c4fa-4d0a-b69d-d69a988dee8e/artifacts/0/armada-bundle.tgz",
         "checksum": "0xf14bd4150a0b14c94fb8c4d21fed7a56d7144daf4fa63d6c6930088cec915367",
