@@ -17,7 +17,7 @@
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "28",
+    "nonce": "31",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -82,12 +82,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.68742 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x6d4407e7be21f808e6509aa9fa9143369579dd7d760fe20a2c09680fc146134f",
+          "0x6d4407e7be21f808e6509aa9fa9143369579dd7d760fe20a2c09680fc146134f"
         ]
       },
       {
@@ -98,12 +98,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.687242 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211",
+          "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211"
         ]
       },
       {
@@ -348,6 +348,17 @@
     ],
     "projects": [
       {
+        "id": "0x0e4562a10381dec21b205ed72637e6b1b523bdd0e4d4d50af5cd23dd4500a211",
+        "owner": "0x1bD2A7f67C72503Ae39176444453De7D0c206c38",
+        "name": "raydium",
+        "email": "@",
+        "escrow": "100.0 USDC",
+        "reserve": "1.687242 USDC",
+        "content": "https://project-sites.s3.amazonaws.com/raydium.tgz",
+        "checksum": "0x48fc10a79d6316ccb3209f390d87e21cd896fc7bec45928ea584efea63cc5c1d",
+        "metadata": ""
+      },
+      {
         "id": "0x3ad8aa4f87544323a9d1e5dd902f40c356527a7955687113db5f9a85ad579dc1",
         "owner": "0x4F5eBa8225E9bdc1eDD0E23F9373B8D8155a271C",
         "name": "overtime-markets",
@@ -370,6 +381,17 @@
         "metadata": ""
       },
       {
+        "id": "0x50bb669a95c7b50b7e8a6f09454034b2b14cf2b85c730dca9a539ca82cb6e350",
+        "owner": "0xAe45034EF2B0551eB1E05d0Ec5F2c872CaAE9371",
+        "name": "one-click-test",
+        "email": "@",
+        "escrow": "0.0 USDC",
+        "reserve": "0.0 USDC",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
         "id": "0x55f448fdea98c4d29eb340757ef0a66cd03dbb9538908a6a81d96026b71ec475",
         "owner": "0x20Bb95D3Cd7c10084E2c86C5d7dA99D2dB1F9664",
         "name": "cli-test",
@@ -381,14 +403,25 @@
         "metadata": ""
       },
       {
+        "id": "0x6d4407e7be21f808e6509aa9fa9143369579dd7d760fe20a2c09680fc146134f",
+        "owner": "0x6CDdad4D558138DAc5F4B50e072536C3F754864b",
+        "name": "Armada Test",
+        "email": "y@ynvalid.com",
+        "escrow": "100.0 USDC",
+        "reserve": "1.68742 USDC",
+        "content": "https://s3.amazonaws.com/assets.randomidea.com/armada/test-project-v0.0.1.tgz",
+        "checksum": "0x70090e00b015c9a93a4b7d749d91b203e5442303f0ca79b37aa82be401a80fa7",
+        "metadata": ""
+      },
+      {
         "id": "0x8d1108e10bcb7c27dddfc02ed9d693a074039d026cf4ea4240b40f7d581ac802",
         "owner": "0x2C28Fa1909926b779cd08eb8Af28D5e33F346d59",
         "name": "dashboard.staging.audius.org",
         "email": "engineering@audius.co",
         "escrow": "90.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1710574348.tgz",
-        "checksum": "0xb5f0674d2a71300e3f57643889344ae6aac8fbdc0a7decbb2f103d9a09b693d3",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1710988739.tgz",
+        "checksum": "0x228ccd0d349df59474ada023a11da16719e8a174931bced05ec05ecc8f65e1c1",
         "metadata": ""
       },
       {
@@ -398,8 +431,8 @@
         "email": "info@synthetix.io",
         "escrow": "189.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-03_01_24_12_18_AM/release-03_01_24_12_18_AM.tgz",
-        "checksum": "0xfdfd4852f86c497371b901d49c2108e2b31f5f619965174b765cd9cce8818d68",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-03_23_24_12_16_AM/release-03_23_24_12_16_AM.tgz",
+        "checksum": "0x6adfe999f4c2f7979715366bf1dc21c2af3bafab66f9d5151d1714fad8e58728",
         "metadata": ""
       },
       {
@@ -431,8 +464,8 @@
         "email": "info@synthetix.io",
         "escrow": "189.669961 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/dce3cfd1-205d-4b42-a539-9ca0a4350b72/artifacts/0/armada-bundle.tgz",
-        "checksum": "0xaa925579fd6e05fc51a0714b5783c5fa57ad9f446f676e5686580944be4927e0",
+        "content": "https://output.circle-artifacts.com/output/job/1aa65b11-c4fa-4d0a-b69d-d69a988dee8e/artifacts/0/armada-bundle.tgz",
+        "checksum": "0xf14bd4150a0b14c94fb8c4d21fed7a56d7144daf4fa63d6c6930088cec915367",
         "metadata": ""
       }
     ]
