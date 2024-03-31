@@ -420,8 +420,8 @@
         "email": "engineering@audius.co",
         "escrow": "89.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1710988739.tgz",
-        "checksum": "0x228ccd0d349df59474ada023a11da16719e8a174931bced05ec05ecc8f65e1c1",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1711783722.tgz",
+        "checksum": "0xde1a4782966a19a15e7b5e068d7a3da8f75e17e7d725ee47ec0450a1ceb0b272",
         "metadata": ""
       },
       {
@@ -431,8 +431,8 @@
         "email": "info@synthetix.io",
         "escrow": "188.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-03_23_24_12_16_AM/release-03_23_24_12_16_AM.tgz",
-        "checksum": "0x6adfe999f4c2f7979715366bf1dc21c2af3bafab66f9d5151d1714fad8e58728",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-03_30_24_12_16_AM/release-03_30_24_12_16_AM.tgz",
+        "checksum": "0x61dc92aa60cdcf43eaf0317c17440aabfea98fe5621a32e8b982e130ab652802",
         "metadata": ""
       },
       {
@@ -464,8 +464,8 @@
         "email": "info@synthetix.io",
         "escrow": "188.669961 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/1aa65b11-c4fa-4d0a-b69d-d69a988dee8e/artifacts/0/armada-bundle.tgz",
-        "checksum": "0xf14bd4150a0b14c94fb8c4d21fed7a56d7144daf4fa63d6c6930088cec915367",
+        "content": "https://output.circle-artifacts.com/output/job/3e34e754-4f49-4f30-a5db-c772ef5002b1/artifacts/0/armada-bundle.tgz",
+        "checksum": "0xeab7ad3c92c24a6f6109323d114dba88dec7332fd0dfb84cb72775ca09ada5be",
         "metadata": ""
       }
     ]
