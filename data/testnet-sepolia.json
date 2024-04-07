@@ -17,7 +17,7 @@
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "31",
+    "nonce": "32",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -194,12 +194,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.548253 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xa03837a25210ee280c2113ff4b77ca23440b19d4866cca721c801278fd08d807",
+          "0xa03837a25210ee280c2113ff4b77ca23440b19d4866cca721c801278fd08d807"
         ]
       },
       {
@@ -420,8 +420,19 @@
         "email": "engineering@audius.co",
         "escrow": "88.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1711783722.tgz",
-        "checksum": "0xde1a4782966a19a15e7b5e068d7a3da8f75e17e7d725ee47ec0450a1ceb0b272",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1712388476.tgz",
+        "checksum": "0xa16bacb13316fba89910f5867ce47c76bc426fdd11d3742032ec2a3e5f61b64b",
+        "metadata": ""
+      },
+      {
+        "id": "0xa03837a25210ee280c2113ff4b77ca23440b19d4866cca721c801278fd08d807",
+        "owner": "0x896100FFbF22C074aD98dD6586F0f8c64c347529",
+        "name": "tapped ai",
+        "email": "support@tapped.ai",
+        "escrow": "100.0 USDC",
+        "reserve": "1.548253 USDC",
+        "content": "https://github.com/TappedOpenSource/armada.tapped.ai/releases/download/v1/gm-v1.tgz",
+        "checksum": "0x9e37a431a4ef46a7bb174bb17ffb56f61e1f436b2686644cfdc914738aee13c0",
         "metadata": ""
       },
       {
@@ -431,8 +442,8 @@
         "email": "info@synthetix.io",
         "escrow": "187.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-03_30_24_12_16_AM/release-03_30_24_12_16_AM.tgz",
-        "checksum": "0x61dc92aa60cdcf43eaf0317c17440aabfea98fe5621a32e8b982e130ab652802",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-04_05_24_12_17_AM/release-04_05_24_12_17_AM.tgz",
+        "checksum": "0xb77ef269192f8f77b5e06f41f0b4264527e406b6473affd3b82f5dab947e2d4e",
         "metadata": ""
       },
       {
@@ -464,8 +475,8 @@
         "email": "info@synthetix.io",
         "escrow": "187.669961 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/3e34e754-4f49-4f30-a5db-c772ef5002b1/artifacts/0/armada-bundle.tgz",
-        "checksum": "0xeab7ad3c92c24a6f6109323d114dba88dec7332fd0dfb84cb72775ca09ada5be",
+        "content": "https://output.circle-artifacts.com/output/job/26991391-072f-4818-8b6d-b08160f1d6d4/artifacts/0/armada-bundle.tgz",
+        "checksum": "0x9aaa04d7d8eceb001c3ec889f7241363d7fd8b4444e06f58176f4639e22823ed",
         "metadata": ""
       }
     ]
