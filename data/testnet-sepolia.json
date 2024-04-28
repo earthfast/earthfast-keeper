@@ -420,8 +420,8 @@
         "email": "engineering@audius.co",
         "escrow": "85.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1713210376.tgz",
-        "checksum": "0xf6f0bf184b706e2695e35cb8c976406ebf6ae3d73b6e8908470393d21c54421c",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1714146458.tgz",
+        "checksum": "0xec36efb64d1cf43f97925642a7d3065e94a05e3d8663db1b24cdccd6e56c9235",
         "metadata": ""
       },
       {
@@ -475,8 +475,8 @@
         "email": "info@synthetix.io",
         "escrow": "184.669961 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/5a5f0ccb-5318-4a4d-9dbf-d49ba512b004/artifacts/0/armada-bundle.tgz",
-        "checksum": "0x24c4365214ce2130a938bf918078da06acd2733f01f9c0f788eae8a24aa112fb",
+        "content": "https://output.circle-artifacts.com/output/job/ed7e32f3-2ae6-42c7-80f8-1a7015a1fe37/artifacts/0/armada-bundle.tgz",
+        "checksum": "0xdcf0cb950702bfe9835bfc749e52e3fe80026233efc2410bcccde5f1db0ea2a0",
         "metadata": ""
       }
     ]
