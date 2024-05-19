@@ -475,8 +475,8 @@
         "email": "info@synthetix.io",
         "escrow": "181.669961 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/3c8d0028-5c31-4b41-b311-0ea7aed7fd0b/artifacts/0/armada-bundle.tgz",
-        "checksum": "0xa033b0d45c62da86d84e9771eba8522677256266f6ef5e303532bf441d1b0d7b",
+        "content": "https://output.circle-artifacts.com/output/job/128ad5ec-1270-4262-9bd7-4f2323513344/artifacts/0/armada-bundle.tgz",
+        "checksum": "0x828e7d34db7936f20347fe6dd0cb09a70e0e7069b42da0c9d895e3f4e8b199b9",
         "metadata": ""
       }
     ]
