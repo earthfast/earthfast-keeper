@@ -387,8 +387,8 @@
         "email": "@",
         "escrow": "0.0 USDC",
         "reserve": "0.0 USDC",
-        "content": "",
-        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "content": "https://github.com/armada-network/demo-project/releases/download/v1.0.3/demo-project-v1.0.3.tgz",
+        "checksum": "0x74abcae853a9c23d9798b3b7f87493fe5a94c762e2667bfb7eead197b96d1949",
         "metadata": ""
       },
       {
@@ -420,8 +420,8 @@
         "email": "engineering@audius.co",
         "escrow": "78.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1717542240.tgz",
-        "checksum": "0x4c241545cdaef4bd7e5aa08c19a9d487a7602bc33ab34ecf2adbf539b6174739",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1718230220.tgz",
+        "checksum": "0x00209e3878f83a119976577279bc8b54f163ad9ffc625d1fdbe9561d4f178a1d",
         "metadata": ""
       },
       {
@@ -442,8 +442,8 @@
         "email": "info@synthetix.io",
         "escrow": "177.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-06_08_24_12_18_AM/release-06_08_24_12_18_AM.tgz",
-        "checksum": "0xf461b6fe135b896df954ab25d98d3fccd7d5ba2835e8a2cb0fe4dfd1a6b8004c",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-06_15_24_12_18_AM/release-06_15_24_12_18_AM.tgz",
+        "checksum": "0xed59992a1c3a7c7b0cea7db54cafbbcc159568b002548a63a38a140dc12f6a0b",
         "metadata": ""
       },
       {
@@ -475,8 +475,8 @@
         "email": "info@synthetix.io",
         "escrow": "177.669961 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/7c193797-023b-40e7-978c-c5e286a819ea/artifacts/0/armada-bundle.tgz",
-        "checksum": "0xdabe236df2232c99c829404c0b5cfca8b7a8c8eb2f0b875431dd32482df5a5cd",
+        "content": "https://output.circle-artifacts.com/output/job/fb5ade0f-0afa-4257-abb2-51280552d913/artifacts/0/armada-bundle.tgz",
+        "checksum": "0x1d0db07564b294b9108b71013117d05f53535e1f05c319b544f8caaf431bcd2d",
         "metadata": ""
       }
     ]
