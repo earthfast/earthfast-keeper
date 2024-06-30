@@ -107,23 +107,35 @@ exports.handler = async function (credentials) {
   const nodeIds = nodeData.map((n) => n.id);
   const uptimeBips = nodeData.map(() => 10000);
 
-  const billingArgs = [NODE_ID, [...nodeIds], [...uptimeBips]];
-  console.log(`Execute ArmadaBilling.processBilling ${stringify(billingArgs)}`);
-  const billingTx = await billing.processBilling(...billingArgs);
-  console.log(billingTx.hash);
-  await billingTx.wait();
+  try {
+    const billingArgs = [NODE_ID, [...nodeIds], [...uptimeBips]];
+    console.log(`Execute ArmadaBilling.processBilling ${stringify(billingArgs)}`);
+    const billingTx = await billing.processBilling(...billingArgs);
+    console.log(billingTx.hash);
+    await billingTx.wait();
+  } catch (e) {
+    console.error("Error processing ArmadaBilling.processBilling", e);
+  }
 
-  const renewalArgs = [NODE_ID, [...nodeIds]];
-  console.log(`Execute ArmadaBilling.processRenewal ${stringify(renewalArgs)}`);
-  const renewalTx = await billing.processRenewal(...renewalArgs);
-  console.log(renewalTx.hash);
-  await renewalTx.wait();
-
-  const advanceArgs = [NODE_ID];
-  console.log(`Execute ArmadaRegistry.advanceEpoch ${stringify(advanceArgs)}`);
-  const advanceTx = await registry.advanceEpoch(...advanceArgs);
-  console.log(advanceTx.hash);
-  await advanceTx.wait();
+  try {
+    const renewalArgs = [NODE_ID, [...nodeIds]];
+    console.log(`Execute ArmadaBilling.processRenewal ${stringify(renewalArgs)}`);
+    const renewalTx = await billing.processRenewal(...renewalArgs);
+    console.log(renewalTx.hash);
+    await renewalTx.wait();
+  } catch (e) {
+    console.error("Error processing ArmadaBilling.processRenewal", e);
+  }
+  
+  try {
+    const advanceArgs = [NODE_ID];
+    console.log(`Execute ArmadaRegistry.advanceEpoch ${stringify(advanceArgs)}`);
+    const advanceTx = await registry.advanceEpoch(...advanceArgs);
+    console.log(advanceTx.hash);
+    await advanceTx.wait();
+  } catch (e) {
+    console.error("Error processing ArmadaRegistry.advanceEpoch", e);
+  }
 };
 
 // Only when running locally
