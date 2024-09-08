@@ -17,7 +17,7 @@
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "73",
+    "nonce": "78",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -562,12 +562,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.293988 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x1b524e1c8b5382bb913d0a2aae8ad83bb92a45fcb47761fa4a12f5b6316c2b20",
+          "0x1b524e1c8b5382bb913d0a2aae8ad83bb92a45fcb47761fa4a12f5b6316c2b20"
         ]
       },
       {
@@ -674,12 +674,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.586746 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x17b0af156a929edf60c351f3df2d53ed643fdd750aef9eda90dc7c8759a104a8",
+          "0x17b0af156a929edf60c351f3df2d53ed643fdd750aef9eda90dc7c8759a104a8"
         ]
       },
       {
@@ -749,8 +749,30 @@
         "email": "contact@earthfast.com",
         "escrow": "28.224941 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/8e196b0e-8f08-4409-9437-69cb32132d6c/artifacts/0/armada-bundle.tgz",
-        "checksum": "0x40cfc3aef5548c64e4a614ed8498f642a9277c3ac17e18667c3cb8b386e1fa4f",
+        "content": "https://output.circle-artifacts.com/output/job/b4e0da6c-f719-412e-a115-2e3de68cb1c6/artifacts/0/earthfast-bundle.tgz",
+        "checksum": "0x842ab80cf6de2674eb3db5e52dc09a3f1a3f5e2f177788e3a2fe0502eab47e3c",
+        "metadata": ""
+      },
+      {
+        "id": "0x17b0af156a929edf60c351f3df2d53ed643fdd750aef9eda90dc7c8759a104a8",
+        "owner": "0x0a9EFD9C7CF31BE6D68F46D04849267f53aCCc29",
+        "name": "thales-io-dapp",
+        "email": "@",
+        "escrow": "4.0 USDC",
+        "reserve": "1.586746 USDC",
+        "content": "https://output.circle-artifacts.com/output/job/13ade617-569c-42ae-9f3f-dfababffc864/artifacts/0/earthfast-bundle.tgz",
+        "checksum": "0xae68cee6c9b9432b92318aa18c61f99f1dea37ef50a6c3169757d08abf99f9cb",
+        "metadata": ""
+      },
+      {
+        "id": "0x1b524e1c8b5382bb913d0a2aae8ad83bb92a45fcb47761fa4a12f5b6316c2b20",
+        "owner": "0x6dDaf6786D6c61890b8CFEfAf04c54ffd8497f10",
+        "name": "TEST 1",
+        "email": "cody.karras@gmail.com",
+        "escrow": "4.0 USDC",
+        "reserve": "1.293988 USDC",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
       },
       {
@@ -837,8 +859,8 @@
         "email": "nikita@cc.snxdao.io",
         "escrow": "27.295874 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/93261b22-478b-4ebe-95f9-6e1c4f0f2704/artifacts/0/earthfast-bundle.tgz",
-        "checksum": "0xce9014f55787e514f84e4bf4bba9a24d781ed0f3e1acb3d8d622d0b2dc625df9",
+        "content": "https://output.circle-artifacts.com/output/job/241733af-6868-4ded-af96-bc8da25fb618/artifacts/0/earthfast-bundle.tgz",
+        "checksum": "0xac980fa7ea3b0271fe9fad403d4017d4e912c9c10c6420f0c40ac15636529a78",
         "metadata": ""
       },
       {
@@ -868,10 +890,10 @@
         "owner": "0xb655E2E1578F7546c357a3ef9f94F1Fa51Ef2FCf",
         "name": "Fidesium",
         "email": "info@fidesium.xyz",
-        "escrow": "2.510139 USDC",
+        "escrow": "27.510139 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/1de6b854-1929-457c-94f4-e739c1c21b09/artifacts/0/earthfast-bundle.tgz",
-        "checksum": "0xb3868367c20322bdb5394486e9527e913d9a56081d8e9040b6d20975082cf6d7",
+        "content": "https://output.circle-artifacts.com/output/job/dcc04275-df3c-46ee-8927-03e84931ab44/artifacts/0/earthfast-bundle.tgz",
+        "checksum": "0x100b69fb1ef5178dc5025abb379396e7cace84cf6f4d6f35dd765856b4f98de0",
         "metadata": ""
       },
       {
@@ -892,8 +914,8 @@
         "email": "info@synthetix.io",
         "escrow": "165.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-08_31_24_12_20_AM/release-08_31_24_12_20_AM.tgz",
-        "checksum": "0xa82c5b829cf77938f66d98433b3f6989405e489242ff69dac7a32c942a8e39d6",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-09_07_24_12_20_AM/release-09_07_24_12_20_AM.tgz",
+        "checksum": "0xa99af1ab76f2b8e5a437ffddc577a0f06d89cf25b147673d4081977494326ecb",
         "metadata": ""
       },
       {
@@ -901,7 +923,7 @@
         "owner": "0x44edc6CBeA86e65aBD214cb4CE13e57B730dC33D",
         "name": "earthfast-dashboard",
         "email": "contact@earthfast.com",
-        "escrow": "3.218096 USDC",
+        "escrow": "28.218096 USDC",
         "reserve": "2.0 USDC",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
