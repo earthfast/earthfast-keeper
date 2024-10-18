@@ -22,8 +22,35 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check if contract is in reconciling mode
+        id: check_reconciling
+        run: |
+          # check json output for isReconciling: true
+          output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia-staging)
+          if echo "$output" | jq '.isReconciling == true' > /dev/null; then
+            echo "Contract is in reconciling mode"
+            echo "is_reconciling=true" >> $GITHUB_OUTPUT
+          else
+            echo "Contract is not in reconciling mode"
+            echo "is_reconciling=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run Autotask
+        # if: steps.check_reconciling.outputs.is_reconciling == 'true'
         run: |
           export RELAYER_API_KEY=${{ secrets.RELAYER_API_KEY_SEPOLIA }}
           export RELAYER_API_SECRET=${{ secrets.RELAYER_API_SECRET_SEPOLIA }}
           npx ts-node autotasks/reconcile-testnet-sepolia.js
+            
+      # verify that the contract is no longer in reconciling mode
+      - name: Check if contract is in reconciling mode
+        id: check_reconciling_after_autotask
+        # if: steps.check_reconciling.outputs.is_reconciling == 'true'
+        run: |
+          output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia-staging)
+          if echo "$output" | jq '.isReconciling == true' > /dev/null; then
+            echo "Contract is in reconciling mode after autotask"
+            exit 1
+          else
+            echo "Contract is no longer in reconciling mode after autotask"
+          fi
