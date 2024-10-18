@@ -51,9 +51,8 @@ jobs:
           output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia-staging)
           isReconciling=$(echo "$output" | jq -r '.isReconciling')
           if [[ "$isReconciling" == "true" ]]; then
-            echo "Contract is in reconciling mode"
-            echo "is_reconciling=true" >> $GITHUB_OUTPUT
+            echo "Contract is in reconciling mode after autotask"
+            exit 1
           else
-            echo "Contract is not in reconciling mode"
-            echo "is_reconciling=false" >> $GITHUB_OUTPUT
+            echo "Contract is no longer in reconciling mode after autotask"
           fi
