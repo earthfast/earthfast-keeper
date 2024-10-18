@@ -1,0 +1,26 @@
+name: Billing and Epoch (testnet-sepolia)
+on:
+  workflow_dispatch:
+  schedule:
+    # cron for every 12 hours UTC every day
+    - cron: '0 0/12 * * *'
+jobs:
+  billing-and-epoch-sepolia:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Autotask
+        run: |
+          export RELAYER_API_KEY=${{ secrets.RELAYER_API_KEY_SEPOLIA }}
+          export RELAYER_API_SECRET=${{ secrets.RELAYER_API_SECRET_SEPOLIA }}
+          npx ts-node autotasks/reconcile-testnet-sepolia.js

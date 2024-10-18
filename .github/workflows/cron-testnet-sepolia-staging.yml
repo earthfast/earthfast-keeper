@@ -1,4 +1,4 @@
-name: Cron (testnet-sepolia-staging)
+name: Network Data Dump (testnet-sepolia-staging)
 on:
   workflow_dispatch:
   schedule:

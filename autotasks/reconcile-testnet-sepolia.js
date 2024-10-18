@@ -12,6 +12,9 @@ const REGISTRY_ABI = [
     stateMutability: "nonpayable",
     type: "function",
   },
+  "function getLastEpochStart() view returns (uint256)",
+  "function getLastEpochLength() view returns (uint256)",
+  "function getEpochRemainder() view returns (uint256)",
 ];
 
 const NODES_ABI = [
@@ -94,6 +97,39 @@ const NODE_ID = "0x0000000000000000000000000000000000000000000000000000000000000
 
 const stringify = (value) => JSON.stringify(value, null, 2);
 
+async function checkReconciling(credentials) {
+  const provider = new DefenderRelayProvider(credentials);
+  const signer = new DefenderRelaySigner(credentials, provider);
+
+  const contract = new ethers.Contract(REGISTRY_ADDRESS, REGISTRY_ABI, signer);
+
+  try {
+    const lastEpochStart = (await contract.getLastEpochStart());
+    const lastEpochLength = (await contract.getLastEpochLength());
+    const epochRemainder = (await contract.getEpochRemainder());
+    const currentTimestamp = BigInt(Math.floor(Date.now() / 1000));
+    const isReconciling = currentTimestamp >= BigInt(lastEpochStart) + BigInt(lastEpochLength);
+    const hasEpochRemainder = BigInt(epochRemainder) > 0n;
+    console.log({ isReconciling, hasEpochRemainder });
+
+    console.log(`Last Epoch Start: ${new Date(Number(lastEpochStart) * 1000).toISOString()}`);
+    console.log(`Last Epoch Length: ${lastEpochLength.toString()} seconds`);
+    console.log(`Current Time: ${new Date(Number(currentTimestamp) * 1000).toISOString()}`);
+    console.log(`Epoch Remainder: ${epochRemainder.toString()} seconds`);
+    console.log(`Is the contract in reconciling mode? ${isReconciling}`);
+    console.log(`Epoch End: ${new Date((Number(lastEpochStart) + Number(lastEpochLength)) * 1000).toISOString()}`);
+
+    if (isReconciling) {
+      throw new Error("The contract is in reconciling mode.");
+    } else {
+      console.log("The contract is not in reconciling mode.");
+    }
+  } catch (error) {
+    console.error("Error checking reconciling status:", error);
+    throw error;
+  }
+}
+
 exports.handler = async function (credentials) {
   const provider = new DefenderRelayProvider(credentials);
   const signer = new DefenderRelaySigner(credentials, provider);
@@ -136,6 +172,7 @@ exports.handler = async function (credentials) {
   } catch (e) {
     console.error("Error processing ArmadaRegistry.advanceEpoch", e);
   }
+  await checkReconciling(credentials);
 };
 
 // Only when running locally
