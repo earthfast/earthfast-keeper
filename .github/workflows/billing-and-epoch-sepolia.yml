@@ -26,8 +26,9 @@ jobs:
         id: check_reconciling
         run: |
           # check json output for isReconciling: true
-          output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia-staging)
-          if echo "$output" | jq '.isReconciling == true' > /dev/null; then
+          output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia)
+          isReconciling=$(echo "$output" | jq -r '.isReconciling')
+          if [[ "$isReconciling" == "true" ]]; then
             echo "Contract is in reconciling mode"
             echo "is_reconciling=true" >> $GITHUB_OUTPUT
           else
@@ -47,7 +48,7 @@ jobs:
         id: check_reconciling_after_autotask
         # if: steps.check_reconciling.outputs.is_reconciling == 'true'
         run: |
-          output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia-staging)
+          output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia)
           if echo "$output" | jq '.isReconciling == true' > /dev/null; then
             echo "Contract is in reconciling mode after autotask"
             exit 1

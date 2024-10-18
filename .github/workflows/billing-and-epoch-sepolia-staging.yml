@@ -27,7 +27,8 @@ jobs:
         run: |
           # check json output for isReconciling: true
           output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia-staging)
-          if echo "$output" | jq '.isReconciling == true' > /dev/null; then
+          isReconciling=$(echo "$output" | jq -r '.isReconciling')
+          if [[ "$isReconciling" == "true" ]]; then
             echo "Contract is in reconciling mode"
             echo "is_reconciling=true" >> $GITHUB_OUTPUT
           else
@@ -36,7 +37,7 @@ jobs:
           fi
 
       - name: Run Autotask
-        if: steps.check_reconciling.outputs.is_reconciling == 'true'
+        # if: steps.check_reconciling.outputs.is_reconciling == 'true'
         run: |
           export RELAYER_API_KEY=${{ secrets.RELAYER_API_KEY_SEPOLIA_STAGING }}
           export RELAYER_API_SECRET=${{ secrets.RELAYER_API_SECRET_SEPOLIA_STAGING }}
@@ -45,7 +46,7 @@ jobs:
       # verify that the contract is no longer in reconciling mode
       - name: Check if contract is in reconciling mode
         id: check_reconciling_after_autotask
-        if: steps.check_reconciling.outputs.is_reconciling == 'true'
+        # if: steps.check_reconciling.outputs.is_reconciling == 'true'
         run: |
           output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia-staging)
           if echo "$output" | jq '.isReconciling == true' > /dev/null; then
