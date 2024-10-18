@@ -1,7 +1,7 @@
 // Checks if the contract is in reconciling mode.
 //
 // USAGE
-// $ npx ts-node ./src/checkReconcile.ts --network {localhost|staging|testnet|testnet-sepolia|mainnet}
+// $ npx ts-node ./src/checkReconcile.ts --network {localhost|testnet-sepolia|testnet-sepolia-staging}
 
 import { BigNumber } from "@ethersproject/bignumber";
 import parseArgs from "minimist";
