@@ -4,9 +4,7 @@ on:
   schedule:
     # cron for every 12 hours UTC every day
     - cron: '0 0/12 * * *'
-  push:
-    branches:
-      - dm-edits-10-17-24
+
 jobs:
   billing-and-epoch-sepolia:
     runs-on: ubuntu-latest
