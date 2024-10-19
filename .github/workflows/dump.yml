@@ -7,9 +7,8 @@ on:
         type: choice
         required: true
         options: 
-        - staging
-        - testnet
         - testnet-sepolia
+        - testnet-sepolia-staging
   workflow_call:
     inputs:
       network:

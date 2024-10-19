@@ -1,4 +1,4 @@
-name: Network Data Dump (testnet-sepolia)
+name: Network Data Dump (testnet-sepolia-staging)
 on:
   workflow_dispatch:
   schedule:
@@ -7,4 +7,4 @@ jobs:
   dump-testnet-sepolia:
     uses: ./.github/workflows/dump.yml
     with:
-      network: testnet-sepolia
+      network: testnet-sepolia-staging
