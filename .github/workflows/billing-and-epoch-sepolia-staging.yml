@@ -2,8 +2,8 @@ name: Billing and Epoch (testnet-sepolia-staging)
 on:
   workflow_dispatch:
   schedule:
-    # cron for every 12 hours UTC every day
-    - cron: '5 0/12 * * *'
+    # cron for every 4 hours UTC every day (0, 4, 8, 12, 16, 20)
+    - cron: '5 0/4 * * *'
 
 jobs:
   billing-and-epoch-sepolia:
