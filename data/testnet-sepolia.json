@@ -17,7 +17,7 @@
   },
   "ArmadaRegistry": {
     "version": "",
-    "nonce": "123",
+    "nonce": "126",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -66,12 +66,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.893075 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x9222cbf5d0ddc505a6f2f04716e22c226cee16a955fef88c618922096dae2fd0",
+          "0x9222cbf5d0ddc505a6f2f04716e22c226cee16a955fef88c618922096dae2fd0"
         ]
       },
       {
@@ -466,12 +466,12 @@
         "topology": false,
         "disabled": false,
         "prices": [
-          "1.0 USDC",
+          "0.655972 USDC",
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xa913c8ac5320dae1c4a00ff23343947ed0fdf88d251e9bd2a5519d3d6162d222",
+          "0xa913c8ac5320dae1c4a00ff23343947ed0fdf88d251e9bd2a5519d3d6162d222"
         ]
       },
       {
@@ -1021,8 +1021,8 @@
         "email": "nikita@cc.snxdao.io",
         "escrow": "20.295874 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-cb85645c-3112-4fa8-b26b-b007d1dd90d0.tgz",
-        "checksum": "0xe9042ca6e0f3d803c7781930aabbaef845c8d8facfc6303a6290f5a7d03db276",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-df3be905-5bb7-4413-a5fb-56890682496c.tgz",
+        "checksum": "0x2b2a4c5fbc29c65c8e279a8e54d9eddaae2f913479bdfed30735fa80bfd6d68d",
         "metadata": ""
       },
       {
@@ -1032,8 +1032,8 @@
         "email": "engineering@audius.co",
         "escrow": "59.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1729160968.tgz",
-        "checksum": "0xea9255bb371ec5810d0dd366c863491baa5c633e65794fa2d298f307d1fccda9",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1729909180.tgz",
+        "checksum": "0x5b759e97a483ff39bfe524f254d91f9f1ba1567e391963142fee0c7cb818b734",
         "metadata": ""
       },
       {
@@ -1048,14 +1048,25 @@
         "metadata": ""
       },
       {
+        "id": "0x9222cbf5d0ddc505a6f2f04716e22c226cee16a955fef88c618922096dae2fd0",
+        "owner": "0x069e74aDaD8B4fFDe36c722FEbBB40301e902F7A",
+        "name": "zazazaz",
+        "email": "bitflyer69@gmail.com",
+        "escrow": "4.0 USDC",
+        "reserve": "1.893075 USDC",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
         "id": "0x957bbdc7fad0dec56e7c96af4a3ab63aa9daf934a52ffce891945b7fb622d791",
         "owner": "0x4F79249013817E6b1D835deC9ba056baadDAf1eD",
         "name": "gmx",
         "email": "swich_golick@simplelogin.com",
         "escrow": "2.236826 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-35430ff7-911c-4b15-a35c-3cba32cfc23f.tgz",
-        "checksum": "0x876f4325fd785397cea3c497dd1fbf680c695387125370691efc181711ef5d78",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-dfb3832b-252d-427a-8e55-9f1dcc057d30.tgz",
+        "checksum": "0x6a506c752961e977587216850a92b22cfa258b9ceee157d5cd06796ac43b5217",
         "metadata": ""
       },
       {
@@ -1120,8 +1131,8 @@
         "email": "info@synthetix.io",
         "escrow": "158.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-10_19_24_12_21_AM/release-10_19_24_12_21_AM.tgz",
-        "checksum": "0x3fea2ed920df23cda53ac1f5b7ac56f1d60453716abb919497dc82c25bf79e51",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-10_26_24_12_21_AM/release-10_26_24_12_21_AM.tgz",
+        "checksum": "0x169ab677969293eec62340611a259a9d01c5e6ef2b3106839239b9b886efc857",
         "metadata": ""
       },
       {
@@ -1131,6 +1142,17 @@
         "email": "contact@earthfast.com",
         "escrow": "21.218096 USDC",
         "reserve": "2.0 USDC",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
+        "id": "0xa913c8ac5320dae1c4a00ff23343947ed0fdf88d251e9bd2a5519d3d6162d222",
+        "owner": "0xaf1912E1205b74E58A085022A9e3daa16d5F069A",
+        "name": "Oct 22 - Test 1",
+        "email": "cheran.v.senthil@gmail.com",
+        "escrow": "4.0 USDC",
+        "reserve": "1.655972 USDC",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
