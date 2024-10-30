@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "UNLICENSED",
   "scripts": {
-    "copy-abi": "SRC=../armada-contracts && DST=$(pwd) && rm -rf ./abi && mkdir ./abi && cd ${SRC}/deployments && tar c {staging,testnet,testnet-sepolia}/*.json | tar x -C ${DST}/abi",
+    "copy-abi": "SRC=../armada-contracts && DST=$(pwd) && rm -rf ./abi && mkdir ./abi && cd ${SRC}/deployments && tar c --exclude='*/solcInputs' localhost staging testnet testnet-sepolia | tar x -C ${DST}/abi",
     "gen-types": "rm -rf ./types && for SRC in ./abi/*; do DST=./types/$(basename ${SRC}); echo \"Generating ${DST}\"; npx typechain --target=ethers-v5 --out-dir ${DST} ${SRC}/*.json; done"
   },
   "dependencies": {
