@@ -13,8 +13,8 @@ import parseArgs from "minimist";
 import { ArmadaBilling, ArmadaNodes, ArmadaOperators, ArmadaProjects, ArmadaRegistry, ArmadaToken } from "../types/staging";
 import { getContract, getProvider, Networks, stderr } from "./util";
 
-const formatUSDC = (value: BigNumberish): string => `${formatUnits(value, 6)} USDC`;
-const formatTokens = (value: BigNumberish): string => `${formatUnits(value, 18)} ARMADA`;
+const formatUSDC = (value: BigNumberish): string => `${formatUnits(value, 6)}`;
+const formatTokens = (value: BigNumberish): string => `${formatUnits(value, 18)}`;
 const isUnique = <T>(value: T, index: number, self: T[]) => self.indexOf(value) === index;
 async function hasRole(contract: Contract, role: string, address: string): Promise<boolean> {
   return await contract.hasRole(role, address);
