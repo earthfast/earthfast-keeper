@@ -6,8 +6,8 @@
 import { Block } from "@ethersproject/providers";
 import { Contract } from "ethers";
 import parseArgs from "minimist";
-import { ArmadaBilling, ArmadaRegistry } from "../types/staging";
-import { TypedEvent, TypedEventFilter } from "../types/staging/common";
+import { EarthfastBilling, EarthfastRegistry } from "../types/testnet-sepolia";
+import { TypedEvent, TypedEventFilter } from "../types/testnet-sepolia/common";
 import { getContract, getProvider, Networks, stderr, stdout } from "./util";
 
 async function findEvent<C extends Contract, E extends TypedEvent>(contract: C, filter: TypedEventFilter<E>, block: Block): Promise<E> {
@@ -31,8 +31,8 @@ async function main() {
   const block = await provider.getBlock("latest");
   stderr(`Block ${block.number} (${block.hash})`);
 
-  const registry = await getContract<ArmadaRegistry>(args.network, "ArmadaRegistry", provider);
-  const billing = await getContract<ArmadaBilling>(args.network, "ArmadaBilling", provider);
+  const registry = await getContract<EarthfastRegistry>(args.network, "EarthfastRegistry", provider);
+  const billing = await getContract<EarthfastBilling>(args.network, "EarthfastBilling", provider);
 
   // This assumes that the EpochAdvanced event happened not too long ago before this script was run.
   const epochAdvancedEvent_ = await findEvent(registry, registry.filters.EpochAdvanced(), block);

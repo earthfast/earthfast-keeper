@@ -10,7 +10,7 @@ import { AddressZero, HashZero } from "@ethersproject/constants";
 import { formatUnits } from "@ethersproject/units";
 import { Contract } from "ethers";
 import parseArgs from "minimist";
-import { ArmadaBilling, ArmadaNodes, ArmadaOperators, ArmadaProjects, ArmadaRegistry, ArmadaToken } from "../types/staging";
+import { EarthfastBilling, EarthfastNodes, EarthfastOperators, EarthfastProjects, EarthfastRegistry, EarthfastToken } from "../types/testnet-sepolia";
 import { getContract, getProvider, Networks, stderr } from "./util";
 
 const formatUSDC = (value: BigNumberish): string => `${formatUnits(value, 6)}`;
@@ -31,12 +31,12 @@ async function main() {
   const blockTag = block.hash;
   stderr(`Block ${block.number} (${blockTag})`);
 
-  const token = await getContract<ArmadaToken>(args.network, "ArmadaToken", provider);
-  const registry = await getContract<ArmadaRegistry>(args.network, "ArmadaRegistry", provider);
-  const billing = await getContract<ArmadaBilling>(args.network, "ArmadaBilling", provider);
-  const nodes = await getContract<ArmadaNodes>(args.network, "ArmadaNodes", provider);
-  const operators = await getContract<ArmadaOperators>(args.network, "ArmadaOperators", provider);
-  const projects = await getContract<ArmadaProjects>(args.network, "ArmadaProjects", provider);
+  const token = await getContract<EarthfastToken>(args.network, "EarthfastToken", provider);
+  const registry = await getContract<EarthfastRegistry>(args.network, "EarthfastRegistry", provider);
+  const billing = await getContract<EarthfastBilling>(args.network, "EarthfastBilling", provider);
+  const nodes = await getContract<EarthfastNodes>(args.network, "EarthfastNodes", provider);
+  const operators = await getContract<EarthfastOperators>(args.network, "EarthfastOperators", provider);
+  const projects = await getContract<EarthfastProjects>(args.network, "EarthfastProjects", provider);
 
   const topologyNodeCount = await nodes.getNodeCount(HashZero, true, { blockTag });
   const contentNodeCount = await nodes.getNodeCount(HashZero, false, { blockTag });
@@ -73,7 +73,7 @@ async function main() {
   const knownHolders = (
     await Promise.all(
       knownAddresses.map(async (address) => ({
-        address: address === registry.address ? "ArmadaRegistry" : address,
+        address: address === registry.address ? "EarthfastRegistry" : address,
         balance: await token.balanceOf(address, { blockTag }),
       }))
     )
@@ -94,10 +94,10 @@ async function main() {
   }
 
   const data = {
-    ArmadaToken: {
+    EarthfastToken: {
       holders: knownHolders.map(({ address, balance }) => ({ address, balance: formatTokens(balance) })),
     },
-    ArmadaRegistry: {
+    EarthfastRegistry: {
       version: await registry.getVersion({ blockTag }),
       nonce: (await registry.getNonce({ blockTag })).toString(),
       lastEpochLength: (await registry.getLastEpochLength({ blockTag })).toString(),
@@ -105,7 +105,7 @@ async function main() {
       cuedEpochLength: (await registry.getCuedEpochLength({ blockTag })).toString(),
       gracePeriod: (await registry.getGracePeriod({ blockTag })).toString(),
     },
-    ArmadaNodes: {
+    EarthfastNodes: {
       // NOTE: This only restores roles of existing operators
       topologyCreators,
       nodes: nodeArray.map((v) => ({
@@ -119,7 +119,7 @@ async function main() {
         projectIds: v.projectIds,
       })),
     },
-    ArmadaOperators: {
+    EarthfastOperators: {
       stakePerNode: formatTokens(await operators.getStakePerNode({ blockTag })),
       operators: operatorArray.map((v) => ({
         id: v.id,
@@ -130,7 +130,7 @@ async function main() {
         balance: formatUSDC(v.balance),
       })),
     },
-    ArmadaProjects: {
+    EarthfastProjects: {
       // NOTE: This only restores roles of existing projects and the special zero address
       projectCreators,
       projects: projectArray.map((v) => ({
@@ -145,7 +145,7 @@ async function main() {
         metadata: v.metadata,
       })),
     },
-    ArmadaBilling: {
+    EarthfastBilling: {
       billingNodeIndex: (await billing.getBillingNodeIndex({ blockTag })).toString(),
       renewalNodeIndex: (await billing.getRenewalNodeIndex({ blockTag })).toString(),
     },

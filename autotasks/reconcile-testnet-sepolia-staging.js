@@ -1,6 +1,6 @@
-const REGISTRY_ADDRESS = "0xD2362B76f79a0AbeF38E961a28E452683691890C";
-const NODES_ADDRESS = "0xB60A480ae6431864223830FaC1e60bDa18BF6Aae";
-const BILLING_ADDRESS = "0x63aCD999CBEf941677932DD7A806723B44a9B043";
+const REGISTRY_ADDRESS = "0xA73F1bd17a7F60374A6d4c511fBaebfDb3Bf774a";
+const NODES_ADDRESS = "0x56247F96bb7DaC09F6120E8Ad084a20aBA00B477";
+const BILLING_ADDRESS = "0x6Ecf1465065BbC2dA97F0AB845ff651f6de3dCBF";
 
 const REGISTRY_ABI = [
   {
@@ -49,7 +49,7 @@ const NODES_ABI = [
             type: "bytes32[2]",
           },
         ],
-        internalType: "struct ArmadaNode[]",
+        internalType: "struct EarthfastNode[]",
         name: "values",
         type: "tuple[]",
       },
@@ -109,32 +109,32 @@ exports.handler = async function (credentials) {
 
   try {
     const billingArgs = [NODE_ID, [...nodeIds], [...uptimeBips]];
-    console.log(`Execute ArmadaBilling.processBilling ${stringify(billingArgs)}`);
+    console.log(`Execute EarthfastBilling.processBilling ${stringify(billingArgs)}`);
     const billingTx = await billing.processBilling(...billingArgs);
     console.log(billingTx.hash);
     await billingTx.wait();
   } catch (e) {
-    console.error("Error processing ArmadaBilling.processBilling", e);
+    console.error("Error processing EarthfastBilling.processBilling", e);
   }
 
   try {
     const renewalArgs = [NODE_ID, [...nodeIds]];
-    console.log(`Execute ArmadaBilling.processRenewal ${stringify(renewalArgs)}`);
+    console.log(`Execute EarthfastBilling.processRenewal ${stringify(renewalArgs)}`);
     const renewalTx = await billing.processRenewal(...renewalArgs);
     console.log(renewalTx.hash);
     await renewalTx.wait();
   } catch (e) {
-    console.error("Error processing ArmadaBilling.processRenewal", e);
+    console.error("Error processing EarthfastBilling.processRenewal", e);
   }
 
   try {
     const advanceArgs = [NODE_ID];
-    console.log(`Execute ArmadaRegistry.advanceEpoch ${stringify(advanceArgs)}`);
+    console.log(`Execute EarthfastRegistry.advanceEpoch ${stringify(advanceArgs)}`);
     const advanceTx = await registry.advanceEpoch(...advanceArgs);
     console.log(advanceTx.hash);
     await advanceTx.wait();
   } catch (e) {
-    console.error("Error processing ArmadaRegistry.advanceEpoch", e);
+    console.error("Error processing EarthfastRegistry.advanceEpoch", e);
   }
 };
 

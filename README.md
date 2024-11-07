@@ -1,4 +1,4 @@
-## armada-keeper
+## earthfast-keeper
 
 This repo stores the code for reconciliations (billing + payments) and network data backups. At a high level the flow is
 
