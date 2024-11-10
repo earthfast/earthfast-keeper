@@ -694,8 +694,8 @@
           "1.0 USDC"
         ],
         "projectIds": [
-          "0xece66cfdbd22e3f37d348a3d8e19074452862cd65fd4b9a11f0336d1ac6d1dc3",
-          "0xece66cfdbd22e3f37d348a3d8e19074452862cd65fd4b9a11f0336d1ac6d1dc3"
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -886,8 +886,8 @@
           "1.0 USDC"
         ],
         "projectIds": [
-          "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
-          "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510"
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -1027,7 +1027,7 @@
         "owner": "0x7a0604B7B60A306F0360ff3CccE7e1bE52A5AabE",
         "name": "earthfast-landing-site",
         "email": "contact@earthfast.com",
-        "escrow": "19.224941 USDC",
+        "escrow": "20.224941 USDC",
         "reserve": "2.0 USDC",
         "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-71020661-976d-40e7-a154-86f743944bc6.tgz",
         "checksum": "0xb7422e121c7b7a5ba712efaefb83e82812ca2957782af52669ee122cfa9464c0",
@@ -1155,17 +1155,6 @@
         "metadata": ""
       },
       {
-        "id": "0x61035b26e3e9eee00e0d72fd1ee8ddca6894550dca6916ea2ac6baa90d11e510",
-        "owner": "0x7fF54b116aF1515864739C54dCf0E1DefC8E65Cb",
-        "name": "test site",
-        "email": "sid@earthfast.com",
-        "escrow": "38.647084 USDC",
-        "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/7e29c05c-ba10-452f-98db-7cce216d3cce/artifacts/0/armada-bundle.tgz",
-        "checksum": "0x8f9881f100282f8a9476e07833b6bc08645ec1782a2b8183a973ae5197587334",
-        "metadata": ""
-      },
-      {
         "id": "0x657000d47e971dcfb21375bcfa3496f47a2a2f0f12c8aeb78a008ace6ae55ca5",
         "owner": "0x81AFE3Fc3730677c9b626a5f6D49a222d7Ff10db",
         "name": "website-test-private",
@@ -1205,8 +1194,8 @@
         "email": "nikita@cc.snxdao.io",
         "escrow": "18.295874 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-4d5d925a-7e04-4318-94c6-44ffc987d136.tgz",
-        "checksum": "0x6b72fc6efd2b6eb0ba38257b9eae9ec15d560233c711ac3a117fdc3b2f3e3446",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-0292acb2-d4d6-4dcc-b667-9210d77cfa0f.tgz",
+        "checksum": "0x605f7c31585647362189bcd8560a61528cedaee4a6c914fb1996744637225f06",
         "metadata": ""
       },
       {
@@ -1227,8 +1216,8 @@
         "email": "engineering@audius.co",
         "escrow": "57.834286 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1730502862.tgz",
-        "checksum": "0xb5fea91d2113e20cdfdd77745dcc062f209d2b0eed56bff8fe710a53b8815361",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1730735186.tgz",
+        "checksum": "0x5d0a61bbc783e9c62007c9f3c0e8c84d39ec37670d737e5c66a459adb24cf8a4",
         "metadata": ""
       },
       {
@@ -1260,8 +1249,8 @@
         "email": "swich_golick@simplelogin.com",
         "escrow": "0.236826 USDC",
         "reserve": "0.0 USDC",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-b9185e01-74b1-496c-b6d7-d853ef79047a.tgz",
-        "checksum": "0x54a9e98150007467fb4ae55fda4d8b0a7fa1d968236d7772caca05f2a946a5ff",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-1beb65be-932d-4b1b-a167-99cf71914f95.tgz",
+        "checksum": "0xd15c25ffc4b653a61ad41f89292b3363c2a79a54ae26ed18c9a0fe11e7bb15c8",
         "metadata": ""
       },
       {
@@ -1326,8 +1315,8 @@
         "email": "info@synthetix.io",
         "escrow": "156.669663 USDC",
         "reserve": "2.0 USDC",
-        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-11_02_24_12_21_AM/release-11_02_24_12_21_AM.tgz",
-        "checksum": "0xc5d62c1ff09eef403c8dc2a2187d5258ceceb17dae88d8d1fbc11e72813ceb10",
+        "content": "https://github.com/dmanjunath/snx-v2-armada/releases/download/release-11_09_24_12_21_AM/release-11_09_24_12_21_AM.tgz",
+        "checksum": "0xb03482b2aa50e02c83c91520491d3a072a639e2a39697e6adf08d2f9c9b8f861",
         "metadata": ""
       },
       {
@@ -1507,25 +1496,14 @@
         "metadata": ""
       },
       {
-        "id": "0xece66cfdbd22e3f37d348a3d8e19074452862cd65fd4b9a11f0336d1ac6d1dc3",
-        "owner": "0xf1A980572788962348352B53966561c458F8Eb47",
-        "name": "test",
-        "email": "sid@earthfast.com",
-        "escrow": "38.825219 USDC",
-        "reserve": "2.0 USDC",
-        "content": "https://output.circle-artifacts.com/output/job/dda7a2d7-7f41-4dd9-b757-efefbb047b04/artifacts/0/armada-bundle.tgz",
-        "checksum": "0x8ef0c66890a58cd2630a0b62ea373b291a4ca50d0f105e24ea67f3f4394692e7",
-        "metadata": ""
-      },
-      {
         "id": "0xf0440771a29e57e18c66727944770b82cc77924aef333c927ce6bdd2cdb3ae03",
         "owner": "0x45216b0C07f5bf40FAf4532244100eCb586308E9",
         "name": "calc",
         "email": "james.zwar@protonmail.com",
         "escrow": "0.640139 USDC",
         "reserve": "0.0 USDC",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-337727b6-20dd-4f85-929e-609bbdad7ecf.tgz",
-        "checksum": "0x5fde50cd00f7998778797ac99ba2e866fb6e6a90418bdd61a2e178373c1000bd",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-e9172638-4412-47f2-85da-70b868baf64b.tgz",
+        "checksum": "0x81485ad342fecc7b976b89aa0ff862edbc59a82ab9f68bff7060b8cf37104829",
         "metadata": ""
       },
       {
