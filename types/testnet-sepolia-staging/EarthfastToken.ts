@@ -539,43 +539,28 @@ export interface EarthfastToken extends BaseContract {
   removeListener: OnEvent<this>;
 
   functions: {
-    /**
-     * Description of the clock
-     */
     CLOCK_MODE(overrides?: CallOverrides): Promise<[string]>;
 
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.
-     */
     DOMAIN_SEPARATOR(overrides?: CallOverrides): Promise<[string]>;
 
     MINTER_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
     PAUSER_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * See {IERC20-allowance}.
-     */
     allowance(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * See {IERC20-approve}. NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address.
-     */
     approve(
       spender: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC20-balanceOf}.
-     */
     balanceOf(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -592,45 +577,27 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Get the `pos`-th checkpoint for `account`.
-     */
     checkpoints(
       account: PromiseOrValue<string>,
       pos: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[ERC20Votes.CheckpointStructOutput]>;
 
-    /**
-     * Clock used for flagging checkpoints. Can be overridden to implement timestamp based checkpoints (and voting).
-     */
     clock(overrides?: CallOverrides): Promise<[number]>;
 
-    /**
-     * Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}.
-     */
     decimals(overrides?: CallOverrides): Promise<[number]>;
 
-    /**
-     * Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.
-     */
     decreaseAllowance(
       spender: PromiseOrValue<string>,
       subtractedValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Delegate votes from the sender to `delegatee`.
-     */
     delegate(
       delegatee: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Delegates votes from signer to `delegatee`
-     */
     delegateBySig(
       delegatee: PromiseOrValue<string>,
       nonce: PromiseOrValue<BigNumberish>,
@@ -641,17 +608,11 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Get the address `account` is currently delegating to.
-     */
     delegates(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    /**
-     * See {EIP-5267}. _Available since v4.9._
-     */
     eip712Domain(
       overrides?: CallOverrides
     ): Promise<
@@ -666,60 +627,39 @@ export interface EarthfastToken extends BaseContract {
       }
     >;
 
-    /**
-     * Retrieve the `totalSupply` at the end of `timepoint`. Note, this value is the sum of all balances. It is NOT the sum of all the delegated votes! Requirements: - `timepoint` must be in the past
-     */
     getPastTotalSupply(
       timepoint: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Retrieve the number of votes for `account` at the end of `timepoint`. Requirements: - `timepoint` must be in the past
-     */
     getPastVotes(
       account: PromiseOrValue<string>,
       timepoint: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    /**
-     * Gets the current votes balance for `account`
-     */
     getVotes(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.
-     */
     increaseAllowance(
       spender: PromiseOrValue<string>,
       addedValue: PromiseOrValue<BigNumberish>,
@@ -732,22 +672,13 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns the name of the token.
-     */
     name(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Returns the current nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times.
-     */
     nonces(
       owner: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Get number of checkpoints for `account`.
-     */
     numCheckpoints(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -757,14 +688,8 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<[boolean]>;
 
-    /**
-     * Sets `value` as the allowance of `spender` over ``owner``'s tokens, given ``owner``'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]. CAUTION: See Security Considerations above.
-     */
     permit(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
@@ -776,54 +701,33 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Returns the symbol of the token, usually a shorter version of the name.
-     */
     symbol(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * See {IERC20-totalSupply}.
-     */
     totalSupply(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * See {IERC20-transfer}. Requirements: - `to` cannot be the zero address. - the caller must have a balance of at least `amount`.
-     */
     transfer(
       to: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `amount`. - the caller must have allowance for ``from``'s tokens of at least `amount`.
-     */
     transferFrom(
       from: PromiseOrValue<string>,
       to: PromiseOrValue<string>,
@@ -836,43 +740,28 @@ export interface EarthfastToken extends BaseContract {
     ): Promise<ContractTransaction>;
   };
 
-  /**
-   * Description of the clock
-   */
   CLOCK_MODE(overrides?: CallOverrides): Promise<string>;
 
   DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.
-   */
   DOMAIN_SEPARATOR(overrides?: CallOverrides): Promise<string>;
 
   MINTER_ROLE(overrides?: CallOverrides): Promise<string>;
 
   PAUSER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * See {IERC20-allowance}.
-   */
   allowance(
     owner: PromiseOrValue<string>,
     spender: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * See {IERC20-approve}. NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address.
-   */
   approve(
     spender: PromiseOrValue<string>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC20-balanceOf}.
-   */
   balanceOf(
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
@@ -889,45 +778,27 @@ export interface EarthfastToken extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Get the `pos`-th checkpoint for `account`.
-   */
   checkpoints(
     account: PromiseOrValue<string>,
     pos: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<ERC20Votes.CheckpointStructOutput>;
 
-  /**
-   * Clock used for flagging checkpoints. Can be overridden to implement timestamp based checkpoints (and voting).
-   */
   clock(overrides?: CallOverrides): Promise<number>;
 
-  /**
-   * Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}.
-   */
   decimals(overrides?: CallOverrides): Promise<number>;
 
-  /**
-   * Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.
-   */
   decreaseAllowance(
     spender: PromiseOrValue<string>,
     subtractedValue: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Delegate votes from the sender to `delegatee`.
-   */
   delegate(
     delegatee: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Delegates votes from signer to `delegatee`
-   */
   delegateBySig(
     delegatee: PromiseOrValue<string>,
     nonce: PromiseOrValue<BigNumberish>,
@@ -938,17 +809,11 @@ export interface EarthfastToken extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Get the address `account` is currently delegating to.
-   */
   delegates(
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<string>;
 
-  /**
-   * See {EIP-5267}. _Available since v4.9._
-   */
   eip712Domain(
     overrides?: CallOverrides
   ): Promise<
@@ -963,60 +828,39 @@ export interface EarthfastToken extends BaseContract {
     }
   >;
 
-  /**
-   * Retrieve the `totalSupply` at the end of `timepoint`. Note, this value is the sum of all balances. It is NOT the sum of all the delegated votes! Requirements: - `timepoint` must be in the past
-   */
   getPastTotalSupply(
     timepoint: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Retrieve the number of votes for `account` at the end of `timepoint`. Requirements: - `timepoint` must be in the past
-   */
   getPastVotes(
     account: PromiseOrValue<string>,
     timepoint: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-   */
   getRoleAdmin(
     role: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<string>;
 
-  /**
-   * Gets the current votes balance for `account`
-   */
   getVotes(
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-   */
   grantRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns `true` if `account` has been granted `role`.
-   */
   hasRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.
-   */
   increaseAllowance(
     spender: PromiseOrValue<string>,
     addedValue: PromiseOrValue<BigNumberish>,
@@ -1029,22 +873,13 @@ export interface EarthfastToken extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns the name of the token.
-   */
   name(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Returns the current nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times.
-   */
   nonces(
     owner: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Get number of checkpoints for `account`.
-   */
   numCheckpoints(
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
@@ -1054,14 +889,8 @@ export interface EarthfastToken extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns true if the contract is paused, and false otherwise.
-   */
   paused(overrides?: CallOverrides): Promise<boolean>;
 
-  /**
-   * Sets `value` as the allowance of `spender` over ``owner``'s tokens, given ``owner``'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]. CAUTION: See Security Considerations above.
-   */
   permit(
     owner: PromiseOrValue<string>,
     spender: PromiseOrValue<string>,
@@ -1073,54 +902,33 @@ export interface EarthfastToken extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-   */
   renounceRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-   */
   revokeRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC165-supportsInterface}.
-   */
   supportsInterface(
     interfaceId: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Returns the symbol of the token, usually a shorter version of the name.
-   */
   symbol(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * See {IERC20-totalSupply}.
-   */
   totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * See {IERC20-transfer}. Requirements: - `to` cannot be the zero address. - the caller must have a balance of at least `amount`.
-   */
   transfer(
     to: PromiseOrValue<string>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `amount`. - the caller must have allowance for ``from``'s tokens of at least `amount`.
-   */
   transferFrom(
     from: PromiseOrValue<string>,
     to: PromiseOrValue<string>,
@@ -1133,43 +941,28 @@ export interface EarthfastToken extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    /**
-     * Description of the clock
-     */
     CLOCK_MODE(overrides?: CallOverrides): Promise<string>;
 
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.
-     */
     DOMAIN_SEPARATOR(overrides?: CallOverrides): Promise<string>;
 
     MINTER_ROLE(overrides?: CallOverrides): Promise<string>;
 
     PAUSER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * See {IERC20-allowance}.
-     */
     allowance(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC20-approve}. NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address.
-     */
     approve(
       spender: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * See {IERC20-balanceOf}.
-     */
     balanceOf(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -1186,45 +979,27 @@ export interface EarthfastToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Get the `pos`-th checkpoint for `account`.
-     */
     checkpoints(
       account: PromiseOrValue<string>,
       pos: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<ERC20Votes.CheckpointStructOutput>;
 
-    /**
-     * Clock used for flagging checkpoints. Can be overridden to implement timestamp based checkpoints (and voting).
-     */
     clock(overrides?: CallOverrides): Promise<number>;
 
-    /**
-     * Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}.
-     */
     decimals(overrides?: CallOverrides): Promise<number>;
 
-    /**
-     * Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.
-     */
     decreaseAllowance(
       spender: PromiseOrValue<string>,
       subtractedValue: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Delegate votes from the sender to `delegatee`.
-     */
     delegate(
       delegatee: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Delegates votes from signer to `delegatee`
-     */
     delegateBySig(
       delegatee: PromiseOrValue<string>,
       nonce: PromiseOrValue<BigNumberish>,
@@ -1235,17 +1010,11 @@ export interface EarthfastToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Get the address `account` is currently delegating to.
-     */
     delegates(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * See {EIP-5267}. _Available since v4.9._
-     */
     eip712Domain(
       overrides?: CallOverrides
     ): Promise<
@@ -1260,60 +1029,39 @@ export interface EarthfastToken extends BaseContract {
       }
     >;
 
-    /**
-     * Retrieve the `totalSupply` at the end of `timepoint`. Note, this value is the sum of all balances. It is NOT the sum of all the delegated votes! Requirements: - `timepoint` must be in the past
-     */
     getPastTotalSupply(
       timepoint: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Retrieve the number of votes for `account` at the end of `timepoint`. Requirements: - `timepoint` must be in the past
-     */
     getPastVotes(
       account: PromiseOrValue<string>,
       timepoint: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Gets the current votes balance for `account`
-     */
     getVotes(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.
-     */
     increaseAllowance(
       spender: PromiseOrValue<string>,
       addedValue: PromiseOrValue<BigNumberish>,
@@ -1326,22 +1074,13 @@ export interface EarthfastToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns the name of the token.
-     */
     name(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Returns the current nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times.
-     */
     nonces(
       owner: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Get number of checkpoints for `account`.
-     */
     numCheckpoints(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -1349,14 +1088,8 @@ export interface EarthfastToken extends BaseContract {
 
     pause(overrides?: CallOverrides): Promise<void>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<boolean>;
 
-    /**
-     * Sets `value` as the allowance of `spender` over ``owner``'s tokens, given ``owner``'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]. CAUTION: See Security Considerations above.
-     */
     permit(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
@@ -1368,54 +1101,33 @@ export interface EarthfastToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Returns the symbol of the token, usually a shorter version of the name.
-     */
     symbol(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * See {IERC20-totalSupply}.
-     */
     totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IERC20-transfer}. Requirements: - `to` cannot be the zero address. - the caller must have a balance of at least `amount`.
-     */
     transfer(
       to: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `amount`. - the caller must have allowance for ``from``'s tokens of at least `amount`.
-     */
     transferFrom(
       from: PromiseOrValue<string>,
       to: PromiseOrValue<string>,
@@ -1515,43 +1227,28 @@ export interface EarthfastToken extends BaseContract {
   };
 
   estimateGas: {
-    /**
-     * Description of the clock
-     */
     CLOCK_MODE(overrides?: CallOverrides): Promise<BigNumber>;
 
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.
-     */
     DOMAIN_SEPARATOR(overrides?: CallOverrides): Promise<BigNumber>;
 
     MINTER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
     PAUSER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IERC20-allowance}.
-     */
     allowance(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC20-approve}. NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address.
-     */
     approve(
       spender: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC20-balanceOf}.
-     */
     balanceOf(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -1568,45 +1265,27 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Get the `pos`-th checkpoint for `account`.
-     */
     checkpoints(
       account: PromiseOrValue<string>,
       pos: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Clock used for flagging checkpoints. Can be overridden to implement timestamp based checkpoints (and voting).
-     */
     clock(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}.
-     */
     decimals(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.
-     */
     decreaseAllowance(
       spender: PromiseOrValue<string>,
       subtractedValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Delegate votes from the sender to `delegatee`.
-     */
     delegate(
       delegatee: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Delegates votes from signer to `delegatee`
-     */
     delegateBySig(
       delegatee: PromiseOrValue<string>,
       nonce: PromiseOrValue<BigNumberish>,
@@ -1617,73 +1296,46 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Get the address `account` is currently delegating to.
-     */
     delegates(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {EIP-5267}. _Available since v4.9._
-     */
     eip712Domain(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Retrieve the `totalSupply` at the end of `timepoint`. Note, this value is the sum of all balances. It is NOT the sum of all the delegated votes! Requirements: - `timepoint` must be in the past
-     */
     getPastTotalSupply(
       timepoint: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Retrieve the number of votes for `account` at the end of `timepoint`. Requirements: - `timepoint` must be in the past
-     */
     getPastVotes(
       account: PromiseOrValue<string>,
       timepoint: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Gets the current votes balance for `account`
-     */
     getVotes(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.
-     */
     increaseAllowance(
       spender: PromiseOrValue<string>,
       addedValue: PromiseOrValue<BigNumberish>,
@@ -1696,22 +1348,13 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the name of the token.
-     */
     name(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the current nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times.
-     */
     nonces(
       owner: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Get number of checkpoints for `account`.
-     */
     numCheckpoints(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -1721,14 +1364,8 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Sets `value` as the allowance of `spender` over ``owner``'s tokens, given ``owner``'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]. CAUTION: See Security Considerations above.
-     */
     permit(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
@@ -1740,54 +1377,33 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the symbol of the token, usually a shorter version of the name.
-     */
     symbol(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IERC20-totalSupply}.
-     */
     totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * See {IERC20-transfer}. Requirements: - `to` cannot be the zero address. - the caller must have a balance of at least `amount`.
-     */
     transfer(
       to: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `amount`. - the caller must have allowance for ``from``'s tokens of at least `amount`.
-     */
     transferFrom(
       from: PromiseOrValue<string>,
       to: PromiseOrValue<string>,
@@ -1801,45 +1417,30 @@ export interface EarthfastToken extends BaseContract {
   };
 
   populateTransaction: {
-    /**
-     * Description of the clock
-     */
     CLOCK_MODE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     DEFAULT_ADMIN_ROLE(
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.
-     */
     DOMAIN_SEPARATOR(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     MINTER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     PAUSER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC20-allowance}.
-     */
     allowance(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC20-approve}. NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address.
-     */
     approve(
       spender: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC20-balanceOf}.
-     */
     balanceOf(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -1856,45 +1457,27 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Get the `pos`-th checkpoint for `account`.
-     */
     checkpoints(
       account: PromiseOrValue<string>,
       pos: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Clock used for flagging checkpoints. Can be overridden to implement timestamp based checkpoints (and voting).
-     */
     clock(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}.
-     */
     decimals(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.
-     */
     decreaseAllowance(
       spender: PromiseOrValue<string>,
       subtractedValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Delegate votes from the sender to `delegatee`.
-     */
     delegate(
       delegatee: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Delegates votes from signer to `delegatee`
-     */
     delegateBySig(
       delegatee: PromiseOrValue<string>,
       nonce: PromiseOrValue<BigNumberish>,
@@ -1905,73 +1488,46 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Get the address `account` is currently delegating to.
-     */
     delegates(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {EIP-5267}. _Available since v4.9._
-     */
     eip712Domain(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Retrieve the `totalSupply` at the end of `timepoint`. Note, this value is the sum of all balances. It is NOT the sum of all the delegated votes! Requirements: - `timepoint` must be in the past
-     */
     getPastTotalSupply(
       timepoint: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Retrieve the number of votes for `account` at the end of `timepoint`. Requirements: - `timepoint` must be in the past
-     */
     getPastVotes(
       account: PromiseOrValue<string>,
       timepoint: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Gets the current votes balance for `account`
-     */
     getVotes(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.
-     */
     increaseAllowance(
       spender: PromiseOrValue<string>,
       addedValue: PromiseOrValue<BigNumberish>,
@@ -1984,22 +1540,13 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the name of the token.
-     */
     name(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the current nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times.
-     */
     nonces(
       owner: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Get number of checkpoints for `account`.
-     */
     numCheckpoints(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -2009,14 +1556,8 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Sets `value` as the allowance of `spender` over ``owner``'s tokens, given ``owner``'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]. CAUTION: See Security Considerations above.
-     */
     permit(
       owner: PromiseOrValue<string>,
       spender: PromiseOrValue<string>,
@@ -2028,54 +1569,33 @@ export interface EarthfastToken extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the symbol of the token, usually a shorter version of the name.
-     */
     symbol(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC20-totalSupply}.
-     */
     totalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC20-transfer}. Requirements: - `to` cannot be the zero address. - the caller must have a balance of at least `amount`.
-     */
     transfer(
       to: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `amount`. - the caller must have allowance for ``from``'s tokens of at least `amount`.
-     */
     transferFrom(
       from: PromiseOrValue<string>,
       to: PromiseOrValue<string>,

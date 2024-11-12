@@ -506,17 +506,11 @@ export interface EarthfastTimelock extends BaseContract {
 
     TIMELOCK_ADMIN_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Cancel an operation. Requirements: - the caller must have the 'canceller' role.
-     */
     cancel(
       id: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Execute an (ready) operation containing a single transaction. Emits a {CallExecuted} event. Requirements: - the caller must have the 'executor' role.
-     */
     execute(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -526,9 +520,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Execute an (ready) operation containing a batch of transactions. Emits one {CallExecuted} event per transaction in the batch. Requirements: - the caller must have the 'executor' role.
-     */
     executeBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -538,48 +529,30 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns the minimum delay for an operation to become valid. This value can be changed by executing an operation that calls `updateDelay`.
-     */
     getMinDelay(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    /**
-     * Returns the timestamp at which an operation becomes ready (0 for unset operations, 1 for done operations).
-     */
     getTimestamp(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Returns the identifier of an operation containing a single transaction.
-     */
     hashOperation(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -589,9 +562,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    /**
-     * Returns the identifier of an operation containing a batch of transactions.
-     */
     hashOperationBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -601,41 +571,26 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    /**
-     * Returns whether an id correspond to a registered operation. This includes both Pending, Ready and Done operations.
-     */
     isOperation(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Returns whether an operation is done or not.
-     */
     isOperationDone(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Returns whether an operation is pending or not. Note that a "pending" operation may also be "ready".
-     */
     isOperationPending(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Returns whether an operation is ready for execution. Note that a "ready" operation is also "pending".
-     */
     isOperationReady(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155BatchReceived}.
-     */
     onERC1155BatchReceived(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -645,9 +600,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155Received}.
-     */
     onERC1155Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -657,9 +609,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC721Receiver-onERC721Received}.
-     */
     onERC721Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -668,27 +617,18 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Schedule an operation containing a single transaction. Emits {CallSalt} if salt is nonzero, and {CallScheduled}. Requirements: - the caller must have the 'proposer' role.
-     */
     schedule(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -699,9 +639,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Schedule an operation containing a batch of transactions. Emits {CallSalt} if salt is nonzero, and one {CallScheduled} event per transaction in the batch. Requirements: - the caller must have the 'proposer' role.
-     */
     scheduleBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -712,17 +649,11 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Changes the minimum timelock duration for future operations. Emits a {MinDelayChange} event. Requirements: - the caller must be the timelock itself. This can only be achieved by scheduling and later executing an operation where the timelock is the target and the data is the ABI-encoded call to this function.
-     */
     updateDelay(
       newDelay: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -739,17 +670,11 @@ export interface EarthfastTimelock extends BaseContract {
 
   TIMELOCK_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Cancel an operation. Requirements: - the caller must have the 'canceller' role.
-   */
   cancel(
     id: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Execute an (ready) operation containing a single transaction. Emits a {CallExecuted} event. Requirements: - the caller must have the 'executor' role.
-   */
   execute(
     target: PromiseOrValue<string>,
     value: PromiseOrValue<BigNumberish>,
@@ -759,9 +684,6 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Execute an (ready) operation containing a batch of transactions. Emits one {CallExecuted} event per transaction in the batch. Requirements: - the caller must have the 'executor' role.
-   */
   executeBatch(
     targets: PromiseOrValue<string>[],
     values: PromiseOrValue<BigNumberish>[],
@@ -771,48 +693,30 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns the minimum delay for an operation to become valid. This value can be changed by executing an operation that calls `updateDelay`.
-   */
   getMinDelay(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-   */
   getRoleAdmin(
     role: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<string>;
 
-  /**
-   * Returns the timestamp at which an operation becomes ready (0 for unset operations, 1 for done operations).
-   */
   getTimestamp(
     id: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-   */
   grantRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns `true` if `account` has been granted `role`.
-   */
   hasRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Returns the identifier of an operation containing a single transaction.
-   */
   hashOperation(
     target: PromiseOrValue<string>,
     value: PromiseOrValue<BigNumberish>,
@@ -822,9 +726,6 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: CallOverrides
   ): Promise<string>;
 
-  /**
-   * Returns the identifier of an operation containing a batch of transactions.
-   */
   hashOperationBatch(
     targets: PromiseOrValue<string>[],
     values: PromiseOrValue<BigNumberish>[],
@@ -834,41 +735,26 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: CallOverrides
   ): Promise<string>;
 
-  /**
-   * Returns whether an id correspond to a registered operation. This includes both Pending, Ready and Done operations.
-   */
   isOperation(
     id: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Returns whether an operation is done or not.
-   */
   isOperationDone(
     id: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Returns whether an operation is pending or not. Note that a "pending" operation may also be "ready".
-   */
   isOperationPending(
     id: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Returns whether an operation is ready for execution. Note that a "ready" operation is also "pending".
-   */
   isOperationReady(
     id: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * See {IERC1155Receiver-onERC1155BatchReceived}.
-   */
   onERC1155BatchReceived(
     arg0: PromiseOrValue<string>,
     arg1: PromiseOrValue<string>,
@@ -878,9 +764,6 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC1155Receiver-onERC1155Received}.
-   */
   onERC1155Received(
     arg0: PromiseOrValue<string>,
     arg1: PromiseOrValue<string>,
@@ -890,9 +773,6 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC721Receiver-onERC721Received}.
-   */
   onERC721Received(
     arg0: PromiseOrValue<string>,
     arg1: PromiseOrValue<string>,
@@ -901,27 +781,18 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-   */
   renounceRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-   */
   revokeRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Schedule an operation containing a single transaction. Emits {CallSalt} if salt is nonzero, and {CallScheduled}. Requirements: - the caller must have the 'proposer' role.
-   */
   schedule(
     target: PromiseOrValue<string>,
     value: PromiseOrValue<BigNumberish>,
@@ -932,9 +803,6 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Schedule an operation containing a batch of transactions. Emits {CallSalt} if salt is nonzero, and one {CallScheduled} event per transaction in the batch. Requirements: - the caller must have the 'proposer' role.
-   */
   scheduleBatch(
     targets: PromiseOrValue<string>[],
     values: PromiseOrValue<BigNumberish>[],
@@ -945,17 +813,11 @@ export interface EarthfastTimelock extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC165-supportsInterface}.
-   */
   supportsInterface(
     interfaceId: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Changes the minimum timelock duration for future operations. Emits a {MinDelayChange} event. Requirements: - the caller must be the timelock itself. This can only be achieved by scheduling and later executing an operation where the timelock is the target and the data is the ABI-encoded call to this function.
-   */
   updateDelay(
     newDelay: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -972,17 +834,11 @@ export interface EarthfastTimelock extends BaseContract {
 
     TIMELOCK_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Cancel an operation. Requirements: - the caller must have the 'canceller' role.
-     */
     cancel(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Execute an (ready) operation containing a single transaction. Emits a {CallExecuted} event. Requirements: - the caller must have the 'executor' role.
-     */
     execute(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -992,9 +848,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Execute an (ready) operation containing a batch of transactions. Emits one {CallExecuted} event per transaction in the batch. Requirements: - the caller must have the 'executor' role.
-     */
     executeBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1004,48 +857,30 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns the minimum delay for an operation to become valid. This value can be changed by executing an operation that calls `updateDelay`.
-     */
     getMinDelay(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Returns the timestamp at which an operation becomes ready (0 for unset operations, 1 for done operations).
-     */
     getTimestamp(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Returns the identifier of an operation containing a single transaction.
-     */
     hashOperation(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1055,9 +890,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Returns the identifier of an operation containing a batch of transactions.
-     */
     hashOperationBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1067,41 +899,26 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Returns whether an id correspond to a registered operation. This includes both Pending, Ready and Done operations.
-     */
     isOperation(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Returns whether an operation is done or not.
-     */
     isOperationDone(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Returns whether an operation is pending or not. Note that a "pending" operation may also be "ready".
-     */
     isOperationPending(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Returns whether an operation is ready for execution. Note that a "ready" operation is also "pending".
-     */
     isOperationReady(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155BatchReceived}.
-     */
     onERC1155BatchReceived(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1111,9 +928,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155Received}.
-     */
     onERC1155Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1123,9 +937,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * See {IERC721Receiver-onERC721Received}.
-     */
     onERC721Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1134,27 +945,18 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Schedule an operation containing a single transaction. Emits {CallSalt} if salt is nonzero, and {CallScheduled}. Requirements: - the caller must have the 'proposer' role.
-     */
     schedule(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1165,9 +967,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Schedule an operation containing a batch of transactions. Emits {CallSalt} if salt is nonzero, and one {CallScheduled} event per transaction in the batch. Requirements: - the caller must have the 'proposer' role.
-     */
     scheduleBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1178,17 +977,11 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Changes the minimum timelock duration for future operations. Emits a {MinDelayChange} event. Requirements: - the caller must be the timelock itself. This can only be achieved by scheduling and later executing an operation where the timelock is the target and the data is the ABI-encoded call to this function.
-     */
     updateDelay(
       newDelay: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1298,17 +1091,11 @@ export interface EarthfastTimelock extends BaseContract {
 
     TIMELOCK_ADMIN_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Cancel an operation. Requirements: - the caller must have the 'canceller' role.
-     */
     cancel(
       id: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Execute an (ready) operation containing a single transaction. Emits a {CallExecuted} event. Requirements: - the caller must have the 'executor' role.
-     */
     execute(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1318,9 +1105,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Execute an (ready) operation containing a batch of transactions. Emits one {CallExecuted} event per transaction in the batch. Requirements: - the caller must have the 'executor' role.
-     */
     executeBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1330,48 +1114,30 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the minimum delay for an operation to become valid. This value can be changed by executing an operation that calls `updateDelay`.
-     */
     getMinDelay(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the timestamp at which an operation becomes ready (0 for unset operations, 1 for done operations).
-     */
     getTimestamp(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the identifier of an operation containing a single transaction.
-     */
     hashOperation(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1381,9 +1147,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the identifier of an operation containing a batch of transactions.
-     */
     hashOperationBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1393,41 +1156,26 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns whether an id correspond to a registered operation. This includes both Pending, Ready and Done operations.
-     */
     isOperation(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns whether an operation is done or not.
-     */
     isOperationDone(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns whether an operation is pending or not. Note that a "pending" operation may also be "ready".
-     */
     isOperationPending(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns whether an operation is ready for execution. Note that a "ready" operation is also "pending".
-     */
     isOperationReady(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155BatchReceived}.
-     */
     onERC1155BatchReceived(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1437,9 +1185,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155Received}.
-     */
     onERC1155Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1449,9 +1194,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC721Receiver-onERC721Received}.
-     */
     onERC721Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1460,27 +1202,18 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Schedule an operation containing a single transaction. Emits {CallSalt} if salt is nonzero, and {CallScheduled}. Requirements: - the caller must have the 'proposer' role.
-     */
     schedule(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1491,9 +1224,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Schedule an operation containing a batch of transactions. Emits {CallSalt} if salt is nonzero, and one {CallScheduled} event per transaction in the batch. Requirements: - the caller must have the 'proposer' role.
-     */
     scheduleBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1504,17 +1234,11 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Changes the minimum timelock duration for future operations. Emits a {MinDelayChange} event. Requirements: - the caller must be the timelock itself. This can only be achieved by scheduling and later executing an operation where the timelock is the target and the data is the ABI-encoded call to this function.
-     */
     updateDelay(
       newDelay: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1536,17 +1260,11 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Cancel an operation. Requirements: - the caller must have the 'canceller' role.
-     */
     cancel(
       id: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Execute an (ready) operation containing a single transaction. Emits a {CallExecuted} event. Requirements: - the caller must have the 'executor' role.
-     */
     execute(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1556,9 +1274,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Execute an (ready) operation containing a batch of transactions. Emits one {CallExecuted} event per transaction in the batch. Requirements: - the caller must have the 'executor' role.
-     */
     executeBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1568,48 +1283,30 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the minimum delay for an operation to become valid. This value can be changed by executing an operation that calls `updateDelay`.
-     */
     getMinDelay(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the timestamp at which an operation becomes ready (0 for unset operations, 1 for done operations).
-     */
     getTimestamp(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the identifier of an operation containing a single transaction.
-     */
     hashOperation(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1619,9 +1316,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the identifier of an operation containing a batch of transactions.
-     */
     hashOperationBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1631,41 +1325,26 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns whether an id correspond to a registered operation. This includes both Pending, Ready and Done operations.
-     */
     isOperation(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns whether an operation is done or not.
-     */
     isOperationDone(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns whether an operation is pending or not. Note that a "pending" operation may also be "ready".
-     */
     isOperationPending(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns whether an operation is ready for execution. Note that a "ready" operation is also "pending".
-     */
     isOperationReady(
       id: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155BatchReceived}.
-     */
     onERC1155BatchReceived(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1675,9 +1354,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC1155Receiver-onERC1155Received}.
-     */
     onERC1155Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1687,9 +1363,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC721Receiver-onERC721Received}.
-     */
     onERC721Received(
       arg0: PromiseOrValue<string>,
       arg1: PromiseOrValue<string>,
@@ -1698,27 +1371,18 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Schedule an operation containing a single transaction. Emits {CallSalt} if salt is nonzero, and {CallScheduled}. Requirements: - the caller must have the 'proposer' role.
-     */
     schedule(
       target: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -1729,9 +1393,6 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Schedule an operation containing a batch of transactions. Emits {CallSalt} if salt is nonzero, and one {CallScheduled} event per transaction in the batch. Requirements: - the caller must have the 'proposer' role.
-     */
     scheduleBatch(
       targets: PromiseOrValue<string>[],
       values: PromiseOrValue<BigNumberish>[],
@@ -1742,17 +1403,11 @@ export interface EarthfastTimelock extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Changes the minimum timelock duration for future operations. Emits a {MinDelayChange} event. Requirements: - the caller must be the timelock itself. This can only be achieved by scheduling and later executing an operation where the timelock is the target and the data is the ABI-encoded call to this function.
-     */
     updateDelay(
       newDelay: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }

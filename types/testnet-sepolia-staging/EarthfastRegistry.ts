@@ -650,10 +650,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     RECONCILER_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Called by the leader topology node to finish epoch reconciliation and unfreeze the network state.
-     * @param topologyNodeId The topology node calling this function (zero is OK if caller has reconciler role) The core contracts automatically enter reconciliation mode when the last epoch ends. During reconciliation, the operations that change contract state, such as node pricing or reservations, are disallowed and will revert. The leader topology node is expected to call processBilling(), processRenewal(), and advanceEpoch() in this order, to execute reconcilication. Calling advanceEpoch() completes reconciliation and unfreezes the contracts. The reconciliation process should normally only take a few blocks.
-     */
     advanceEpoch(
       topologyNodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -663,8 +659,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     getCuedEpochLength(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    /**
-     */
     getEpochRemainder(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     getGracePeriod(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -685,9 +679,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     getReservations(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -699,18 +690,12 @@ export interface EarthfastRegistry extends BaseContract {
 
     getVersion(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -731,19 +716,10 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<[boolean]>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<[string]>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -762,9 +738,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -786,9 +759,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -798,9 +768,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetBilling(
       billing: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -816,17 +783,11 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetOperators(
       operators: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetProjects(
       projects: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -837,17 +798,11 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetToken(
       token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetUSDC(
       usdc: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -859,26 +814,17 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.One can unsafe-deposit funds to this contract directly by token.transfer().
-     */
     unsafeWithdrawUSDC(
       to: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
@@ -890,10 +836,6 @@ export interface EarthfastRegistry extends BaseContract {
 
   RECONCILER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Called by the leader topology node to finish epoch reconciliation and unfreeze the network state.
-   * @param topologyNodeId The topology node calling this function (zero is OK if caller has reconciler role) The core contracts automatically enter reconciliation mode when the last epoch ends. During reconciliation, the operations that change contract state, such as node pricing or reservations, are disallowed and will revert. The leader topology node is expected to call processBilling(), processRenewal(), and advanceEpoch() in this order, to execute reconcilication. Calling advanceEpoch() completes reconciliation and unfreezes the contracts. The reconciliation process should normally only take a few blocks.
-   */
   advanceEpoch(
     topologyNodeId: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -903,8 +845,6 @@ export interface EarthfastRegistry extends BaseContract {
 
   getCuedEpochLength(overrides?: CallOverrides): Promise<BigNumber>;
 
-  /**
-   */
   getEpochRemainder(overrides?: CallOverrides): Promise<BigNumber>;
 
   getGracePeriod(overrides?: CallOverrides): Promise<BigNumber>;
@@ -925,9 +865,6 @@ export interface EarthfastRegistry extends BaseContract {
 
   getReservations(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-   */
   getRoleAdmin(
     role: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
@@ -939,18 +876,12 @@ export interface EarthfastRegistry extends BaseContract {
 
   getVersion(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-   */
   grantRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns `true` if `account` has been granted `role`.
-   */
   hasRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
@@ -971,19 +902,10 @@ export interface EarthfastRegistry extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns true if the contract is paused, and false otherwise.
-   */
   paused(overrides?: CallOverrides): Promise<boolean>;
 
-  /**
-   * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-   */
   proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
-  /**
-   * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-   */
   renounceRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
@@ -1002,9 +924,6 @@ export interface EarthfastRegistry extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-   */
   revokeRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
@@ -1026,9 +945,6 @@ export interface EarthfastRegistry extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC165-supportsInterface}.
-   */
   supportsInterface(
     interfaceId: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
@@ -1038,9 +954,6 @@ export interface EarthfastRegistry extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetBilling(
     billing: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1056,17 +969,11 @@ export interface EarthfastRegistry extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetOperators(
     operators: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetProjects(
     projects: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1077,17 +984,11 @@ export interface EarthfastRegistry extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetToken(
     token: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetUSDC(
     usdc: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1099,26 +1000,17 @@ export interface EarthfastRegistry extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.One can unsafe-deposit funds to this contract directly by token.transfer().
-   */
   unsafeWithdrawUSDC(
     to: PromiseOrValue<string>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-   */
   upgradeTo(
     newImplementation: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-   */
   upgradeToAndCall(
     newImplementation: PromiseOrValue<string>,
     data: PromiseOrValue<BytesLike>,
@@ -1130,10 +1022,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     RECONCILER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Called by the leader topology node to finish epoch reconciliation and unfreeze the network state.
-     * @param topologyNodeId The topology node calling this function (zero is OK if caller has reconciler role) The core contracts automatically enter reconciliation mode when the last epoch ends. During reconciliation, the operations that change contract state, such as node pricing or reservations, are disallowed and will revert. The leader topology node is expected to call processBilling(), processRenewal(), and advanceEpoch() in this order, to execute reconcilication. Calling advanceEpoch() completes reconciliation and unfreezes the contracts. The reconciliation process should normally only take a few blocks.
-     */
     advanceEpoch(
       topologyNodeId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1143,8 +1031,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     getCuedEpochLength(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     */
     getEpochRemainder(overrides?: CallOverrides): Promise<BigNumber>;
 
     getGracePeriod(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1165,9 +1051,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     getReservations(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1179,18 +1062,12 @@ export interface EarthfastRegistry extends BaseContract {
 
     getVersion(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1207,19 +1084,10 @@ export interface EarthfastRegistry extends BaseContract {
 
     pause(overrides?: CallOverrides): Promise<void>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<boolean>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1232,9 +1100,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     requireReconciling(overrides?: CallOverrides): Promise<void>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1256,9 +1121,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1266,9 +1128,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     unpause(overrides?: CallOverrides): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetBilling(
       billing: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -1284,17 +1143,11 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetOperators(
       operators: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetProjects(
       projects: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -1305,17 +1158,11 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetToken(
       token: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetUSDC(
       usdc: PromiseOrValue<string>,
       overrides?: CallOverrides
@@ -1327,26 +1174,17 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.One can unsafe-deposit funds to this contract directly by token.transfer().
-     */
     unsafeWithdrawUSDC(
       to: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
@@ -1429,10 +1267,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     RECONCILER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Called by the leader topology node to finish epoch reconciliation and unfreeze the network state.
-     * @param topologyNodeId The topology node calling this function (zero is OK if caller has reconciler role) The core contracts automatically enter reconciliation mode when the last epoch ends. During reconciliation, the operations that change contract state, such as node pricing or reservations, are disallowed and will revert. The leader topology node is expected to call processBilling(), processRenewal(), and advanceEpoch() in this order, to execute reconcilication. Calling advanceEpoch() completes reconciliation and unfreezes the contracts. The reconciliation process should normally only take a few blocks.
-     */
     advanceEpoch(
       topologyNodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1442,8 +1276,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     getCuedEpochLength(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     */
     getEpochRemainder(overrides?: CallOverrides): Promise<BigNumber>;
 
     getGracePeriod(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1464,9 +1296,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     getReservations(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1478,18 +1307,12 @@ export interface EarthfastRegistry extends BaseContract {
 
     getVersion(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1510,19 +1333,10 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1541,9 +1355,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1565,9 +1376,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1577,9 +1385,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetBilling(
       billing: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1595,17 +1400,11 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetOperators(
       operators: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetProjects(
       projects: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1616,17 +1415,11 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetToken(
       token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetUSDC(
       usdc: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1638,26 +1431,17 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.One can unsafe-deposit funds to this contract directly by token.transfer().
-     */
     unsafeWithdrawUSDC(
       to: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
@@ -1672,10 +1456,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     RECONCILER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Called by the leader topology node to finish epoch reconciliation and unfreeze the network state.
-     * @param topologyNodeId The topology node calling this function (zero is OK if caller has reconciler role) The core contracts automatically enter reconciliation mode when the last epoch ends. During reconciliation, the operations that change contract state, such as node pricing or reservations, are disallowed and will revert. The leader topology node is expected to call processBilling(), processRenewal(), and advanceEpoch() in this order, to execute reconcilication. Calling advanceEpoch() completes reconciliation and unfreezes the contracts. The reconciliation process should normally only take a few blocks.
-     */
     advanceEpoch(
       topologyNodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1687,8 +1467,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     */
     getEpochRemainder(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getGracePeriod(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1713,9 +1491,6 @@ export interface EarthfastRegistry extends BaseContract {
 
     getReservations(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1727,18 +1502,12 @@ export interface EarthfastRegistry extends BaseContract {
 
     getVersion(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1759,19 +1528,10 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1790,9 +1550,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1814,9 +1571,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1826,9 +1580,6 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetBilling(
       billing: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1844,17 +1595,11 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetOperators(
       operators: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetProjects(
       projects: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1865,17 +1610,11 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetToken(
       token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetUSDC(
       usdc: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1887,26 +1626,17 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.One can unsafe-deposit funds to this contract directly by token.transfer().
-     */
     unsafeWithdrawUSDC(
       to: PromiseOrValue<string>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,

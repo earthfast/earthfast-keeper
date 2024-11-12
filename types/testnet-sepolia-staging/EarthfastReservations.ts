@@ -516,9 +516,6 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getReservations(
       projectId: PromiseOrValue<BytesLike>,
       skip: PromiseOrValue<BigNumberish>,
@@ -528,36 +525,23 @@ export interface EarthfastReservations extends BaseContract {
       [EarthfastNodeStructOutput[]] & { result: EarthfastNodeStructOutput[] }
     >;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -569,14 +553,8 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<[boolean]>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<[string]>;
 
     removeProjectNodeIdImpl(
@@ -585,27 +563,18 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -621,25 +590,16 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
@@ -682,9 +642,6 @@ export interface EarthfastReservations extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  /**
-   * Truncates the results if skip or size are out of bounds
-   */
   getReservations(
     projectId: PromiseOrValue<BytesLike>,
     skip: PromiseOrValue<BigNumberish>,
@@ -692,36 +649,23 @@ export interface EarthfastReservations extends BaseContract {
     overrides?: CallOverrides
   ): Promise<EarthfastNodeStructOutput[]>;
 
-  /**
-   * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-   */
   getRoleAdmin(
     role: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<string>;
 
-  /**
-   * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-   */
   grantRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns `true` if `account` has been granted `role`.
-   */
   hasRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  /**
-   * Called once to set up the contract. Not called during proxy upgrades.
-   * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-   */
   initialize(
     admins: PromiseOrValue<string>[],
     registry: PromiseOrValue<string>,
@@ -733,14 +677,8 @@ export interface EarthfastReservations extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Returns true if the contract is paused, and false otherwise.
-   */
   paused(overrides?: CallOverrides): Promise<boolean>;
 
-  /**
-   * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-   */
   proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
   removeProjectNodeIdImpl(
@@ -749,27 +687,18 @@ export interface EarthfastReservations extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-   */
   renounceRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-   */
   revokeRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * See {IERC165-supportsInterface}.
-   */
   supportsInterface(
     interfaceId: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
@@ -785,25 +714,16 @@ export interface EarthfastReservations extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-   */
   unsafeSetRegistry(
     registry: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-   */
   upgradeTo(
     newImplementation: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  /**
-   * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-   */
   upgradeToAndCall(
     newImplementation: PromiseOrValue<string>,
     data: PromiseOrValue<BytesLike>,
@@ -846,9 +766,6 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getReservations(
       projectId: PromiseOrValue<BytesLike>,
       skip: PromiseOrValue<BigNumberish>,
@@ -856,36 +773,23 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<EarthfastNodeStructOutput[]>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -895,14 +799,8 @@ export interface EarthfastReservations extends BaseContract {
 
     pause(overrides?: CallOverrides): Promise<void>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<boolean>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
     removeProjectNodeIdImpl(
@@ -911,27 +809,18 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -945,25 +834,16 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
@@ -1108,9 +988,6 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getReservations(
       projectId: PromiseOrValue<BytesLike>,
       skip: PromiseOrValue<BigNumberish>,
@@ -1118,36 +995,23 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -1159,14 +1023,8 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<BigNumber>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<BigNumber>;
 
     removeProjectNodeIdImpl(
@@ -1175,27 +1033,18 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1211,25 +1060,16 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,
@@ -1275,9 +1115,6 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Truncates the results if skip or size are out of bounds
-     */
     getReservations(
       projectId: PromiseOrValue<BytesLike>,
       skip: PromiseOrValue<BigNumberish>,
@@ -1285,36 +1122,23 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.
-     */
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.
-     */
     grantRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns `true` if `account` has been granted `role`.
-     */
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Called once to set up the contract. Not called during proxy upgrades.
-     * @param grantImporterRole allows the contract deployer to import initial data into the contract using unsafeImport* functions, which is used for proxy-less upgrades. CAUTION: Once import is finished, the importer role should be explicitly revoked.
-     */
     initialize(
       admins: PromiseOrValue<string>[],
       registry: PromiseOrValue<string>,
@@ -1326,14 +1150,8 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Returns true if the contract is paused, and false otherwise.
-     */
     paused(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    /**
-     * Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.
-     */
     proxiableUUID(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     removeProjectNodeIdImpl(
@@ -1342,27 +1160,18 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.
-     */
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.
-     */
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * See {IERC165-supportsInterface}.
-     */
     supportsInterface(
       interfaceId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -1378,25 +1187,16 @@ export interface EarthfastReservations extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * CAUTION: This can break data consistency. Used for proxy-less upgrades.
-     */
     unsafeSetRegistry(
       registry: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeTo(
       newImplementation: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    /**
-     * Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.
-     */
     upgradeToAndCall(
       newImplementation: PromiseOrValue<string>,
       data: PromiseOrValue<BytesLike>,

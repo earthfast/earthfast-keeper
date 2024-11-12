@@ -79,7 +79,10 @@ async function main() {
     )
   ).filter(({ balance }) => !balance.isZero());
 
-  const totalBalance = knownHolders.reduce((sum, val) => ({ address: "", balance: sum.balance.add(val.balance) }));
+  const totalBalance = knownHolders.reduce(
+    (sum, val) => ({ address: "", balance: sum.balance.add(val.balance) }),
+    { address: "", balance: BigNumber.from(0) }
+  );
   if (!totalBalance.balance.eq(await token.totalSupply({ blockTag }))) {
     stderr("WARNING: Could not identify all token holders");
   }
