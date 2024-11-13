@@ -4,9 +4,7 @@ const BILLING_ADDRESS = "0x6Ecf1465065BbC2dA97F0AB845ff651f6de3dCBF";
 
 const REGISTRY_ABI = [
   {
-    inputs: [
-      { internalType: "bytes32", name: "topologyNodeId", type: "bytes32" },
-    ],
+    inputs: [],
     name: "advanceEpoch",
     outputs: [],
     stateMutability: "nonpayable",
@@ -18,7 +16,6 @@ const NODES_ABI = [
   {
     inputs: [
       { internalType: "bytes32", name: "operatorIdOrZero", type: "bytes32" },
-      { internalType: "bool", name: "topology", type: "bool" },
     ],
     name: "getNodeCount",
     outputs: [{ internalType: "uint256", name: "count", type: "uint256" }],
@@ -28,7 +25,6 @@ const NODES_ABI = [
   {
     inputs: [
       { internalType: "bytes32", name: "operatorIdOrZero", type: "bytes32" },
-      { internalType: "bool", name: "topology", type: "bool" },
       { internalType: "uint256", name: "skip", type: "uint256" },
       { internalType: "uint256", name: "size", type: "uint256" },
     ],
@@ -40,7 +36,6 @@ const NODES_ABI = [
           { internalType: "bytes32", name: "operatorId", type: "bytes32" },
           { internalType: "string", name: "host", type: "string" },
           { internalType: "string", name: "region", type: "string" },
-          { internalType: "bool", name: "topology", type: "bool" },
           { internalType: "bool", name: "disabled", type: "bool" },
           { internalType: "uint256[2]", name: "prices", type: "uint256[2]" },
           {
@@ -62,7 +57,6 @@ const NODES_ABI = [
 const BILLING_ABI = [
   {
     inputs: [
-      { internalType: "bytes32", name: "topologyNodeId", type: "bytes32" },
       { internalType: "bytes32[]", name: "nodeIds", type: "bytes32[]" },
       { internalType: "uint256[]", name: "uptimeBips", type: "uint256[]" },
     ],
@@ -73,7 +67,6 @@ const BILLING_ABI = [
   },
   {
     inputs: [
-      { internalType: "bytes32", name: "topologyNodeId", type: "bytes32" },
       { internalType: "bytes32[]", name: "nodeIds", type: "bytes32[]" },
     ],
     name: "processRenewal",
@@ -90,7 +83,6 @@ const {
 } = require("defender-relay-client/lib/ethers");
 
 const HashZero = "0x0000000000000000000000000000000000000000000000000000000000000000";
-const NODE_ID = "0x0000000000000000000000000000000000000000000000000000000000000000";
 
 const stringify = (value) => JSON.stringify(value, null, 2);
 
@@ -102,13 +94,13 @@ exports.handler = async function (credentials) {
   const nodes = new ethers.Contract(NODES_ADDRESS, NODES_ABI, signer);
   const billing = new ethers.Contract(BILLING_ADDRESS, BILLING_ABI, signer);
 
-  const nodeCount = await nodes.getNodeCount(HashZero, false);
-  const nodeData = await nodes.getNodes(HashZero, false, 0, nodeCount);
+  const nodeCount = await nodes.getNodeCount(HashZero);
+  const nodeData = await nodes.getNodes(HashZero, 0, nodeCount);
   const nodeIds = nodeData.map((n) => n.id);
   const uptimeBips = nodeData.map(() => 10000);
 
   try {
-    const billingArgs = [NODE_ID, [...nodeIds], [...uptimeBips]];
+    const billingArgs = [[...nodeIds], [...uptimeBips]];
     console.log(`Execute EarthfastBilling.processBilling ${stringify(billingArgs)}`);
     const billingTx = await billing.processBilling(...billingArgs);
     console.log(billingTx.hash);
@@ -118,7 +110,7 @@ exports.handler = async function (credentials) {
   }
 
   try {
-    const renewalArgs = [NODE_ID, [...nodeIds]];
+    const renewalArgs = [[...nodeIds]];
     console.log(`Execute EarthfastBilling.processRenewal ${stringify(renewalArgs)}`);
     const renewalTx = await billing.processRenewal(...renewalArgs);
     console.log(renewalTx.hash);
@@ -128,7 +120,7 @@ exports.handler = async function (credentials) {
   }
 
   try {
-    const advanceArgs = [NODE_ID];
+    const advanceArgs = [];
     console.log(`Execute EarthfastRegistry.advanceEpoch ${stringify(advanceArgs)}`);
     const advanceTx = await registry.advanceEpoch(...advanceArgs);
     console.log(advanceTx.hash);
