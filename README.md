@@ -1,10 +1,16 @@
-## armada-keeper
+## earthfast-keeper
 
 This repo stores the code for reconciliations (billing + payments) and network data backups. At a high level the flow is
 
 1. OZ Defender Autotask (cron) => reconciles billing + payouts, advances epoch
 2. Github cron => read network status + execute data dump => create github PR for data backup purposes
 
+#### Setup scripts
+To copy the abis from the contracts repo to this repo:
+`npm run copy-abi`
+
+To generate the types from the abis:
+`npm run gen-types`
 
 #### Autotasks
 Autotasks are run by OZ Defender on a cron. The files in the autotask/ folder are just copies.

@@ -5,7 +5,7 @@
 
 import { BigNumber } from "@ethersproject/bignumber";
 import parseArgs from "minimist";
-import { ArmadaRegistry } from "../types/staging";
+import { EarthfastRegistry } from "../types/testnet-sepolia";
 import { getContract, getProvider, Networks, stderr, stdout } from "./util";
 
 async function main() {
@@ -17,7 +17,7 @@ async function main() {
   const block = await provider.getBlock("latest");
   stderr(`Block ${block.number} (${block.hash})`);
 
-  const registry = await getContract<ArmadaRegistry>(args.network, "ArmadaRegistry", provider);
+  const registry = await getContract<EarthfastRegistry>(args.network, "EarthfastRegistry", provider);
 
   try {
     const lastEpochStart = await registry.getLastEpochStart();
