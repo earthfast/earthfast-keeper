@@ -3,7 +3,7 @@
     "holders": [
       {
         "address": "0x76824F74dE8C1E4985D73A9ea475B7E01432CdF5",
-        "balance": "999996900.0"
+        "balance": "999896900.0"
       },
       {
         "address": "0x8E0d75dEF5212698F6A2DA4546536acDBfF134b9",
@@ -13,7 +13,7 @@
   },
   "EarthfastRegistry": {
     "version": "",
-    "nonce": "139",
+    "nonce": "140",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -1025,8 +1025,8 @@
         "email": "contact@earthfast.com",
         "escrow": "19.224941",
         "reserve": "2.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-71020661-976d-40e7-a154-86f743944bc6.tgz",
-        "checksum": "0xb7422e121c7b7a5ba712efaefb83e82812ca2957782af52669ee122cfa9464c0",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-7565ecf1-ac5a-4272-a683-0ffcc89bbcd8.tgz",
+        "checksum": "0x99ba35dfe2e76a97199c3bc658c2dfbf3b054dbcb3baaca95e3d17d250179386",
         "metadata": ""
       },
       {
