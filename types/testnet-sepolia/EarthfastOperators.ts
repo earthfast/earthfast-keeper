@@ -74,7 +74,6 @@ export interface EarthfastOperatorsInterface extends utils.Interface {
     "paused()": FunctionFragment;
     "proxiableUUID()": FunctionFragment;
     "renounceRole(bytes32,address)": FunctionFragment;
-    "requireTopologyNode(bytes32,address)": FunctionFragment;
     "revokeRole(bytes32,address)": FunctionFragment;
     "setOperatorBalanceImpl(bytes32,uint256,uint256)": FunctionFragment;
     "setOperatorOwner(bytes32,address)": FunctionFragment;
@@ -112,7 +111,6 @@ export interface EarthfastOperatorsInterface extends utils.Interface {
       | "paused"
       | "proxiableUUID"
       | "renounceRole"
-      | "requireTopologyNode"
       | "revokeRole"
       | "setOperatorBalanceImpl"
       | "setOperatorOwner"
@@ -220,10 +218,6 @@ export interface EarthfastOperatorsInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "renounceRole",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "requireTopologyNode",
     values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
@@ -360,10 +354,6 @@ export interface EarthfastOperatorsInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "renounceRole",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "requireTopologyNode",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "revokeRole", data: BytesLike): Result;
@@ -738,12 +728,6 @@ export interface EarthfastOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    requireTopologyNode(
-      nodeId: PromiseOrValue<BytesLike>,
-      sender: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -921,12 +905,6 @@ export interface EarthfastOperators extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  requireTopologyNode(
-    nodeId: PromiseOrValue<BytesLike>,
-    sender: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
-
   revokeRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
@@ -1099,12 +1077,6 @@ export interface EarthfastOperators extends BaseContract {
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    requireTopologyNode(
-      nodeId: PromiseOrValue<BytesLike>,
-      sender: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -1425,12 +1397,6 @@ export interface EarthfastOperators extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    requireTopologyNode(
-      nodeId: PromiseOrValue<BytesLike>,
-      sender: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-
     revokeRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
@@ -1608,12 +1574,6 @@ export interface EarthfastOperators extends BaseContract {
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-
-    requireTopologyNode(
-      nodeId: PromiseOrValue<BytesLike>,
-      sender: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 

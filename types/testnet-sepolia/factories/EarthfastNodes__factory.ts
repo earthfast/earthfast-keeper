@@ -85,12 +85,6 @@ const _abi = [
       {
         indexed: false,
         internalType: "bool",
-        name: "topology",
-        type: "bool",
-      },
-      {
-        indexed: false,
-        internalType: "bool",
         name: "disabled",
         type: "bool",
       },
@@ -130,12 +124,6 @@ const _abi = [
         internalType: "string",
         name: "region",
         type: "string",
-      },
-      {
-        indexed: false,
-        internalType: "bool",
-        name: "topology",
-        type: "bool",
       },
       {
         indexed: false,
@@ -405,19 +393,6 @@ const _abi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "TOPOLOGY_CREATOR_ROLE",
-    outputs: [
-      {
-        internalType: "bytes32",
-        name: "",
-        type: "bytes32",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [
       {
         internalType: "bytes32",
@@ -438,11 +413,6 @@ const _abi = [
         type: "bytes32",
       },
       {
-        internalType: "bool",
-        name: "topology",
-        type: "bool",
-      },
-      {
         components: [
           {
             internalType: "string",
@@ -453,11 +423,6 @@ const _abi = [
             internalType: "string",
             name: "region",
             type: "string",
-          },
-          {
-            internalType: "bool",
-            name: "topology",
-            type: "bool",
           },
           {
             internalType: "bool",
@@ -492,11 +457,6 @@ const _abi = [
         internalType: "bytes32",
         name: "operatorId",
         type: "bytes32",
-      },
-      {
-        internalType: "bool",
-        name: "topology",
-        type: "bool",
       },
       {
         internalType: "bytes32[]",
@@ -543,11 +503,6 @@ const _abi = [
           },
           {
             internalType: "bool",
-            name: "topology",
-            type: "bool",
-          },
-          {
-            internalType: "bool",
             name: "disabled",
             type: "bool",
           },
@@ -577,11 +532,6 @@ const _abi = [
         name: "operatorIdOrZero",
         type: "bytes32",
       },
-      {
-        internalType: "bool",
-        name: "topology",
-        type: "bool",
-      },
     ],
     name: "getNodeCount",
     outputs: [
@@ -600,11 +550,6 @@ const _abi = [
         internalType: "bytes32",
         name: "operatorIdOrZero",
         type: "bytes32",
-      },
-      {
-        internalType: "bool",
-        name: "topology",
-        type: "bool",
       },
       {
         internalType: "uint256",
@@ -640,11 +585,6 @@ const _abi = [
             internalType: "string",
             name: "region",
             type: "string",
-          },
-          {
-            internalType: "bool",
-            name: "topology",
-            type: "bool",
           },
           {
             internalType: "bool",
@@ -1025,11 +965,6 @@ const _abi = [
           },
           {
             internalType: "bool",
-            name: "topology",
-            type: "bool",
-          },
-          {
-            internalType: "bool",
             name: "disabled",
             type: "bool",
           },
@@ -1047,11 +982,6 @@ const _abi = [
         internalType: "struct EarthfastNode[]",
         name: "nodes",
         type: "tuple[]",
-      },
-      {
-        internalType: "address[]",
-        name: "topologyCreators",
-        type: "address[]",
       },
       {
         internalType: "bool",
