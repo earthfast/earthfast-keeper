@@ -41,7 +41,6 @@ export type EarthfastSlotStructOutput = [boolean, boolean] & {
 export type EarthfastCreateNodeDataStruct = {
   host: PromiseOrValue<string>;
   region: PromiseOrValue<string>;
-  topology: PromiseOrValue<boolean>;
   disabled: PromiseOrValue<boolean>;
   price: PromiseOrValue<BigNumberish>;
 };
@@ -50,22 +49,14 @@ export type EarthfastCreateNodeDataStructOutput = [
   string,
   string,
   boolean,
-  boolean,
   BigNumber
-] & {
-  host: string;
-  region: string;
-  topology: boolean;
-  disabled: boolean;
-  price: BigNumber;
-};
+] & { host: string; region: string; disabled: boolean; price: BigNumber };
 
 export type EarthfastNodeStruct = {
   id: PromiseOrValue<BytesLike>;
   operatorId: PromiseOrValue<BytesLike>;
   host: PromiseOrValue<string>;
   region: PromiseOrValue<string>;
-  topology: PromiseOrValue<boolean>;
   disabled: PromiseOrValue<boolean>;
   prices: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>];
   projectIds: [PromiseOrValue<BytesLike>, PromiseOrValue<BytesLike>];
@@ -77,7 +68,6 @@ export type EarthfastNodeStructOutput = [
   string,
   string,
   boolean,
-  boolean,
   [BigNumber, BigNumber],
   [string, string]
 ] & {
@@ -85,7 +75,6 @@ export type EarthfastNodeStructOutput = [
   operatorId: string;
   host: string;
   region: string;
-  topology: boolean;
   disabled: boolean;
   prices: [BigNumber, BigNumber];
   projectIds: [string, string];
@@ -95,13 +84,12 @@ export interface EarthfastNodesInterface extends utils.Interface {
   functions: {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
     "IMPORTER_ROLE()": FunctionFragment;
-    "TOPOLOGY_CREATOR_ROLE()": FunctionFragment;
     "advanceNodeEpochImpl(bytes32)": FunctionFragment;
-    "createNodes(bytes32,bool,(string,string,bool,bool,uint256)[])": FunctionFragment;
-    "deleteNodes(bytes32,bool,bytes32[])": FunctionFragment;
+    "createNodes(bytes32,(string,string,bool,uint256)[])": FunctionFragment;
+    "deleteNodes(bytes32,bytes32[])": FunctionFragment;
     "getNode(bytes32)": FunctionFragment;
-    "getNodeCount(bytes32,bool)": FunctionFragment;
-    "getNodes(bytes32,bool,uint256,uint256)": FunctionFragment;
+    "getNodeCount(bytes32)": FunctionFragment;
+    "getNodes(bytes32,uint256,uint256)": FunctionFragment;
     "getRegistry()": FunctionFragment;
     "getRoleAdmin(bytes32)": FunctionFragment;
     "grantRole(bytes32,address)": FunctionFragment;
@@ -119,7 +107,7 @@ export interface EarthfastNodesInterface extends utils.Interface {
     "setNodeProjectImpl(bytes32,uint256,bytes32)": FunctionFragment;
     "supportsInterface(bytes4)": FunctionFragment;
     "unpause()": FunctionFragment;
-    "unsafeImportData((bytes32,bytes32,string,string,bool,bool,uint256[2],bytes32[2])[],address[],bool)": FunctionFragment;
+    "unsafeImportData((bytes32,bytes32,string,string,bool,uint256[2],bytes32[2])[],bool)": FunctionFragment;
     "unsafeSetPrices(uint256,uint256,uint256,uint256)": FunctionFragment;
     "unsafeSetRegistry(address)": FunctionFragment;
     "upgradeTo(address)": FunctionFragment;
@@ -130,7 +118,6 @@ export interface EarthfastNodesInterface extends utils.Interface {
     nameOrSignatureOrTopic:
       | "DEFAULT_ADMIN_ROLE"
       | "IMPORTER_ROLE"
-      | "TOPOLOGY_CREATOR_ROLE"
       | "advanceNodeEpochImpl"
       | "createNodes"
       | "deleteNodes"
@@ -170,28 +157,16 @@ export interface EarthfastNodesInterface extends utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "TOPOLOGY_CREATOR_ROLE",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
     functionFragment: "advanceNodeEpochImpl",
     values: [PromiseOrValue<BytesLike>]
   ): string;
   encodeFunctionData(
     functionFragment: "createNodes",
-    values: [
-      PromiseOrValue<BytesLike>,
-      PromiseOrValue<boolean>,
-      EarthfastCreateNodeDataStruct[]
-    ]
+    values: [PromiseOrValue<BytesLike>, EarthfastCreateNodeDataStruct[]]
   ): string;
   encodeFunctionData(
     functionFragment: "deleteNodes",
-    values: [
-      PromiseOrValue<BytesLike>,
-      PromiseOrValue<boolean>,
-      PromiseOrValue<BytesLike>[]
-    ]
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<BytesLike>[]]
   ): string;
   encodeFunctionData(
     functionFragment: "getNode",
@@ -199,13 +174,12 @@ export interface EarthfastNodesInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "getNodeCount",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<boolean>]
+    values: [PromiseOrValue<BytesLike>]
   ): string;
   encodeFunctionData(
     functionFragment: "getNodes",
     values: [
       PromiseOrValue<BytesLike>,
-      PromiseOrValue<boolean>,
       PromiseOrValue<BigNumberish>,
       PromiseOrValue<BigNumberish>
     ]
@@ -297,11 +271,7 @@ export interface EarthfastNodesInterface extends utils.Interface {
   encodeFunctionData(functionFragment: "unpause", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "unsafeImportData",
-    values: [
-      EarthfastNodeStruct[],
-      PromiseOrValue<string>[],
-      PromiseOrValue<boolean>
-    ]
+    values: [EarthfastNodeStruct[], PromiseOrValue<boolean>]
   ): string;
   encodeFunctionData(
     functionFragment: "unsafeSetPrices",
@@ -331,10 +301,6 @@ export interface EarthfastNodesInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "IMPORTER_ROLE",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "TOPOLOGY_CREATOR_ROLE",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -424,8 +390,8 @@ export interface EarthfastNodesInterface extends utils.Interface {
     "AdminChanged(address,address)": EventFragment;
     "BeaconUpgraded(address)": EventFragment;
     "Initialized(uint8)": EventFragment;
-    "NodeCreated(bytes32,bytes32,string,string,bool,bool,uint256)": EventFragment;
-    "NodeDeleted(bytes32,bytes32,string,string,bool,bool,uint256)": EventFragment;
+    "NodeCreated(bytes32,bytes32,string,string,bool,uint256)": EventFragment;
+    "NodeDeleted(bytes32,bytes32,string,string,bool,uint256)": EventFragment;
     "NodeDisabledChanged(bytes32,bool,bool)": EventFragment;
     "NodeHostChanged(bytes32,string,string,string,string)": EventFragment;
     "NodePriceChanged(bytes32,uint256,uint256,uint256,tuple)": EventFragment;
@@ -486,12 +452,11 @@ export interface NodeCreatedEventObject {
   operatorId: string;
   host: string;
   region: string;
-  topology: boolean;
   disabled: boolean;
   price: BigNumber;
 }
 export type NodeCreatedEvent = TypedEvent<
-  [string, string, string, string, boolean, boolean, BigNumber],
+  [string, string, string, string, boolean, BigNumber],
   NodeCreatedEventObject
 >;
 
@@ -502,12 +467,11 @@ export interface NodeDeletedEventObject {
   operatorId: string;
   host: string;
   region: string;
-  topology: boolean;
   disabled: boolean;
   price: BigNumber;
 }
 export type NodeDeletedEvent = TypedEvent<
-  [string, string, string, string, boolean, boolean, BigNumber],
+  [string, string, string, string, boolean, BigNumber],
   NodeDeletedEventObject
 >;
 
@@ -644,8 +608,6 @@ export interface EarthfastNodes extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    TOPOLOGY_CREATOR_ROLE(overrides?: CallOverrides): Promise<[string]>;
-
     advanceNodeEpochImpl(
       nodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -653,14 +615,12 @@ export interface EarthfastNodes extends BaseContract {
 
     createNodes(
       operatorId: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       nodes: EarthfastCreateNodeDataStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     deleteNodes(
       operatorId: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       nodeIds: PromiseOrValue<BytesLike>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
@@ -672,13 +632,11 @@ export interface EarthfastNodes extends BaseContract {
 
     getNodeCount(
       operatorIdOrZero: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<[BigNumber] & { count: BigNumber }>;
 
     getNodes(
       operatorIdOrZero: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -780,7 +738,6 @@ export interface EarthfastNodes extends BaseContract {
 
     unsafeImportData(
       nodes: EarthfastNodeStruct[],
-      topologyCreators: PromiseOrValue<string>[],
       revokeImporterRole: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
@@ -814,8 +771,6 @@ export interface EarthfastNodes extends BaseContract {
 
   IMPORTER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  TOPOLOGY_CREATOR_ROLE(overrides?: CallOverrides): Promise<string>;
-
   advanceNodeEpochImpl(
     nodeId: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -823,14 +778,12 @@ export interface EarthfastNodes extends BaseContract {
 
   createNodes(
     operatorId: PromiseOrValue<BytesLike>,
-    topology: PromiseOrValue<boolean>,
     nodes: EarthfastCreateNodeDataStruct[],
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   deleteNodes(
     operatorId: PromiseOrValue<BytesLike>,
-    topology: PromiseOrValue<boolean>,
     nodeIds: PromiseOrValue<BytesLike>[],
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
@@ -842,13 +795,11 @@ export interface EarthfastNodes extends BaseContract {
 
   getNodeCount(
     operatorIdOrZero: PromiseOrValue<BytesLike>,
-    topology: PromiseOrValue<boolean>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   getNodes(
     operatorIdOrZero: PromiseOrValue<BytesLike>,
-    topology: PromiseOrValue<boolean>,
     skip: PromiseOrValue<BigNumberish>,
     size: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
@@ -948,7 +899,6 @@ export interface EarthfastNodes extends BaseContract {
 
   unsafeImportData(
     nodes: EarthfastNodeStruct[],
-    topologyCreators: PromiseOrValue<string>[],
     revokeImporterRole: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
@@ -982,8 +932,6 @@ export interface EarthfastNodes extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    TOPOLOGY_CREATOR_ROLE(overrides?: CallOverrides): Promise<string>;
-
     advanceNodeEpochImpl(
       nodeId: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
@@ -991,14 +939,12 @@ export interface EarthfastNodes extends BaseContract {
 
     createNodes(
       operatorId: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       nodes: EarthfastCreateNodeDataStruct[],
       overrides?: CallOverrides
     ): Promise<string[]>;
 
     deleteNodes(
       operatorId: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       nodeIds: PromiseOrValue<BytesLike>[],
       overrides?: CallOverrides
     ): Promise<void>;
@@ -1010,13 +956,11 @@ export interface EarthfastNodes extends BaseContract {
 
     getNodeCount(
       operatorIdOrZero: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getNodes(
       operatorIdOrZero: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1112,7 +1056,6 @@ export interface EarthfastNodes extends BaseContract {
 
     unsafeImportData(
       nodes: EarthfastNodeStruct[],
-      topologyCreators: PromiseOrValue<string>[],
       revokeImporterRole: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
@@ -1162,12 +1105,11 @@ export interface EarthfastNodes extends BaseContract {
     "Initialized(uint8)"(version?: null): InitializedEventFilter;
     Initialized(version?: null): InitializedEventFilter;
 
-    "NodeCreated(bytes32,bytes32,string,string,bool,bool,uint256)"(
+    "NodeCreated(bytes32,bytes32,string,string,bool,uint256)"(
       nodeId?: PromiseOrValue<BytesLike> | null,
       operatorId?: PromiseOrValue<BytesLike> | null,
       host?: null,
       region?: null,
-      topology?: null,
       disabled?: null,
       price?: null
     ): NodeCreatedEventFilter;
@@ -1176,17 +1118,15 @@ export interface EarthfastNodes extends BaseContract {
       operatorId?: PromiseOrValue<BytesLike> | null,
       host?: null,
       region?: null,
-      topology?: null,
       disabled?: null,
       price?: null
     ): NodeCreatedEventFilter;
 
-    "NodeDeleted(bytes32,bytes32,string,string,bool,bool,uint256)"(
+    "NodeDeleted(bytes32,bytes32,string,string,bool,uint256)"(
       nodeId?: PromiseOrValue<BytesLike> | null,
       operatorId?: PromiseOrValue<BytesLike> | null,
       host?: null,
       region?: null,
-      topology?: null,
       disabled?: null,
       price?: null
     ): NodeDeletedEventFilter;
@@ -1195,7 +1135,6 @@ export interface EarthfastNodes extends BaseContract {
       operatorId?: PromiseOrValue<BytesLike> | null,
       host?: null,
       region?: null,
-      topology?: null,
       disabled?: null,
       price?: null
     ): NodeDeletedEventFilter;
@@ -1293,8 +1232,6 @@ export interface EarthfastNodes extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    TOPOLOGY_CREATOR_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
-
     advanceNodeEpochImpl(
       nodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1302,14 +1239,12 @@ export interface EarthfastNodes extends BaseContract {
 
     createNodes(
       operatorId: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       nodes: EarthfastCreateNodeDataStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     deleteNodes(
       operatorId: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       nodeIds: PromiseOrValue<BytesLike>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
@@ -1321,13 +1256,11 @@ export interface EarthfastNodes extends BaseContract {
 
     getNodeCount(
       operatorIdOrZero: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getNodes(
       operatorIdOrZero: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1427,7 +1360,6 @@ export interface EarthfastNodes extends BaseContract {
 
     unsafeImportData(
       nodes: EarthfastNodeStruct[],
-      topologyCreators: PromiseOrValue<string>[],
       revokeImporterRole: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
@@ -1464,10 +1396,6 @@ export interface EarthfastNodes extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    TOPOLOGY_CREATOR_ROLE(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
     advanceNodeEpochImpl(
       nodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1475,14 +1403,12 @@ export interface EarthfastNodes extends BaseContract {
 
     createNodes(
       operatorId: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       nodes: EarthfastCreateNodeDataStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     deleteNodes(
       operatorId: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       nodeIds: PromiseOrValue<BytesLike>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
@@ -1494,13 +1420,11 @@ export interface EarthfastNodes extends BaseContract {
 
     getNodeCount(
       operatorIdOrZero: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getNodes(
       operatorIdOrZero: PromiseOrValue<BytesLike>,
-      topology: PromiseOrValue<boolean>,
       skip: PromiseOrValue<BigNumberish>,
       size: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1600,7 +1524,6 @@ export interface EarthfastNodes extends BaseContract {
 
     unsafeImportData(
       nodes: EarthfastNodeStruct[],
-      topologyCreators: PromiseOrValue<string>[],
       revokeImporterRole: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;

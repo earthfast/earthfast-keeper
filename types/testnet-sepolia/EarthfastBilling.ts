@@ -31,7 +31,6 @@ import type {
 export interface EarthfastBillingInterface extends utils.Interface {
   functions: {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
-    "RECONCILER_ROLE()": FunctionFragment;
     "getBillingNodeIndex()": FunctionFragment;
     "getRegistry()": FunctionFragment;
     "getRenewalNodeIndex()": FunctionFragment;
@@ -41,8 +40,8 @@ export interface EarthfastBillingInterface extends utils.Interface {
     "initialize(address[],address)": FunctionFragment;
     "pause()": FunctionFragment;
     "paused()": FunctionFragment;
-    "processBilling(bytes32,bytes32[],uint256[])": FunctionFragment;
-    "processRenewal(bytes32,bytes32[])": FunctionFragment;
+    "processBilling(bytes32[],uint256[])": FunctionFragment;
+    "processRenewal(bytes32[])": FunctionFragment;
     "proxiableUUID()": FunctionFragment;
     "renounceRole(bytes32,address)": FunctionFragment;
     "revokeRole(bytes32,address)": FunctionFragment;
@@ -58,7 +57,6 @@ export interface EarthfastBillingInterface extends utils.Interface {
   getFunction(
     nameOrSignatureOrTopic:
       | "DEFAULT_ADMIN_ROLE"
-      | "RECONCILER_ROLE"
       | "getBillingNodeIndex"
       | "getRegistry"
       | "getRenewalNodeIndex"
@@ -84,10 +82,6 @@ export interface EarthfastBillingInterface extends utils.Interface {
 
   encodeFunctionData(
     functionFragment: "DEFAULT_ADMIN_ROLE",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "RECONCILER_ROLE",
     values?: undefined
   ): string;
   encodeFunctionData(
@@ -122,15 +116,11 @@ export interface EarthfastBillingInterface extends utils.Interface {
   encodeFunctionData(functionFragment: "paused", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "processBilling",
-    values: [
-      PromiseOrValue<BytesLike>,
-      PromiseOrValue<BytesLike>[],
-      PromiseOrValue<BigNumberish>[]
-    ]
+    values: [PromiseOrValue<BytesLike>[], PromiseOrValue<BigNumberish>[]]
   ): string;
   encodeFunctionData(
     functionFragment: "processRenewal",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<BytesLike>[]]
+    values: [PromiseOrValue<BytesLike>[]]
   ): string;
   encodeFunctionData(
     functionFragment: "proxiableUUID",
@@ -172,10 +162,6 @@ export interface EarthfastBillingInterface extends utils.Interface {
 
   decodeFunctionResult(
     functionFragment: "DEFAULT_ADMIN_ROLE",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "RECONCILER_ROLE",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -412,8 +398,6 @@ export interface EarthfastBilling extends BaseContract {
   functions: {
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    RECONCILER_ROLE(overrides?: CallOverrides): Promise<[string]>;
-
     getBillingNodeIndex(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     getRegistry(overrides?: CallOverrides): Promise<[string]>;
@@ -450,14 +434,12 @@ export interface EarthfastBilling extends BaseContract {
     paused(overrides?: CallOverrides): Promise<[boolean]>;
 
     processBilling(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       nodeIds: PromiseOrValue<BytesLike>[],
       uptimeBips: PromiseOrValue<BigNumberish>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     processRenewal(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       nodeIds: PromiseOrValue<BytesLike>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
@@ -514,8 +496,6 @@ export interface EarthfastBilling extends BaseContract {
 
   DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  RECONCILER_ROLE(overrides?: CallOverrides): Promise<string>;
-
   getBillingNodeIndex(overrides?: CallOverrides): Promise<BigNumber>;
 
   getRegistry(overrides?: CallOverrides): Promise<string>;
@@ -552,14 +532,12 @@ export interface EarthfastBilling extends BaseContract {
   paused(overrides?: CallOverrides): Promise<boolean>;
 
   processBilling(
-    topologyNodeId: PromiseOrValue<BytesLike>,
     nodeIds: PromiseOrValue<BytesLike>[],
     uptimeBips: PromiseOrValue<BigNumberish>[],
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   processRenewal(
-    topologyNodeId: PromiseOrValue<BytesLike>,
     nodeIds: PromiseOrValue<BytesLike>[],
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
@@ -616,8 +594,6 @@ export interface EarthfastBilling extends BaseContract {
   callStatic: {
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    RECONCILER_ROLE(overrides?: CallOverrides): Promise<string>;
-
     getBillingNodeIndex(overrides?: CallOverrides): Promise<BigNumber>;
 
     getRegistry(overrides?: CallOverrides): Promise<string>;
@@ -652,14 +628,12 @@ export interface EarthfastBilling extends BaseContract {
     paused(overrides?: CallOverrides): Promise<boolean>;
 
     processBilling(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       nodeIds: PromiseOrValue<BytesLike>[],
       uptimeBips: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<void>;
 
     processRenewal(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       nodeIds: PromiseOrValue<BytesLike>[],
       overrides?: CallOverrides
     ): Promise<void>;
@@ -814,8 +788,6 @@ export interface EarthfastBilling extends BaseContract {
   estimateGas: {
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    RECONCILER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
-
     getBillingNodeIndex(overrides?: CallOverrides): Promise<BigNumber>;
 
     getRegistry(overrides?: CallOverrides): Promise<BigNumber>;
@@ -852,14 +824,12 @@ export interface EarthfastBilling extends BaseContract {
     paused(overrides?: CallOverrides): Promise<BigNumber>;
 
     processBilling(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       nodeIds: PromiseOrValue<BytesLike>[],
       uptimeBips: PromiseOrValue<BigNumberish>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     processRenewal(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       nodeIds: PromiseOrValue<BytesLike>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
@@ -919,8 +889,6 @@ export interface EarthfastBilling extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    RECONCILER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
     getBillingNodeIndex(
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
@@ -961,14 +929,12 @@ export interface EarthfastBilling extends BaseContract {
     paused(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     processBilling(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       nodeIds: PromiseOrValue<BytesLike>[],
       uptimeBips: PromiseOrValue<BigNumberish>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     processRenewal(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       nodeIds: PromiseOrValue<BytesLike>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;

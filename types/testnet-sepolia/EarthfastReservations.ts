@@ -43,7 +43,6 @@ export type EarthfastNodeStruct = {
   operatorId: PromiseOrValue<BytesLike>;
   host: PromiseOrValue<string>;
   region: PromiseOrValue<string>;
-  topology: PromiseOrValue<boolean>;
   disabled: PromiseOrValue<boolean>;
   prices: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>];
   projectIds: [PromiseOrValue<BytesLike>, PromiseOrValue<BytesLike>];
@@ -55,7 +54,6 @@ export type EarthfastNodeStructOutput = [
   string,
   string,
   boolean,
-  boolean,
   [BigNumber, BigNumber],
   [string, string]
 ] & {
@@ -63,7 +61,6 @@ export type EarthfastNodeStructOutput = [
   operatorId: string;
   host: string;
   region: string;
-  topology: boolean;
   disabled: boolean;
   prices: [BigNumber, BigNumber];
   projectIds: [string, string];
@@ -91,7 +88,7 @@ export interface EarthfastReservationsInterface extends utils.Interface {
     "revokeRole(bytes32,address)": FunctionFragment;
     "supportsInterface(bytes4)": FunctionFragment;
     "unpause()": FunctionFragment;
-    "unsafeImportData((bytes32,bytes32,string,string,bool,bool,uint256[2],bytes32[2])[],bool)": FunctionFragment;
+    "unsafeImportData((bytes32,bytes32,string,string,bool,uint256[2],bytes32[2])[],bool)": FunctionFragment;
     "unsafeSetRegistry(address)": FunctionFragment;
     "upgradeTo(address)": FunctionFragment;
     "upgradeToAndCall(address,bytes)": FunctionFragment;

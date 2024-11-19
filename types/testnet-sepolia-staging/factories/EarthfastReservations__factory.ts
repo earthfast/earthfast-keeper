@@ -501,11 +501,6 @@ const _abi = [
           },
           {
             internalType: "bool",
-            name: "topology",
-            type: "bool",
-          },
-          {
-            internalType: "bool",
             name: "disabled",
             type: "bool",
           },
@@ -754,11 +749,6 @@ const _abi = [
             internalType: "string",
             name: "region",
             type: "string",
-          },
-          {
-            internalType: "bool",
-            name: "topology",
-            type: "bool",
           },
           {
             internalType: "bool",

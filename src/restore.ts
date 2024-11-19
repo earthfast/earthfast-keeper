@@ -102,15 +102,13 @@ async function main() {
     operatorId: node.operatorId,
     host: node.host,
     region: node.region,
-    topology: node.topology,
     disabled: node.disabled,
     prices: node.prices.map(parseUSDC),
     projectIds: node.projectIds,
   }));
-  const topologyCreators = dump.EarthfastNodes.topologyCreators;
 
   console.log("restoring nodes...");
-  await nodes.connect(signer).unsafeImportData(nodeData, topologyCreators, true);
+  await nodes.connect(signer).unsafeImportData(nodeData, true);
 
   //   restore the reservations
   console.log("restoring reservations...");
@@ -146,10 +144,8 @@ async function main() {
   console.log("newProjectCount:", newProjectCount.toString());
   console.log("newOperatorCount:", newOperatorCount.toString());
 
-  //   const newNodeCount = await nodes.getNodeCount();
   if (newProjectCount !== projectCount) throw Error("Failed to restore projects");
   if (newOperatorCount !== operatorCount) throw Error("Failed to restore operators");
-//   if (newNodeCount !== nodeCount) throw Error("Failed to restore nodes");
 }
 
 main().catch((error) => {

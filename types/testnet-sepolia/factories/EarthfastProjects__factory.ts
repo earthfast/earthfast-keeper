@@ -443,19 +443,6 @@ const _abi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "PROJECT_CREATOR_ROLE",
-    outputs: [
-      {
-        internalType: "bytes32",
-        name: "",
-        type: "bytes32",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [
       {
         components: [
@@ -1080,11 +1067,6 @@ const _abi = [
         internalType: "struct EarthfastProject[]",
         name: "projects",
         type: "tuple[]",
-      },
-      {
-        internalType: "address[]",
-        name: "creators",
-        type: "address[]",
       },
       {
         internalType: "bool",

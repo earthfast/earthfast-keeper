@@ -91,7 +91,6 @@ export interface EarthfastProjectsInterface extends utils.Interface {
   functions: {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
     "IMPORTER_ROLE()": FunctionFragment;
-    "PROJECT_CREATOR_ROLE()": FunctionFragment;
     "createProject((address,string,string,string,bytes32,string))": FunctionFragment;
     "deleteProject(bytes32)": FunctionFragment;
     "depositProjectEscrow(bytes32,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
@@ -116,7 +115,7 @@ export interface EarthfastProjectsInterface extends utils.Interface {
     "setProjectReserveImpl(bytes32,uint256,uint256)": FunctionFragment;
     "supportsInterface(bytes4)": FunctionFragment;
     "unpause()": FunctionFragment;
-    "unsafeImportData((bytes32,address,string,string,uint256,uint256,string,bytes32,string)[],address[],bool)": FunctionFragment;
+    "unsafeImportData((bytes32,address,string,string,uint256,uint256,string,bytes32,string)[],bool)": FunctionFragment;
     "unsafeSetEscrows(uint256,uint256,uint256,uint256)": FunctionFragment;
     "unsafeSetRegistry(address)": FunctionFragment;
     "upgradeTo(address)": FunctionFragment;
@@ -128,7 +127,6 @@ export interface EarthfastProjectsInterface extends utils.Interface {
     nameOrSignatureOrTopic:
       | "DEFAULT_ADMIN_ROLE"
       | "IMPORTER_ROLE"
-      | "PROJECT_CREATOR_ROLE"
       | "createProject"
       | "deleteProject"
       | "depositProjectEscrow"
@@ -167,10 +165,6 @@ export interface EarthfastProjectsInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "IMPORTER_ROLE",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "PROJECT_CREATOR_ROLE",
     values?: undefined
   ): string;
   encodeFunctionData(
@@ -289,11 +283,7 @@ export interface EarthfastProjectsInterface extends utils.Interface {
   encodeFunctionData(functionFragment: "unpause", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "unsafeImportData",
-    values: [
-      EarthfastProjectStruct[],
-      PromiseOrValue<string>[],
-      PromiseOrValue<boolean>
-    ]
+    values: [EarthfastProjectStruct[], PromiseOrValue<boolean>]
   ): string;
   encodeFunctionData(
     functionFragment: "unsafeSetEscrows",
@@ -331,10 +321,6 @@ export interface EarthfastProjectsInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "IMPORTER_ROLE",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "PROJECT_CREATOR_ROLE",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -686,8 +672,6 @@ export interface EarthfastProjects extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    PROJECT_CREATOR_ROLE(overrides?: CallOverrides): Promise<[string]>;
-
     createProject(
       project: EarthfastCreateProjectDataStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -822,7 +806,6 @@ export interface EarthfastProjects extends BaseContract {
 
     unsafeImportData(
       projects: EarthfastProjectStruct[],
-      creators: PromiseOrValue<string>[],
       revokeImporterRole: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
@@ -862,8 +845,6 @@ export interface EarthfastProjects extends BaseContract {
   DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
   IMPORTER_ROLE(overrides?: CallOverrides): Promise<string>;
-
-  PROJECT_CREATOR_ROLE(overrides?: CallOverrides): Promise<string>;
 
   createProject(
     project: EarthfastCreateProjectDataStruct,
@@ -995,7 +976,6 @@ export interface EarthfastProjects extends BaseContract {
 
   unsafeImportData(
     projects: EarthfastProjectStruct[],
-    creators: PromiseOrValue<string>[],
     revokeImporterRole: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
@@ -1035,8 +1015,6 @@ export interface EarthfastProjects extends BaseContract {
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<string>;
-
-    PROJECT_CREATOR_ROLE(overrides?: CallOverrides): Promise<string>;
 
     createProject(
       project: EarthfastCreateProjectDataStruct,
@@ -1164,7 +1142,6 @@ export interface EarthfastProjects extends BaseContract {
 
     unsafeImportData(
       projects: EarthfastProjectStruct[],
-      creators: PromiseOrValue<string>[],
       revokeImporterRole: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
@@ -1374,8 +1351,6 @@ export interface EarthfastProjects extends BaseContract {
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    PROJECT_CREATOR_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
-
     createProject(
       project: EarthfastCreateProjectDataStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1506,7 +1481,6 @@ export interface EarthfastProjects extends BaseContract {
 
     unsafeImportData(
       projects: EarthfastProjectStruct[],
-      creators: PromiseOrValue<string>[],
       revokeImporterRole: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
@@ -1549,10 +1523,6 @@ export interface EarthfastProjects extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     IMPORTER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    PROJECT_CREATOR_ROLE(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
 
     createProject(
       project: EarthfastCreateProjectDataStruct,
@@ -1684,7 +1654,6 @@ export interface EarthfastProjects extends BaseContract {
 
     unsafeImportData(
       projects: EarthfastProjectStruct[],
-      creators: PromiseOrValue<string>[],
       revokeImporterRole: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;

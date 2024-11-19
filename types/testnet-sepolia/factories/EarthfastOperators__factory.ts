@@ -777,24 +777,6 @@ const _abi = [
     inputs: [
       {
         internalType: "bytes32",
-        name: "nodeId",
-        type: "bytes32",
-      },
-      {
-        internalType: "address",
-        name: "sender",
-        type: "address",
-      },
-    ],
-    name: "requireTopologyNode",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "bytes32",
         name: "role",
         type: "bytes32",
       },

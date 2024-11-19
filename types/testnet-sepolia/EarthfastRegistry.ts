@@ -77,8 +77,7 @@ export type EarthfastRegistryInitializeDataStructOutput = [
 export interface EarthfastRegistryInterface extends utils.Interface {
   functions: {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
-    "RECONCILER_ROLE()": FunctionFragment;
-    "advanceEpoch(bytes32)": FunctionFragment;
+    "advanceEpoch()": FunctionFragment;
     "getBilling()": FunctionFragment;
     "getCuedEpochLength()": FunctionFragment;
     "getEpochRemainder()": FunctionFragment;
@@ -129,7 +128,6 @@ export interface EarthfastRegistryInterface extends utils.Interface {
   getFunction(
     nameOrSignatureOrTopic:
       | "DEFAULT_ADMIN_ROLE"
-      | "RECONCILER_ROLE"
       | "advanceEpoch"
       | "getBilling"
       | "getCuedEpochLength"
@@ -183,12 +181,8 @@ export interface EarthfastRegistryInterface extends utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "RECONCILER_ROLE",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
     functionFragment: "advanceEpoch",
-    values: [PromiseOrValue<BytesLike>]
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "getBilling",
@@ -352,10 +346,6 @@ export interface EarthfastRegistryInterface extends utils.Interface {
 
   decodeFunctionResult(
     functionFragment: "DEFAULT_ADMIN_ROLE",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "RECONCILER_ROLE",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -648,10 +638,7 @@ export interface EarthfastRegistry extends BaseContract {
   functions: {
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    RECONCILER_ROLE(overrides?: CallOverrides): Promise<[string]>;
-
     advanceEpoch(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -834,10 +821,7 @@ export interface EarthfastRegistry extends BaseContract {
 
   DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  RECONCILER_ROLE(overrides?: CallOverrides): Promise<string>;
-
   advanceEpoch(
-    topologyNodeId: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1020,12 +1004,7 @@ export interface EarthfastRegistry extends BaseContract {
   callStatic: {
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    RECONCILER_ROLE(overrides?: CallOverrides): Promise<string>;
-
-    advanceEpoch(
-      topologyNodeId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    advanceEpoch(overrides?: CallOverrides): Promise<void>;
 
     getBilling(overrides?: CallOverrides): Promise<string>;
 
@@ -1265,10 +1244,7 @@ export interface EarthfastRegistry extends BaseContract {
   estimateGas: {
     DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    RECONCILER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
-
     advanceEpoch(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -1454,10 +1430,7 @@ export interface EarthfastRegistry extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    RECONCILER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
     advanceEpoch(
-      topologyNodeId: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 

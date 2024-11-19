@@ -38,36 +38,19 @@ async function main() {
   const operators = await getContract<EarthfastOperators>(args.network, "EarthfastOperators", provider);
   const projects = await getContract<EarthfastProjects>(args.network, "EarthfastProjects", provider);
 
-  const topologyNodeCount = await nodes.getNodeCount(HashZero, true, { blockTag });
-  const contentNodeCount = await nodes.getNodeCount(HashZero, false, { blockTag });
-  const topologyNodeData = await nodes.getNodes(HashZero, true, 0, topologyNodeCount, { blockTag });
-  const contentNodeData = await nodes.getNodes(HashZero, false, 0, contentNodeCount, { blockTag });
-  const topologyNodeArray = topologyNodeData.slice().sort((a, b) => a.id.localeCompare(b.id));
-  const contentNodeArray = contentNodeData.slice().sort((a, b) => a.id.localeCompare(b.id));
-  const nodeArray = topologyNodeArray.concat(contentNodeArray);
+  const contentNodeCount = await nodes.getNodeCount(HashZero, { blockTag });
+  const contentNodeData = await nodes.getNodes(HashZero, 0, contentNodeCount, { blockTag });
+  const nodeArray = contentNodeData.slice().sort((a, b) => a.id.localeCompare(b.id));
 
   const operatorCount = await operators.getOperatorCount({ blockTag });
   const operatorData = await operators.getOperators(0, operatorCount, { blockTag });
   const operatorArray = operatorData.slice().sort((a, b) => a.id.localeCompare(b.id));
   const operatorOwners = operatorArray.map((v) => v.owner as string).filter(isUnique).sort();
-  const topologyCreators: string[] = [];
-  for (let i = 0; i < operatorOwners.length; ++i) {
-    if (await hasRole(nodes, await nodes.TOPOLOGY_CREATOR_ROLE({ blockTag }), operatorOwners[i])) {
-      topologyCreators.push(operatorOwners[i]);
-    }
-  }
 
   const projectCount = await projects.getProjectCount({ blockTag });
   const projectData = await projects.getProjects(0, projectCount, { blockTag });
   const projectArray = projectData.slice().sort((a, b) => a.id.localeCompare(b.id));
   const projectOwners = projectArray.map((v) => v.owner as string).concat(AddressZero).filter(isUnique).sort();
-  const projectCreators: string[] = [];
-  const projectCreatorRole = await projects.PROJECT_CREATOR_ROLE({ blockTag });
-  for (let i = 0; i < projectOwners.length; ++i) {
-    if (await hasRole(projects, projectCreatorRole, projectOwners[i])) {
-      projectCreators.push(projectOwners[i]);
-    }
-  }
 
   const knownAddresses = [registry.address].concat([...operatorOwners, ...projectOwners].sort()).filter(isUnique);
   const knownHolders = (
@@ -110,13 +93,11 @@ async function main() {
     },
     EarthfastNodes: {
       // NOTE: This only restores roles of existing operators
-      topologyCreators,
       nodes: nodeArray.map((v) => ({
         id: v.id,
         operatorId: v.operatorId,
         host: v.host,
         region: v.region,
-        topology: v.topology,
         disabled: v.disabled,
         prices: v.prices.map((v: BigNumber) => formatUSDC(v)),
         projectIds: v.projectIds,
@@ -135,7 +116,6 @@ async function main() {
     },
     EarthfastProjects: {
       // NOTE: This only restores roles of existing projects and the special zero address
-      projectCreators,
       projects: projectArray.map((v) => ({
         id: v.id,
         owner: v.owner,
