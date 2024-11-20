@@ -50,6 +50,7 @@ jobs:
           isReconciling=$(echo "$output" | jq -r '.isReconciling')
           if [[ "$isReconciling" == "true" ]]; then
             echo "Contract is in reconciling mode after autotask"
+            curl -X POST -H 'Content-type: application/json' --data '{"text":"❌ Testnet-Sepolia-Staging Reconciliation failed - Contract still in reconciling mode after autotask"}' ${{ secrets.SLACK_WEBHOOK_URL }}
             exit 1
           else
             echo "Contract is no longer in reconciling mode after autotask"
