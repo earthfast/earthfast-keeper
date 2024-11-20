@@ -54,19 +54,3 @@ exports.handler = async function (credentials, configPath) {
     console.error("Error processing EarthfastRegistry.advanceEpoch", e);
   }
 };
-
-// Only when running locally
-if (require.main === module) {
-  require("dotenv").config();
-  const { RELAYER_API_KEY: apiKey, RELAYER_API_SECRET: apiSecret } = process.env;
-  const network = process.env.NETWORK || 'testnet-sepolia';
-  const configPath = `./config/${network}.js`;
-  
-  exports
-    .handler({ apiKey, apiSecret }, configPath)
-    .then(() => process.exit(0))
-    .catch((error) => {
-      console.error(error);
-      process.exit(1);
-    });
-}
