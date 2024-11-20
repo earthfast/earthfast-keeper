@@ -9,7 +9,7 @@ module.exports = {
   },
   abis: {
     registry: require(path.join(__dirname, '../../abi/testnet-sepolia/EarthfastRegistry.json')).abi,
-    nodes: require(path.join(__dirname, '../../abi/testnet-sepolia/EarthfastNodesImpl.json')).abi,
+    nodes: require(path.join(__dirname, '../../abi/testnet-sepolia/EarthfastNodes.json')).abi,
     billing: require(path.join(__dirname, '../../abi/testnet-sepolia/EarthfastBilling.json')).abi
   }
 };
