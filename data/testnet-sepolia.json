@@ -11,7 +11,7 @@
       },
       {
         "address": "0x76824F74dE8C1E4985D73A9ea475B7E01432CdF5",
-        "balance": "999895100.0"
+        "balance": "999885100.0"
       },
       {
         "address": "0x8E0d75dEF5212698F6A2DA4546536acDBfF134b9",
@@ -19,7 +19,7 @@
       },
       {
         "address": "0xb007bbAf4a377f13F449FCe4F6D43f148f349F44",
-        "balance": "0.0000000000000001"
+        "balance": "500.0000000000000001"
       }
     ]
   },
@@ -1385,8 +1385,8 @@
         "email": "@",
         "escrow": "36.805616",
         "reserve": "2.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-ad60e36b-f94b-4797-bcb1-71bf77a3b748.tgz",
-        "checksum": "0x1f629ca794e5071fdcd0236c0ebe5112d53d499e48acddd2f5ef1f1f6ce2f5ba",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-1b721e21-7252-4eaf-b835-58ab87ade304.tgz",
+        "checksum": "0x1c1f891d10f9373bfd1818e187c876983d305caba6edfc0e2a5f8a45df373e5e",
         "metadata": ""
       },
       {
