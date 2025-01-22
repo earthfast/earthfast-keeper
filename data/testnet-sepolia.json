@@ -3,7 +3,7 @@
     "holders": [
       {
         "address": "EarthfastRegistry",
-        "balance": "2100.0"
+        "balance": "2200.0"
       },
       {
         "address": "0x00653CE2315497a32C61d3198b9c9D04B3073c8f",
@@ -37,7 +37,7 @@
   },
   "EarthfastRegistry": {
     "version": "",
-    "nonce": "160",
+    "nonce": "165",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -52,12 +52,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.464365",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xe434dc35da084cf8d7e8186688ea2dacb53db7003d427af3abf351bd9d0a4e8d",
+          "0xe434dc35da084cf8d7e8186688ea2dacb53db7003d427af3abf351bd9d0a4e8d"
         ]
       },
       {
@@ -451,6 +451,21 @@
         ]
       },
       {
+        "id": "0x60859188cffe297f44dde29f2d2865634621f26215049caeb304ccba566a8b17",
+        "operatorId": "0xaadc37b8ba5645e62f4546802db221593a94729ccbfc5a97d01365a88f649878",
+        "host": "domain-node.operator-voldgods.com",
+        "region": "as",
+        "disabled": true,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
         "id": "0x66925e85f1a4743fd8d60ba595ed74887b7caf321dd83b21e04d77c115383408",
         "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
         "host": "content-1.us-east-2.sepolia.earthfastnodes.com",
@@ -532,12 +547,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.464503",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xe434dc35da084cf8d7e8186688ea2dacb53db7003d427af3abf351bd9d0a4e8d",
+          "0xe434dc35da084cf8d7e8186688ea2dacb53db7003d427af3abf351bd9d0a4e8d"
         ]
       },
       {
@@ -721,6 +736,21 @@
         ]
       },
       {
+        "id": "0xaaf4f58de99300cfadc4585755f376d5fa747d5bc561d5bd9d710de1f91bf42d",
+        "operatorId": "0xaadc37b8ba5645e62f4546802db221593a94729ccbfc5a97d01365a88f649878",
+        "host": "voldgods.tech",
+        "region": "as",
+        "disabled": true,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
         "id": "0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6",
         "operatorId": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563",
         "host": "content1.us-central1-a.testnet-sepolia.guerillaflotilla.com",
@@ -757,12 +787,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.484484",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x78fdc8d422c49ced035a9edf18d00d3c6a8d81df210f3e5e448e045e77b41e88",
+          "0x78fdc8d422c49ced035a9edf18d00d3c6a8d81df210f3e5e448e045e77b41e88"
         ]
       },
       {
@@ -1112,6 +1142,14 @@
         "balance": "0.0"
       },
       {
+        "id": "0xaadc37b8ba5645e62f4546802db221593a94729ccbfc5a97d01365a88f649878",
+        "owner": "0xc5165FDE11d4Ca68AbecC65Ccca23Ed735F66472",
+        "name": "voldgods",
+        "email": "dontmr21@gmail.com",
+        "stake": "100.0",
+        "balance": "0.0"
+      },
+      {
         "id": "0xaf85b9071dfafeac1409d3f1d19bafc9bc7c37974cde8df0ee6168f0086e539c",
         "owner": "0x5ea8fF6AbFA905bF5DEb7E3aDD20597f91bd6bD0",
         "name": "FleetCommand",
@@ -1130,8 +1168,8 @@
         "email": "contact@earthfast.com",
         "escrow": "11.756171",
         "reserve": "2.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-71ec7c49-8e97-4e44-9135-db5c77f60641.tgz",
-        "checksum": "0xfab3fdd0f5769794a8365038bc4b32fd8990a2f2a7511541be0f4e4ed2e1499c",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-cb828f69-4516-4ae3-bb7d-9c05176497af.tgz",
+        "checksum": "0x8a439092133dd85902e95f657551759a09d9259e6a91759f59ed09cbad857997",
         "metadata": ""
       },
       {
@@ -1366,14 +1404,25 @@
         "metadata": ""
       },
       {
+        "id": "0x78fdc8d422c49ced035a9edf18d00d3c6a8d81df210f3e5e448e045e77b41e88",
+        "owner": "0x7FBd4977BcF81cd1535f696050F2568fDce3acdC",
+        "name": "Voldgods",
+        "email": "dontmr21@gmail.com",
+        "escrow": "4.0",
+        "reserve": "1.484484",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
         "id": "0x7c9785e8241615bc80415d89775984a1337d15dc1bf4ce50f41988b2a2b336a7",
         "owner": "0x5909AFe4db1385A7325fA0b9ACfc0777a4CD1372",
         "name": "Synthetix",
         "email": "nikita@cc.snxdao.io",
         "escrow": "108.295874",
         "reserve": "2.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-1371dbf0-32b3-4d43-8825-665fe8818cbf.tgz",
-        "checksum": "0x981730f618c591118c23bf0ae196daada8a7078aa2e01d55530e82be1b93ab30",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-f6259ea3-c84b-4b47-ba25-fa48744be90c.tgz",
+        "checksum": "0x294cec4bb3983ead6032ec4079a1931ee39a937aaf7fb7276921c206436029ab",
         "metadata": ""
       },
       {
@@ -1647,6 +1696,17 @@
         "email": "qdmagix@hotmail.de",
         "escrow": "0.529703",
         "reserve": "0.0",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
+        "id": "0xe434dc35da084cf8d7e8186688ea2dacb53db7003d427af3abf351bd9d0a4e8d",
+        "owner": "0x45d0a7C1B603c48eeA1402aC803CC1a06305f72F",
+        "name": "Voldgods",
+        "email": "dontmr21@gmail.com",
+        "escrow": "4.0",
+        "reserve": "2.928868",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
