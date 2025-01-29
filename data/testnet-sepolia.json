@@ -37,7 +37,7 @@
   },
   "EarthfastRegistry": {
     "version": "",
-    "nonce": "165",
+    "nonce": "166",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -187,12 +187,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.838611",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xb29a2b3b6f2ff1b765777a231725941da5072cc4fcc30ac4a2ce09706e8ddeff",
+          "0xb29a2b3b6f2ff1b765777a231725941da5072cc4fcc30ac4a2ce09706e8ddeff"
         ]
       },
       {
@@ -1421,8 +1421,8 @@
         "email": "nikita@cc.snxdao.io",
         "escrow": "107.295874",
         "reserve": "2.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-f6259ea3-c84b-4b47-ba25-fa48744be90c.tgz",
-        "checksum": "0x294cec4bb3983ead6032ec4079a1931ee39a937aaf7fb7276921c206436029ab",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-858bc00b-0682-456b-a822-b7fcb0eb620a.tgz",
+        "checksum": "0x644db44e6ee307f090a84a3135864df6f2b0bbd6a2444fabb3d6201324dca10d",
         "metadata": ""
       },
       {
@@ -1577,6 +1577,17 @@
         "reserve": "0.0",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
+        "id": "0xb29a2b3b6f2ff1b765777a231725941da5072cc4fcc30ac4a2ce09706e8ddeff",
+        "owner": "0x2bB717E14D0dA97BAd87466054CCd542D371F8CF",
+        "name": "earthfast-demo",
+        "email": "mike@earthfast.com",
+        "escrow": "4.0",
+        "reserve": "1.838611",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-09a763a2-7e47-48dc-91c1-771efb763554.tgz",
+        "checksum": "0x6d652be31aad54e27c719101c982c541492fd754d2c9e7ce9817c798dc1e5567",
         "metadata": ""
       },
       {
