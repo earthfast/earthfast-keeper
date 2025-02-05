@@ -37,7 +37,7 @@
   },
   "EarthfastRegistry": {
     "version": "",
-    "nonce": "166",
+    "nonce": "171",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -82,12 +82,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.095079",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xdc471888e6136f84c49e531e9c9240dc4e3fba66da9d3a49e2af6202133683e0",
+          "0xdc471888e6136f84c49e531e9c9240dc4e3fba66da9d3a49e2af6202133683e0"
         ]
       },
       {
@@ -157,12 +157,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.094345",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x550d3de95be0bd28a79c3eb4ea7f05692c60b0602e48b49461e703379b08a71a",
+          "0x550d3de95be0bd28a79c3eb4ea7f05692c60b0602e48b49461e703379b08a71a"
         ]
       },
       {
@@ -427,12 +427,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.095753",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xbee89403b5bf0e626c2f71adb366311c697013df53107181a963adc459ef4d99",
+          "0xbee89403b5bf0e626c2f71adb366311c697013df53107181a963adc459ef4d99"
         ]
       },
       {
@@ -667,12 +667,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.687043",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x2da56674729343acc9933752c8c469a244252915242eb6d4c02d11ddd69164a1",
+          "0x2da56674729343acc9933752c8c469a244252915242eb6d4c02d11ddd69164a1"
         ]
       },
       {
@@ -907,12 +907,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.291428",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0xb68792697ed876af8b4858b316f5b54d81f6861191ad2950c1fde6c3dc7b3dea",
+          "0xb68792697ed876af8b4858b316f5b54d81f6861191ad2950c1fde6c3dc7b3dea"
         ]
       },
       {
@@ -1239,6 +1239,17 @@
         "metadata": ""
       },
       {
+        "id": "0x2da56674729343acc9933752c8c469a244252915242eb6d4c02d11ddd69164a1",
+        "owner": "0x11D78175e5A9e44479AD760cC8c9a28A9b20BB26",
+        "name": "ef-dashboard-demo",
+        "email": "mike@earthfast.com",
+        "escrow": "4.0",
+        "reserve": "1.687043",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-b23ef213-28d1-4729-ac4a-9c98f719d21e.tgz",
+        "checksum": "0x527a47408747ef3259f8e16bb4a7233cc7b55bc79029b3b65dd169a10ba5a5c3",
+        "metadata": ""
+      },
+      {
         "id": "0x34d3c319f536deb74ed8f1f3205d9aefef7487c819e77d3351630820dbff1118",
         "owner": "0x621e20bCAc077c2669A61C9E391f8712E2a444DB",
         "name": "EarthFast Test",
@@ -1305,6 +1316,17 @@
         "metadata": ""
       },
       {
+        "id": "0x550d3de95be0bd28a79c3eb4ea7f05692c60b0602e48b49461e703379b08a71a",
+        "owner": "0xc38F9874429B1f2065f3F32D0b67E16cf0969aAd",
+        "name": "Ambient Test",
+        "email": "@",
+        "escrow": "4.0",
+        "reserve": "1.094345",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-ec050aee-e15b-4ba5-a47b-67b894d26792.tgz",
+        "checksum": "0x665ff84d65a987d4e8bae39c10c2329addfcad5daf0219b34717bb33e2c307f0",
+        "metadata": ""
+      },
+      {
         "id": "0x5529612556959ef813dbe8d0ed29336ab75e80a9b7855030760b2917b01e568a",
         "owner": "0x2EE0Ee8589eb45960F1E3e348A9311f2A1CfD81F",
         "name": "Sept 16 GitHub Test 1",
@@ -1324,17 +1346,6 @@
         "reserve": "0.0",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "metadata": ""
-      },
-      {
-        "id": "0x60b1e32550f9d5f25f9dd040e7a106b15d8eb282dd6b3e1914c73d8066896412",
-        "owner": "0x2559995f52610A9D5DD46273ed5b690D817fa625",
-        "name": "URL project landing nov14",
-        "email": "jlmonroy13@gmail.com",
-        "escrow": "0.147223",
-        "reserve": "0.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-c8bc66d5-892a-44d2-a963-ac29c250370d.tgz",
-        "checksum": "0x8641f8ae435444a941b647997eb892c66d21ce8d5b9c36ce11f23e3ad8deaa52",
         "metadata": ""
       },
       {
@@ -1421,8 +1432,8 @@
         "email": "nikita@cc.snxdao.io",
         "escrow": "106.295874",
         "reserve": "2.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-858bc00b-0682-456b-a822-b7fcb0eb620a.tgz",
-        "checksum": "0x644db44e6ee307f090a84a3135864df6f2b0bbd6a2444fabb3d6201324dca10d",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-2d79e923-7d48-4947-9537-c7ee31b401c3.tgz",
+        "checksum": "0x06921d7652aa122d3b3840c6702dd298e7b0cdf47033d836c4dee85c7ce13aae",
         "metadata": ""
       },
       {
@@ -1443,8 +1454,8 @@
         "email": "engineering@audius.co",
         "escrow": "45.834286",
         "reserve": "2.0",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1735013095.tgz",
-        "checksum": "0xb120a08279a659fe329dcaf25f6eefeedab0ecc03de9d694a73c0df4a5f822f0",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1738091394.tgz",
+        "checksum": "0x6afc1036f130b94f3208b3a1dfede4281e0643b57ca06e82d0a95f4ad6d10f23",
         "metadata": ""
       },
       {
@@ -1553,8 +1564,8 @@
         "email": "contact@earthfast.com",
         "escrow": "7.218096",
         "reserve": "2.0",
-        "content": "",
-        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-3ced6279-51c8-4d93-b766-b0b760b1b842.tgz",
+        "checksum": "0xe19c0a3ede1c1c1b0c7a2f5f05b9fd20709ec09a3e9508da407687d602562e0c",
         "metadata": ""
       },
       {
@@ -1602,6 +1613,17 @@
         "metadata": ""
       },
       {
+        "id": "0xb68792697ed876af8b4858b316f5b54d81f6861191ad2950c1fde6c3dc7b3dea",
+        "owner": "0xa1cea88B75b915D493dE07829030Ba339F44ff7c",
+        "name": "Jan 27 Test 1",
+        "email": "cheran.v.senthil@gmail.com",
+        "escrow": "4.0",
+        "reserve": "1.291428",
+        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-f5c5bfc6-34c3-441d-b833-32c70f47f0a8.tgz",
+        "checksum": "0x7d1ced18f119c8b805a4dae15976b4cbe114d4c8eeb1897926329b92878cae37",
+        "metadata": ""
+      },
+      {
         "id": "0xb912c5eb6319a4a6a83580b9611610bedb31614179330261bfd87a41347cae1c",
         "owner": "0x2e2D04191d79fe01ba98Dd311A1B4Dd7e8d323D4",
         "name": "Genie Coin",
@@ -1632,6 +1654,17 @@
         "reserve": "2.0",
         "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-1b721e21-7252-4eaf-b835-58ab87ade304.tgz",
         "checksum": "0x1c1f891d10f9373bfd1818e187c876983d305caba6edfc0e2a5f8a45df373e5e",
+        "metadata": ""
+      },
+      {
+        "id": "0xbee89403b5bf0e626c2f71adb366311c697013df53107181a963adc459ef4d99",
+        "owner": "0xf66F87B9F53EF7631e23505454EAB54DB11F2E8b",
+        "name": "Ambient",
+        "email": "jlmonroy13@gmail.com",
+        "escrow": "4.0",
+        "reserve": "1.095753",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
       },
       {
@@ -1685,8 +1718,8 @@
         "email": "engineering@audius.co",
         "escrow": "87.193393",
         "reserve": "6.0",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.audius.org/dist1735013087.tgz",
-        "checksum": "0xd3c7ab7db34154c4aa96a4c37b7268d2c83c6c0bfd4c640d0b1839ebe2c7285a",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.audius.org/dist1738029386.tgz",
+        "checksum": "0xdde0062d2d20af960612787f2b726904a95303fdb4d3da05cfeb972fdcf49ba7",
         "metadata": ""
       },
       {
@@ -1707,6 +1740,17 @@
         "email": "qdmagix@hotmail.de",
         "escrow": "0.529703",
         "reserve": "0.0",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
+        "id": "0xdc471888e6136f84c49e531e9c9240dc4e3fba66da9d3a49e2af6202133683e0",
+        "owner": "0xe9FdbEa786EEE0E06CbD3aBECF155eda18E97083",
+        "name": "Ambient",
+        "email": "jlmonroy13@gmail.com",
+        "escrow": "4.0",
+        "reserve": "1.095079",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
