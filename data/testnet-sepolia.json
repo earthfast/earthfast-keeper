@@ -37,7 +37,7 @@
   },
   "EarthfastRegistry": {
     "version": "",
-    "nonce": "200",
+    "nonce": "205",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -346,9 +346,9 @@
         ]
       },
       {
-        "id": "0x44da158ba27f9252712a74ff6a55c5d531f69609f1f6e7f17c4443a8e2089be4",
-        "operatorId": "0x28da5ca8143bfa5e9f642e58e5e87bef0a2eb0c00bcd4efdd01050293f5fac91",
-        "host": "content-2.testnet-sepolia.tomkhagai.com",
+        "id": "0x42d72674974f694b5f5159593243114d38a5c39c89d6b62fee061ff523240ee1",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content-1738851473.us-east-2.sepolia.earthfastnodes.com",
         "region": "us",
         "disabled": false,
         "prices": [
@@ -358,6 +358,21 @@
         "projectIds": [
           "0x0000000000000000000000000000000000000000000000000000000000000000",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "id": "0x44da158ba27f9252712a74ff6a55c5d531f69609f1f6e7f17c4443a8e2089be4",
+        "operatorId": "0x28da5ca8143bfa5e9f642e58e5e87bef0a2eb0c00bcd4efdd01050293f5fac91",
+        "host": "content-2.testnet-sepolia.tomkhagai.com",
+        "region": "us",
+        "disabled": false,
+        "prices": [
+          "0.992916",
+          "1.0"
+        ],
+        "projectIds": [
+          "0xe71fac6fb785942cc6c6404a423f94f32a28ae66d69ff41494c38bfd4788b2f8",
+          "0xe71fac6fb785942cc6c6404a423f94f32a28ae66d69ff41494c38bfd4788b2f8"
         ]
       },
       {
@@ -493,6 +508,21 @@
         "projectIds": [
           "0x1c5f5ac147ec2dee04d8ce29bdbebbc58f578e0e1392da66f352a62e5c09c503",
           "0x1c5f5ac147ec2dee04d8ce29bdbebbc58f578e0e1392da66f352a62e5c09c503"
+        ]
+      },
+      {
+        "id": "0x66be4f155c5ef2ebd3772b228f2f00681e4ed5826cdb3b1943cc11ad15ad1d28",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content-1738851064.us-east-2.sepolia.earthfastnodes.com",
+        "region": "us",
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
       {
@@ -766,6 +796,21 @@
         ]
       },
       {
+        "id": "0xa7ce836d032b2bf62b7e2097a8e0a6d8aeb35405ad15271e96d3b0188a1d06fb",
+        "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
+        "host": "content-1738854589.us-east-2.sepolia.earthfastnodes.com",
+        "region": "us",
+        "disabled": false,
+        "prices": [
+          "1.0",
+          "1.0"
+        ],
+        "projectIds": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
         "id": "0xa813484aef6fb598f9f753daf162068ff39ccea4075cb95e1a30f86995b5b7ee",
         "operatorId": "0x8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b",
         "host": "content27.usw2.testnet-sepolia.armadanodes.com",
@@ -832,12 +877,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.666369",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x47197230e1e4b29fc0bd84d7d78966c0925452aff72a2a121538b102457e9ebe",
+          "0x47197230e1e4b29fc0bd84d7d78966c0925452aff72a2a121538b102457e9ebe"
         ]
       },
       {
@@ -1435,6 +1480,17 @@
         "metadata": ""
       },
       {
+        "id": "0x47197230e1e4b29fc0bd84d7d78966c0925452aff72a2a121538b102457e9ebe",
+        "owner": "0x571ccF0b3490D4389E9412068228D374846357AA",
+        "name": "walletbeat-beta",
+        "email": "polymutex@protonmail.com",
+        "escrow": "4.0",
+        "reserve": "1.666369",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
         "id": "0x50bb669a95c7b50b7e8a6f09454034b2b14cf2b85c730dca9a539ca82cb6e350",
         "owner": "0xAe45034EF2B0551eB1E05d0Ec5F2c872CaAE9371",
         "name": "one-click-test",
@@ -1573,8 +1629,8 @@
         "email": "engineering@audius.co",
         "escrow": "43.834286",
         "reserve": "2.0",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1738696686.tgz",
-        "checksum": "0x3ab0484db691f0d683f33379e5f64516d275b7ea1cf77c3f10fa9529e6aadabf",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1739231333.tgz",
+        "checksum": "0x87c8e1d6eb950a4a144f5f1d5c421ee08732b0165937d988faf49e3ef3a85569",
         "metadata": ""
       },
       {
@@ -1892,6 +1948,17 @@
         "email": "dontmr21@gmail.com",
         "escrow": "0.071132",
         "reserve": "0.0",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": ""
+      },
+      {
+        "id": "0xe71fac6fb785942cc6c6404a423f94f32a28ae66d69ff41494c38bfd4788b2f8",
+        "owner": "0x11e524c38542A14E3C011A8db89abF9367a6CC8c",
+        "name": "Feb 5 Test 2",
+        "email": "cheran.v.senthil@gmail.com",
+        "escrow": "4.0",
+        "reserve": "1.992916",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
