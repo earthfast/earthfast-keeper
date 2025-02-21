@@ -8,6 +8,7 @@ on:
 jobs:
   billing-and-epoch-sepolia:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -23,7 +24,6 @@ jobs:
       - name: Check if contract is in reconciling mode
         id: check_reconciling
         run: |
-          # check json output for isReconciling: true
           output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia)
           isReconciling=$(echo "$output" | jq -r '.isReconciling')
           if [[ "$isReconciling" == "true" ]]; then
@@ -34,24 +34,34 @@ jobs:
             echo "is_reconciling=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Run Autotask
+      - name: Run Autotask with Retry
         if: steps.check_reconciling.outputs.is_reconciling == 'true'
-        run: |
-          export RELAYER_API_KEY=${{ secrets.RELAYER_API_KEY_SEPOLIA }}
-          export RELAYER_API_SECRET=${{ secrets.RELAYER_API_SECRET_SEPOLIA }}
-          npx ts-node autotasks/reconcile-testnet-sepolia.js
-            
-      # verify that the contract is no longer in reconciling mode
-      - name: Check if contract is in reconciling mode
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 5
+          max_attempts: 2  # Retries once before failing
+          retry_on: error
+          command: |
+            export RELAYER_API_KEY=${{ secrets.RELAYER_API_KEY_SEPOLIA }}
+            export RELAYER_API_SECRET=${{ secrets.RELAYER_API_SECRET_SEPOLIA }}
+            npx ts-node autotasks/reconcile-testnet-sepolia.js
+
+      - name: Verify reconciliation status
         id: check_reconciling_after_autotask
         if: steps.check_reconciling.outputs.is_reconciling == 'true'
         run: |
           output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia)
           isReconciling=$(echo "$output" | jq -r '.isReconciling')
           if [[ "$isReconciling" == "true" ]]; then
-            echo "Contract is in reconciling mode after autotask"
-            curl -X POST -H 'Content-type: application/json' --data '{"text":"❌ Testnet-Sepolia Reconciliation failed - Contract still in reconciling mode after autotask"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+            echo "Contract is still in reconciling mode after retries"
             exit 1
           else
-            echo "Contract is no longer in reconciling mode after autotask"
+            echo "Contract is no longer in reconciling mode"
           fi
+
+      - name: Notify on Slack if failed
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"❌ Testnet-Sepolia Reconciliation failed - Contract still in reconciling mode after retry"}' \
+          ${{ secrets.SLACK_WEBHOOK_URL }}
