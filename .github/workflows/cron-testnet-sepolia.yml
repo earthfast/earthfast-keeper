@@ -8,3 +8,5 @@ jobs:
     uses: ./.github/workflows/dump.yml
     with:
       network: testnet-sepolia
+    secrets:
+      RPC_URL: ${{ secrets.SEPOLIA_RPC_URL }}
