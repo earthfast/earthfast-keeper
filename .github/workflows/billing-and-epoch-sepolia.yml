@@ -23,6 +23,7 @@ jobs:
       - name: Check if contract is in reconciling mode
         id: check_reconciling
         run: |
+          export RPC_URL=${{ secrets.SEPOLIA_RPC_URL }}
           # check json output for isReconciling: true
           output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia)
           isReconciling=$(echo "$output" | jq -r '.isReconciling')
@@ -47,6 +48,7 @@ jobs:
         id: check_reconciling_after_autotask
         if: steps.check_reconciling.outputs.is_reconciling == 'true'
         run: |
+          export RPC_URL=${{ secrets.SEPOLIA_RPC_URL }}
           output=$(npx ts-node src/checkReconcile.ts --network testnet-sepolia)
           isReconciling=$(echo "$output" | jq -r '.isReconciling')
           if [[ "$isReconciling" == "true" ]]; then
