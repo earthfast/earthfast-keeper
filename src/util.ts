@@ -2,14 +2,23 @@ import fs from "fs";
 import path from "path";
 import { JsonRpcProvider, Provider } from "@ethersproject/providers";
 import { Contract } from "ethers";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const RPC_URL = process.env.RPC_URL;
+
+if (!RPC_URL) {
+  throw new Error("RPC_URL is not set");
+}
 
 export const stdout = (s: string): void => console.log(s);
 export const stderr = (s: string): void => console.warn("> " + s);
 
 export const Networks: Record<string, { rpcUrl: string; abiDir?: string }> = {
   mainnet: { rpcUrl: "https://rpc.ankr.com/eth" },
-  "testnet-sepolia": { rpcUrl: "https://rpc.ankr.com/eth_sepolia" },
-  "testnet-sepolia-staging": { rpcUrl: "https://rpc.ankr.com/eth_sepolia" },
+  "testnet-sepolia": { rpcUrl: RPC_URL },
+  "testnet-sepolia-staging": { rpcUrl: RPC_URL },
   localhost: { rpcUrl: "http://localhost:8545", abiDir: "../earthfast-contracts/deployments/localhost" },
 };
 
