@@ -39,7 +39,7 @@ jobs:
         run: |
           export RELAYER_API_KEY=${{ secrets.RELAYER_API_KEY_SEPOLIA }}
           export RELAYER_API_SECRET=${{ secrets.RELAYER_API_SECRET_SEPOLIA }}
-          export RPC_URL=${{ secrets.RPC_URL }}
+          export RPC_URL=${{ secrets.SEPOLIA_RPC_URL }}
           npx ts-node autotasks/reconcile-testnet-sepolia.js
             
       # verify that the contract is no longer in reconciling mode
