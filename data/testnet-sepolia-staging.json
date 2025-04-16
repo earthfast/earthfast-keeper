@@ -9,7 +9,7 @@
   },
   "EarthfastRegistry": {
     "version": "",
-    "nonce": "1854",
+    "nonce": "1912",
     "lastEpochLength": "604800",
     "nextEpochLength": "604800",
     "cuedEpochLength": "604800",
@@ -54,11 +54,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.702916",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x2945c08ceaff060204def85e506ea7fdeb077b1fe5e3608981245a77913ae8ad",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -69,12 +69,12 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.6825",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000000000000000000000000000000000000000000000"
+          "0x23b12dd377e7f25e4305ceb005ea5b7463df3e23c4fd3287e32554d6563aec05",
+          "0x23b12dd377e7f25e4305ceb005ea5b7463df3e23c4fd3287e32554d6563aec05"
         ]
       },
       {
@@ -99,11 +99,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.451408",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x4fb25f53f9fa1e2c5a4269b25c089861fe15b09793cc7d4dd422db55fdc5d513",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -144,11 +144,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.663888",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0xbe0e81141c6fb68542d5f4b29900c42ad8d43ec1511e42d436d12afc2200c726",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -249,11 +249,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.152817",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x55195158d3c076f92f4a70d892e6659c8d9f96459c825b2b14c967751cd36351",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -264,11 +264,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.378134",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x4f2531418e27b70032be73d3632b05c9fc7b2f16227c89e954a55f36e6ee7ab8",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -279,11 +279,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.235396",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0xd225d49c1a614db3877ba1d8ebe4c5ae18aa42c052986f40203cee128f5452f9",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -294,11 +294,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.030892",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x11308e838e86e32b1c708a32c17ea479cbee46ed5af59e6141ad75e7c54defc8",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -309,11 +309,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.026408",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x9ed7261b3c1add04eae7fcab2cf4d8cbb4884f24bc198d41b1fc749b4102623d",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -324,11 +324,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.020734",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0xb501d8e6d609d1597b2b0e6482996f95db3bf6397294ea66916d3897f7b20493",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -354,11 +354,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.008968",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x7968e6f96a87f41379ec2f14457b14276c6ef9bb2caf2ba88b817a4e2c042c9a",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -474,11 +474,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.28613",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x220dc8f73b9640e239a06b3b14f62e5aa7aac7949709016000d201ada7cca00b",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -489,11 +489,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.17742",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x90da8890bf97affb772e37d69626bb0a3976daa448f17d50751d0ead3a955ca6",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -519,11 +519,11 @@
         "region": "us",
         "disabled": false,
         "prices": [
-          "1.0",
+          "0.154801",
           "1.0"
         ],
         "projectIds": [
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0xc2878bb9f546113b29d095c8264fa6d43d974c28ca9a5a8f96170cd354b43f28",
           "0x0000000000000000000000000000000000000000000000000000000000000000"
         ]
       },
@@ -1235,6 +1235,17 @@
         "metadata": ""
       },
       {
+        "id": "0x11308e838e86e32b1c708a32c17ea479cbee46ed5af59e6141ad75e7c54defc8",
+        "owner": "0xad9b0B92602F94021F625feA64ae1a4e3A3A027b",
+        "name": "Pancake Swap",
+        "email": "cheran.v.senthil@gmail.com",
+        "escrow": "4.0",
+        "reserve": "0.030892",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{\"type\":\"nextjs\"}"
+      },
+      {
         "id": "0x1154b1811474ad22f4e9b8509a2b29777349918688489f9441ab68c9417d9835",
         "owner": "0x41c3F669AdEcC13761097BacC650df875eabbf43",
         "name": "Test Project",
@@ -1603,7 +1614,7 @@
         "name": "Apr 1 Test 1",
         "email": "cheran.v.senthil@gmail.com",
         "escrow": "3.684902",
-        "reserve": "0.0",
+        "reserve": "0.28613",
         "content": "https://one-click-project-bundles-dev.s3.us-east-1.amazonaws.com/nextjs-ssr-cookies-1-bundle.tgz",
         "checksum": "0x9d9762825a8ce3f7c350185386fa9573e6ddd0a68222ed95a9be0a293b9bd2b1",
         "metadata": "{\"type\":\"nextjs\"}"
@@ -1618,6 +1629,17 @@
         "content": "https://output.circle-artifacts.com/output/job/a283af2a-c984-4504-9749-1ab9784ca1de/artifacts/0/armada-bundle.tgz",
         "checksum": "0x03cabd52b763f4197bf20854fbfd1268318e4a0f084e62880c741aecec88988d",
         "metadata": ""
+      },
+      {
+        "id": "0x23b12dd377e7f25e4305ceb005ea5b7463df3e23c4fd3287e32554d6563aec05",
+        "owner": "0x183921bD248aEB173312A794cFEf413fDE5bF5Ca",
+        "name": "Project Name",
+        "email": "email@example.com",
+        "escrow": "9.0",
+        "reserve": "1.6825",
+        "content": "ipfs://content",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{}"
       },
       {
         "id": "0x23b6913629113586d5dfbecc12038893feb476c47ecb24aae63713aba4e14b59",
@@ -1680,7 +1702,7 @@
         "name": "Mar 28 Curve Test Old",
         "email": "cheran.v.senthil@gmail.com",
         "escrow": "3.274604",
-        "reserve": "0.0",
+        "reserve": "0.702916",
         "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-961d4b07-a8ff-4fe4-b9fa-e9bab02300df.tgz",
         "checksum": "0xd7d509eeddc214a2e499e98ef7b8761b011d72663f914cc688b346ca57d8814c",
         "metadata": "{\"type\":\"nextjs\"}"
@@ -1695,6 +1717,17 @@
         "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-37572b85-f915-45e4-a9c8-69d2625b3b5a.tgz",
         "checksum": "0x42b1daddc4dfb5ef22828e53f708cc2712ae3af56274b707858e1d332f507ca0",
         "metadata": ""
+      },
+      {
+        "id": "0x298e91196aca02219107164bd0719252c23d7c249427517a0a2f47fcc68213a9",
+        "owner": "0x91682c19c0265e5EdC9F35dddA953D9eCCef0653",
+        "name": "Test Project",
+        "email": "testuser_e51f9438-f49d-43f8-8752-015df456371c@example.com",
+        "escrow": "0.0",
+        "reserve": "0.0",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{\"type\":\"static\"}"
       },
       {
         "id": "0x2a5bc11e69fc0bf6f9f389bc4856dcd66d20137734ee5f27eb3fbad875770e40",
@@ -1717,6 +1750,17 @@
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
+      },
+      {
+        "id": "0x2b8555426111658aa3f476440b0654adcc56f8181e9adbe649fb0fbe37bee71f",
+        "owner": "0x11B928361e615C767a28313281E9D5Bd087484A9",
+        "name": "Test Project",
+        "email": "testuser_aa4cc465-2ca0-4bd2-9b42-a26d87e4a5e8@example.com",
+        "escrow": "0.0",
+        "reserve": "0.0",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{\"type\":\"static\"}"
       },
       {
         "id": "0x2c072cf2a1319852119981aa6e3386273773c4083e117b3122168171d58ea408",
@@ -1978,8 +2022,8 @@
         "email": "@",
         "escrow": "3.401112",
         "reserve": "0.0",
-        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-9d12181d-1a95-43f2-8886-d36807ea0e42.tgz",
-        "checksum": "0x4cf56c9a872d371784c5242945f14c4199776ba1530dac5afe8484688078df2b",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-4eefc167-4658-4db5-94f8-22bb7bec83fd.tgz",
+        "checksum": "0x5f70a2f5e7d3bd58f52d47bf4085da822cc87d309ed687e3ea9c703c9569ab1f",
         "metadata": ""
       },
       {
@@ -2055,8 +2099,8 @@
         "email": "asdas@asdasd.com",
         "escrow": "3.917223",
         "reserve": "0.0",
-        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-82270db5-bb69-4752-ad5e-756966b2c798.tgz",
-        "checksum": "0x4ad9f3287b751b5e7b5353e578085f171dcde0e199b82c8d2787f00df4d747f5",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-651cd501-dd60-45b0-a7c1-7393ab52cc1a.tgz",
+        "checksum": "0x4c28b3e0645ca4956c6c4e6691d6e4baac88186a728328cae80c454966f5e3ca",
         "metadata": ""
       },
       {
@@ -2390,12 +2434,34 @@
         "metadata": ""
       },
       {
+        "id": "0x4f2531418e27b70032be73d3632b05c9fc7b2f16227c89e954a55f36e6ee7ab8",
+        "owner": "0x8c9A41Af4e3a669D251bb7e099aCD7c99d4C0E90",
+        "name": "Test Project URL",
+        "email": "testuser_e0026749-d6bb-4233-9fbc-6ac8e47e0ad6@example.com",
+        "escrow": "4.0",
+        "reserve": "0.378134",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-891d4b6e-2486-407d-9507-7b7df5342374.tgz",
+        "checksum": "0x18b48d8d3e206153dcbcc288e43736c57bcf378f13580f0fc6187b130f2c6850",
+        "metadata": "{\"type\":\"static\"}"
+      },
+      {
         "id": "0x4f36f366dad0ebb7284e5512934beeddfe3b4f688acd15e10d8dc04bf55cf777",
         "owner": "0x64d10BAD2A9cB7705e7E88B7c7C47Be06F2fC187",
         "name": "Test Project",
         "email": "testuser_67634f43-1c66-4993-99e7-21b7a0993c4a@example.com",
         "escrow": "4.0",
         "reserve": "0.0",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{\"type\":\"static\"}"
+      },
+      {
+        "id": "0x4fb25f53f9fa1e2c5a4269b25c089861fe15b09793cc7d4dd422db55fdc5d513",
+        "owner": "0xd235d9Fc4bEd76A021d6e8305fB0a680cf46Bc83",
+        "name": "Test Project URL",
+        "email": "testuser_d906a176-9246-44d1-96f1-6bb5e9f2b52b@example.com",
+        "escrow": "4.0",
+        "reserve": "0.451408",
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": "{\"type\":\"static\"}"
@@ -2531,6 +2597,17 @@
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": ""
+      },
+      {
+        "id": "0x55195158d3c076f92f4a70d892e6659c8d9f96459c825b2b14c967751cd36351",
+        "owner": "0x8Fbf9EAc74b1d41E3A28E3B5A94eA4192C933448",
+        "name": "codemender 8apr 918am",
+        "email": "jlmonroy13@gmail.com",
+        "escrow": "4.0",
+        "reserve": "0.152817",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-1e117784-b6ae-412f-b07e-6524355d9d81.tgz",
+        "checksum": "0xf97798f07d7bda25c1bcffcd67b67d88a36024144deecc5bb6de25f2062d8b54",
+        "metadata": "{\"type\":\"nextjs\"}"
       },
       {
         "id": "0x552430c2010355dda19e8bae437f75cfb136cb8d667c4c0867367db21eee69b6",
@@ -2707,6 +2784,17 @@
         "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-88172a4c-837d-48cb-97a2-87fc22fa512a.tgz",
         "checksum": "0xf1eb1b5432cbc1f41435db6876310f90032bc19d633e17305d7e36e4e3675383",
         "metadata": ""
+      },
+      {
+        "id": "0x5949f4cd3982628fe753b5f34e8b8bc25ade9e2847d0b4a21a05769cd25f43b2",
+        "owner": "0x183921bD248aEB173312A794cFEf413fDE5bF5Ca",
+        "name": "Project Name",
+        "email": "email@example.com",
+        "escrow": "0.0",
+        "reserve": "0.0",
+        "content": "ipfs://content",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{}"
       },
       {
         "id": "0x5999c730a42958a0f9957826db8ec54767301b964d39b7c0be54cab4c9d46125",
@@ -2960,17 +3048,6 @@
         "content": "https://output.circle-artifacts.com/output/job/d5aa11e8-9d48-4d09-8c82-c7fea998c639/artifacts/0/armada-bundle.tgz",
         "checksum": "0xb05a937943ea0b04d66c8cc15398f9c103141297125fb16238ad4068cf7b2ff8",
         "metadata": ""
-      },
-      {
-        "id": "0x676b01fad95374ac58e427dd0486c5c34247d777eb22f0cdbb1be6add704d3e9",
-        "owner": "0x9ba74F2363CBA5AcD3291916573Cf5Cd09548c2B",
-        "name": "Mar 28 Test 1",
-        "email": "cheran.v.senthil@gmail.com",
-        "escrow": "3.270635",
-        "reserve": "0.0",
-        "content": "",
-        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "metadata": "{\"type\":\"static\"}"
       },
       {
         "id": "0x67f9cda35a6d1806f0df4c927f9387905cdc9387981bff39f15da9857d5d3cc4",
@@ -3264,7 +3341,7 @@
         "name": "quartzpay",
         "email": "@",
         "escrow": "2.274922",
-        "reserve": "0.0",
+        "reserve": "0.008968",
         "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-13b4e21d-4042-435e-8e97-5df4d30b7718.tgz",
         "checksum": "0xf4ce1731c26181d70129b5d4a4fb64ca86bad1ebd6f0c38a1467309888fa3f18",
         "metadata": "{\"type\":\"nextjs\"}"
@@ -3353,8 +3430,8 @@
         "email": "@",
         "escrow": "2.905815",
         "reserve": "0.0",
-        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-5f53bc4c-f565-403a-8589-23b5d10624d4.tgz",
-        "checksum": "0x246f3732a9118ea3d198ee7b607f3fe5bc96f909ff1c8affe910b2b40a7a9691",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-4edafe0a-7e6b-4e0c-b580-bd1506b7d94a.tgz",
+        "checksum": "0xda7ae366f74b7d8f87b812d5fd2239a3dd79b0d03c60cbf3d443cbff5e951ce3",
         "metadata": ""
       },
       {
@@ -3732,6 +3809,17 @@
         "metadata": ""
       },
       {
+        "id": "0x90da8890bf97affb772e37d69626bb0a3976daa448f17d50751d0ead3a955ca6",
+        "owner": "0x29db60e87BB33ACAdC63211bD6091A8B5575E1Be",
+        "name": "April 8 Test 1",
+        "email": "cheran.v.senthil@gmail.com",
+        "escrow": "4.0",
+        "reserve": "0.17742",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-f7253826-c94c-47ce-a323-c819faaf8ecf.tgz",
+        "checksum": "0x21102a0a9e13b4c57d267c9053643075a60748de6c7234b1cf5ca0a744e15210",
+        "metadata": "{\"type\":\"static\"}"
+      },
+      {
         "id": "0x915c3eb987b20e1af620c1403197bf687fb7f18513b3a73fde6e78c7072c41a6",
         "owner": "0xE98Cf08d9817a5cAa03Dd69819B76AC56578aCb9",
         "name": "Test Project URL",
@@ -4027,6 +4115,17 @@
         "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-41aa2956-2986-4f29-a9e5-8fafa402eeda.tgz",
         "checksum": "0x053f85041df728a97c4048d2a2b0ebe0abccb0554e61dbe888773aa2cfc9df21",
         "metadata": ""
+      },
+      {
+        "id": "0x9ed7261b3c1add04eae7fcab2cf4d8cbb4884f24bc198d41b1fc749b4102623d",
+        "owner": "0xC7b6b9412374BFf9b87856D063cD181e2E1b8Ba4",
+        "name": "Yearn Finance",
+        "email": "cheran.v.senthil@gmail.com",
+        "escrow": "4.0",
+        "reserve": "0.026408",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{\"type\":\"nextjs\"}"
       },
       {
         "id": "0x9ef8000f3ef06f2a809e420f8b0e2e5980a7b6b55735df79d6caf3bcd7e504c2",
@@ -4524,6 +4623,17 @@
         "metadata": ""
       },
       {
+        "id": "0xb501d8e6d609d1597b2b0e6482996f95db3bf6397294ea66916d3897f7b20493",
+        "owner": "0xc4a91066373fcD7C182Ab3B39be4e0e76462BBa2",
+        "name": "Yearn Finance New",
+        "email": "cheran.v.senthil@gmail.com",
+        "escrow": "4.0",
+        "reserve": "0.020734",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{\"type\":\"nextjs\"}"
+      },
+      {
         "id": "0xb55a0d573d9c140c337e60daf8e2e4a11bac3c12ffba8f0586dca25852519910",
         "owner": "0x81f5276766C113cFa3C1a00dc81cEcaCDC7941ae",
         "name": "Test Project URL",
@@ -4544,6 +4654,17 @@
         "content": "",
         "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "metadata": "{\"type\":\"static\"}"
+      },
+      {
+        "id": "0xb5edc084aa8fc2a84825809714626663b1db2d58298d66f227ca2d2f33c8d283",
+        "owner": "0x183921bD248aEB173312A794cFEf413fDE5bF5Ca",
+        "name": "Project Name",
+        "email": "email@example.com",
+        "escrow": "0.0",
+        "reserve": "0.0",
+        "content": "ipfs://content",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{}"
       },
       {
         "id": "0xb759a9fe1ff933c015eba00625e88690d6765725d138e96c8e1cf26d03db4ef6",
@@ -4766,6 +4887,17 @@
         "metadata": ""
       },
       {
+        "id": "0xbe0e81141c6fb68542d5f4b29900c42ad8d43ec1511e42d436d12afc2200c726",
+        "owner": "0x09a3BdE4Bb2719E9D75CBabdDf88345eA0Af974B",
+        "name": "Test Project URL",
+        "email": "testuser_25e52802-b020-4b89-97ac-6e3bfdb05dd0@example.com",
+        "escrow": "4.0",
+        "reserve": "0.663888",
+        "content": "",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{\"type\":\"static\"}"
+      },
+      {
         "id": "0xbeb61f9a7cf51dfe2f7af2492fdcd2702cacee857677c504c9282a939b0fe659",
         "owner": "0x994534169fd62AeFc42b05E89Bd7bc7f150bd655",
         "name": "Test Project",
@@ -4830,6 +4962,17 @@
         "content": "https://output.circle-artifacts.com/output/job/25c20649-2d54-4ef2-99c9-c8c22685d4df/artifacts/0/earthfast-bundle.tgz",
         "checksum": "0xe1bfb0e775f4ff0d5f9c8a46ca2de50772c91455dcd5fa0b3070b699d7ffcc2f",
         "metadata": ""
+      },
+      {
+        "id": "0xc2878bb9f546113b29d095c8264fa6d43d974c28ca9a5a8f96170cd354b43f28",
+        "owner": "0x0A9EE418Ac7e5705187cA1CEACa6b8aAC11F1ea1",
+        "name": "April 8 Test 2 (Nextjs)",
+        "email": "cheran.v.senthil@gmail.com",
+        "escrow": "4.0",
+        "reserve": "0.154801",
+        "content": "https://one-click-project-bundles-dev.s3.us-east-1.amazonaws.com/nextjs-ssr-cookies-1-bundle.tgz",
+        "checksum": "0x9d9762825a8ce3f7c350185386fa9573e6ddd0a68222ed95a9be0a293b9bd2b1",
+        "metadata": "{\"type\":\"nextjs\"}"
       },
       {
         "id": "0xc2af2151f463329650b362c7829e614d604ced56eb228ece1915699878679a00",
@@ -5074,6 +5217,17 @@
         "metadata": ""
       },
       {
+        "id": "0xce33119fe8f90fa81be2b30c91ebea0cf3bf8f8100c621826e7acc6f28dc0155",
+        "owner": "0x183921bD248aEB173312A794cFEf413fDE5bF5Ca",
+        "name": "Project Name",
+        "email": "email@example.com",
+        "escrow": "0.0",
+        "reserve": "0.0",
+        "content": "ipfs://content",
+        "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "metadata": "{}"
+      },
+      {
         "id": "0xce9501223d0d56ac6a6cae95f0cf0f2408aefe03380ec90203a7dcd1a7dadc8b",
         "owner": "0xA03C62BD3c35ddBd980BB3861165d03b2083E593",
         "name": "Test Project URL",
@@ -5184,6 +5338,17 @@
         "metadata": ""
       },
       {
+        "id": "0xd225d49c1a614db3877ba1d8ebe4c5ae18aa42c052986f40203cee128f5452f9",
+        "owner": "0xE2EcB4e8d709cDF00b8850Ea2a9BAaBD2a5f1B54",
+        "name": "Test Project URL",
+        "email": "testuser_b10a4fad-bc15-4913-b2d9-a03aa95a210e@example.com",
+        "escrow": "4.0",
+        "reserve": "0.235396",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-798e855c-aa8c-45f2-aea7-d260483e3698.tgz",
+        "checksum": "0x2f5baf11285e5733dced66ea8a6a56d9f01db1a94f76c56dbb0f11d0f39aa951",
+        "metadata": "{\"type\":\"static\"}"
+      },
+      {
         "id": "0xd2d8c0e1d9b7b401e5c6da9a0d7a7290cdd42599e127c383731cf889f2462a36",
         "owner": "0x6f622519Ccc4C64B1B68D9A2d398FFC2796D1e6B",
         "name": "Test Project URL",
@@ -5223,8 +5388,8 @@
         "email": "jlmonroy13@gmail.com",
         "escrow": "1.201549",
         "reserve": "0.0",
-        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-89769db9-ae01-4f44-b7b8-e182b696392a.tgz",
-        "checksum": "0x8556c5ed6309a1db317e4cb0aa501e82934e68ed428372d1a7d91f073d038b43",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-c16c1294-bf84-4b95-bf98-37406b2e1e4f.tgz",
+        "checksum": "0xd65ae4d2b2ab5d16e08f665833e7d2922847d604d245a4edf1385f99c7f20c53",
         "metadata": "{\"type\":\"nextjs\"}"
       },
       {
@@ -5463,7 +5628,7 @@
         "owner": "0x27509269917Fab39D35f30694BF2f789b50b2DaE",
         "name": "vite mar28 1140",
         "email": "jlmonroy13@gmail.com",
-        "escrow": "3.36127",
+        "escrow": "0.0",
         "reserve": "0.0",
         "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-abb74920-a2e7-4f99-b132-c42c92700052.tgz",
         "checksum": "0x364c0b57cd4192b8297b1bdcfde2eee33b3bdbe2f83b366c65020a1fa1e8619e",
@@ -5982,8 +6147,8 @@
         "email": "@",
         "escrow": "2.721132",
         "reserve": "0.0",
-        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-08368dc1-69f8-4e8c-9cad-38934acf875b.tgz",
-        "checksum": "0x599d0aa7ef3cdd491acd5dc82252adb99de6ab9c090f6a59135e00222595cfe7",
+        "content": "https://one-click-project-bundles-sepolia-staging.s3.us-east-1.amazonaws.com/earthfast-bundle-553a9d60-37bc-4981-ae74-66c7405fc047.tgz",
+        "checksum": "0x3c3fe6fe0460694a3ee9e98333395e201cf999623b617b40bd00178947b57877",
         "metadata": ""
       },
       {
