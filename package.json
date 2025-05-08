@@ -1,7 +1,7 @@
 {
   "name": "erthfast-keeper",
   "version": "1.0.0",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "copy-abi": "(cd ../earthfast-contracts/scripts && sh copy-contract-deployments.sh keeper)",
     "gen-types": "rm -rf ./types && for SRC in ./abi/*; do DST=./types/$(basename ${SRC}); echo \"Generating ${DST}\"; npx typechain --target=ethers-v5 --out-dir ${DST} ${SRC}/*.json; done"
