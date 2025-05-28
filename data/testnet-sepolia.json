@@ -2004,8 +2004,8 @@
         "email": "contact@earthfast.com",
         "escrow": "0.754068",
         "reserve": "0.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-ea8b08b6-571b-4716-861f-8c12a1d32d43.tgz",
-        "checksum": "0x086a18239d06b78aa491f680bf67c58af4552a6dbc973dd98eb1bc64d59188f0",
+        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeidd5mn62jsujakncx4n47sh4cpgwcfuqeqb7kzu5jseor5d4pl764",
+        "checksum": "0xef6e8a9b0434cb5a6965654a9e94d468d3cb90f97191e1634d03b4a39d4944a1",
         "metadata": "{\"type\":\"static\"}"
       },
       {
@@ -2433,8 +2433,8 @@
         "email": "contact@earthfast.com",
         "escrow": "4.796925",
         "reserve": "2.0",
-        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeigwdtoo4vby2pxaiabdcfcvpe6vc7jaunnvtvy6mpa2duj5qv6gue",
-        "checksum": "0xe35af3aa3b33a033a6268cc57442c33985046991b5da7ad894c9e0a7a238b006",
+        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeiglqzostbmhvpq4uqq3sch36bnv4z7mwszlynuuccptxyd5yeatem",
+        "checksum": "0x93a82053e8de7668e372c3cb5e2ba7d8f74a81e51eee5bacd8fd0c88b07d68e0",
         "metadata": "{\"type\":\"nextjs\"}"
       },
       {
@@ -2455,8 +2455,8 @@
         "email": "contact@earthfast.com",
         "escrow": "18.302223",
         "reserve": "2.0",
-        "content": "https://earthfast-dashboard-project-bundles-sepolia.s3.us-east-1.amazonaws.com/earthfast-bundle-25a837bf-6659-4b9d-b34f-188cb99d08f2.tgz",
-        "checksum": "0xafa1ca585e8701412049d9e131a81356e272477806799cecae551bfef872d56b",
+        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeihhmd3jekwoqz7eitm5t7yqdgem6wrmewmxtu2wzvdshvtokpbapy",
+        "checksum": "0x618141b45335c87b228343787d6d5d0e799a6fe292c3e05622b3bfd2abebadff",
         "metadata": ""
       },
       {
@@ -2521,8 +2521,8 @@
         "email": "engineering@audius.co",
         "escrow": "29.834286",
         "reserve": "2.0",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1746825345.tgz",
-        "checksum": "0x80477445596c8ef1fc8827c57fdf2869accd59f3b23f053b2bfcaeb0944687e4",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1747767128.tgz",
+        "checksum": "0xbdd9097f818b1a7a6227bde0852d6c92e27240b2ac1e86d300a3adc5172dead4",
         "metadata": ""
       },
       {
@@ -2620,8 +2620,8 @@
         "email": "contact@earthfast.com",
         "escrow": "0.874684",
         "reserve": "0.0",
-        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeigyurokm2wh26gk2q6jrenybkxnunsaymw5rccq5ashj25ceg77gy",
-        "checksum": "0x2b35ec952a76c587f9ab8d34e78f36f50ab56ffe05caf93678f93d6659875565",
+        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeigjnxuh2i3hp7jwgebzcg3ojovfyp7lg4kc66kv4yu7u6hdtz3ihy",
+        "checksum": "0x86559b6f7d7401a57b9c954257e08746cfc550ec4a0a8ddec795c3f0216a780b",
         "metadata": "{\"type\":\"nextjs\"}"
       },
       {
@@ -2675,8 +2675,8 @@
         "email": "contact@earthfast.com",
         "escrow": "10.700159",
         "reserve": "0.0",
-        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeih4onyeo7ewscpoairtogs7yid2xk6nll4vxas6ymupi55cxinsuy",
-        "checksum": "0xa46ad9e65f724bd57ffaff5121ce50e8698148bab8d9c91da9aaeb21f84a1682",
+        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeiexjjsjhgtvjtx64jd27g263msqh3ljufmpu7whrrg4o5sr2yaqhi",
+        "checksum": "0x81f47b96227ad042400287aa360f021afe74f96c4b7a91ec3c447849359de732",
         "metadata": "{\"type\":\"static\"}"
       },
       {
