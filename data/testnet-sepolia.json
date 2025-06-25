@@ -2004,8 +2004,8 @@
         "email": "contact@earthfast.com",
         "escrow": "0.754068",
         "reserve": "0.0",
-        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeib36w65gb64zxofiy7aqdyqcjwkevgce57476jwztq5j7crfyofem",
-        "checksum": "0xa0bc4c8c90a92aa8c2abe192c53998b8f6c75b4d75d1538b0cff0778dd209e4b",
+        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeibbd4kkj7aga2rzkyyto763qapf2uj6746xlmemq47om3liwv57eu",
+        "checksum": "0xf0a33ab54dd17eb1a3dd66731e12af16651f82b71e3b8287e4cabff33b12a4af",
         "metadata": "{\"type\":\"static\"}"
       },
       {
@@ -2477,8 +2477,8 @@
         "email": "nikita@cc.snxdao.io",
         "escrow": "86.295874",
         "reserve": "2.0",
-        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeiaoens3x5ll5fscnjlclawl73h7udaiw6mlnvntxxtwqdt53cgcxi",
-        "checksum": "0x8ffd97f00731c570a95aa8733773f498b70bfd28dd96d334ef432313f6de524b",
+        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeidgheb3flwllq54ksb3zvayhg7d2ttsmlrfjccgav4gvwi6nrqxmi",
+        "checksum": "0x4480500f9a547eeadbc2034edd76acb3b7efd9a77e5a5ad12e51abb26e62077e",
         "metadata": ""
       },
       {
@@ -2521,8 +2521,8 @@
         "email": "engineering@audius.co",
         "escrow": "25.834286",
         "reserve": "2.0",
-        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1748331535.tgz",
-        "checksum": "0x2de2f6911d8ca3b9433e322d6328940fcc016c673f46be4603c630eb2b8a6c42",
+        "content": "https://s3.us-west-1.amazonaws.com/dashboard.staging.audius.org/dist1750108517.tgz",
+        "checksum": "0x7eda3c60626e14addcf7165ae5da4b6f29427c1601df19793a4e7249477a27f4",
         "metadata": ""
       },
       {
@@ -2675,8 +2675,8 @@
         "email": "contact@earthfast.com",
         "escrow": "10.700159",
         "reserve": "0.0",
-        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeib33wbozk2wolhtp3csfufflorg5wy5rsqysccps45yqyf3waszkm",
-        "checksum": "0xf42cd0ff8ce42f62d9d7c5480ed0ec3fb326b8f83853afb326cda25791302ccf",
+        "content": "https://gateway.ipfs.earthfast.com/ipfs/bafybeigfiteywkrcuwiq2rgxbivnq64efdw6pqric3jcpybb7pdzpnvr3a",
+        "checksum": "0x2a40a5b4894f3db0504053d01bf600e995ac84b5bbea1b631bd7cac1095abbbb",
         "metadata": "{\"type\":\"static\"}"
       },
       {
